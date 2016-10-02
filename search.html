@@ -7,14 +7,7 @@
       <title><![CDATA[如何搭建个人博客（GitHub Pages + Hexo + 域名绑定）]]></title>
       <url>http://yoursite.com/2016/10/02/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%88GitHub-Pages-Hexo-%E5%9F%9F%E5%90%8D%E7%BB%91%E5%AE%9A%EF%BC%89/</url>
       <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>本文主要记载了笔者在Window下一步步搭建博客的过程，主要用到了GitHub Pages与Hexo，域名绑定不是必须的，读者可自行取舍。在Mac下搭建博客的步骤应该也是一样的。</p>
-<h2 id="第一步，GitHub-Pages"><a href="#第一步，GitHub-Pages" class="headerlink" title="第一步，GitHub Pages"></a>第一步，GitHub Pages</h2><p>GitHub是世界上最大的代码存放网站和开源社区。而github Pages可以被认为是用户编写的、托管在github上的静态网页。免费稳定，用它来放博客，最合适不过了。</p>
-<p><img src="images/1.jpg" alt="GitHub Pages"></p>
-<h3 id="创建GitHub-Pages"><a href="#创建GitHub-Pages" class="headerlink" title="创建GitHub Pages"></a>创建GitHub Pages</h3><p>首先你需要有一个GitHub账号，然后只要创建一个repository就行了。但是这个仓库是有规则的，其名字格式必须为：<code>yourusername.github.io</code>。创建好之后，这个仓库就是你的GitHub Pages了。</p>
-<p><img src="images/2.jpg" alt="GitHub Pages"></p>
-<blockquote>
-<p>仓库命名格式中的<code>yourusername</code>是你的github用户名。笔者的github用户名是szm1002。所以仓库命名格式则是<code>szm1002.github.io</code>。</p>
-</blockquote>
-<h2 id="第二步，Hexo"><a href="#第二步，Hexo" class="headerlink" title="第二步，Hexo"></a>第二步，Hexo</h2><p><a href="https://hexo.io/zh-cn/docs/index.html" target="_blank" rel="external">Hexo</a>是一个快速、简洁且高效的博客框架。Hexo 使用 <a href="http://daringfireball.net/projects/markdown/" target="_blank" rel="external">Markdown</a>（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。在安装Hexo之前，需要先安装Node.js以及Git。</p>
+<h2 id="第一步，Hexo"><a href="#第一步，Hexo" class="headerlink" title="第一步，Hexo"></a>第一步，Hexo</h2><p><a href="https://hexo.io/zh-cn/docs/index.html" target="_blank" rel="external">Hexo</a>是一个快速、简洁且高效的博客框架。Hexo 使用 <a href="http://daringfireball.net/projects/markdown/" target="_blank" rel="external">Markdown</a>（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。在安装Hexo之前，需要先安装Node.js以及Git。</p>
 <h3 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h3><p>可以到它的<a href="https://nodejs.org/zh-cn/" target="_blank" rel="external">官网</a>下载适合自己电脑系统的版本进行安装即可，推荐更稳定的LTS版本。笔者选择的是LTS的.msi文件进行安装（Windows 64-bit）。</p>
 <h3 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h3><ul>
 <li>Windows：下载并安装<a href="https://git-scm.com/download/win" target="_blank" rel="external">Git</a></li>
@@ -25,6 +18,92 @@
 <h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><p>Node.js和Hexo安装完毕后，终于可以安装Hexo啦！</p>
 <p>打开Git Bash，输入以下命令即可完成安装。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install -g hexo-cli</div></pre></td></tr></table></figure>
+<h3 id="本地部署Hexo站点"><a href="#本地部署Hexo站点" class="headerlink" title="本地部署Hexo站点"></a>本地部署Hexo站点</h3><p>在Hexo完成安装之后还需要进行部署。</p>
+<blockquote>
+<p>以笔者为例，笔者打算把博客的本地文件放到D盘的Blog文件夹下。</p>
+</blockquote>
+<p>进入D盘根目录，新建Blog文件夹。然后在D盘空白处单击右键，</p>
+<p><img src="images/3.jpg" alt="Git Bash"></p>
+<p>选择Git Bash Here。然后输入以下命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ hexo init B<span class="built_in">log</span></div><div class="line">$ <span class="built_in">cd</span> B<span class="built_in">log</span></div><div class="line">$ npm install</div></pre></td></tr></table></figure>
+<p>到此，Hexo站点本地部署完成。然后在d:/Blog文件夹下用Git Bash执行以下命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ hexo g  <span class="comment">#生成本地发布文件夹</span></div><div class="line">$ hexo s  <span class="comment">#开启服务</span></div></pre></td></tr></table></figure>
+<p>会出现如下反馈：</p>
+<p><img src="images/4.jpg" alt="hexo service"></p>
+<p>然后你就可以浏览器输入<code>localhost:4000</code>预览你的博客了。</p>
+<blockquote>
+<p>别高兴的太早，这只是在你本地跑起来了，接下来需要把博客部署到网上（也就是GitHub Pages上）。</p>
+</blockquote>
+<h2 id="第二步，GitHub-Pages"><a href="#第二步，GitHub-Pages" class="headerlink" title="第二步，GitHub Pages"></a>第二步，GitHub Pages</h2><p>GitHub是世界上最大的代码存放网站和开源社区。而github Pages可以被认为是用户编写的、托管在github上的静态网页。免费稳定，用它来放博客，最合适不过了。</p>
+<p><img src="images/1.jpg" alt="GitHub Pages"></p>
+<h3 id="创建GitHub-Pages"><a href="#创建GitHub-Pages" class="headerlink" title="创建GitHub Pages"></a>创建GitHub Pages</h3><p>首先你需要有一个GitHub账号，然后只要创建一个repository就行了。但是这个仓库是有规则的，其名字格式必须为：<code>yourusername.github.io</code>。创建好之后，这个仓库就是你的GitHub Pages了。</p>
+<p><img src="images/2.jpg" alt="GitHub Pages"></p>
+<blockquote>
+<p>仓库命名格式中的<code>yourusername</code>是你的github用户名。笔者的github用户名是szm1002。所以仓库命名格式则是<code>szm1002.github.io</code>。</p>
+</blockquote>
+<h3 id="配置和使用GitHub"><a href="#配置和使用GitHub" class="headerlink" title="配置和使用GitHub"></a>配置和使用GitHub</h3><p>我们需要设置SSH Keys来让本地Git项目与GitHub建立联系。</p>
+<h4 id="配置SSH-keys"><a href="#配置SSH-keys" class="headerlink" title="配置SSH keys"></a>配置SSH keys</h4><p>首先生成一个新的ssh key：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ ssh-keygen -t rsa -C <span class="string">"szm1002@126.com"</span></div><div class="line">Generating public/private rsa key pair.</div><div class="line">Enter file <span class="keyword">in</span> <span class="built_in">which</span> to save the key (/Users/your_user_directory/.ssh/id_rsa):</div></pre></td></tr></table></figure>
+<p>此时回车就好。注意，把<em>邮箱地址</em>替换成你自己的邮箱地址，且此处 <code>-C</code> 是大写。</p>
+<p>然后系统会要你输入密码，这个密码会在你提交项目时使用，如果为空的话提交项目时则不用输入。这个设置是防止别人往你的项目里提交内容。</p>
+<blockquote>
+<p>注意：输入密码的时候没有*字样的，你直接输入就可以了。</p>
+</blockquote>
+<p>在本机设置SSH Key之后，需要添加到GitHub上，以完成SSH链接的设置。</p>
+<ol>
+<li>打开id_rsa.pub文件（在C盘中，但不同系统具体路径可能不同，可以在C盘中搜索该文件）。此文件里面内容为刚才生成人密钥。如果看不到这个文件，你需要设置显示隐藏文件。准确的复制这个文件的内容，才能保证设置的成功。</li>
+<li>登陆github系统。点击右上角的 Account Settings—&gt;SSH Public keys —&gt; add another public keys 。</li>
+<li>把你本地生成的密钥复制到里面（key文本框中）， 点击 add key 就ok了。</li>
+</ol>
+<h4 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h4><p>可以输入下面的命令，看看设置是否成功：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ssh -T git@github.com</div></pre></td></tr></table></figure>
+<p>如果是下面的反馈：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">The authenticity of host &apos;github.com (207.97.227.239)&apos; can&apos;t be established.</div><div class="line">RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.</div><div class="line">Are you sure you want to continue connecting (yes/no)?</div></pre></td></tr></table></figure>
+<p>输入yes，然后会看到：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Hi szm1002! You&apos;ve successfully authenticated, but GitHub does not provide shell access.</div></pre></td></tr></table></figure>
+<h4 id="设置用户信息"><a href="#设置用户信息" class="headerlink" title="设置用户信息"></a>设置用户信息</h4><p>接下来需要输入下面的代码进行个人信息的设置，把名称和邮箱替换成你自己的：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git config --global user.name <span class="string">"szm1002"</span></div><div class="line">$ git config --global user.email  <span class="string">"szm1002@126.com"</span></div></pre></td></tr></table></figure>
+<p>现在，你的PC已成功通过SSH链接到GitHub。</p>
+<h3 id="Hexo部署到GitHub-Pages"><a href="#Hexo部署到GitHub-Pages" class="headerlink" title="Hexo部署到GitHub Pages"></a>Hexo部署到GitHub Pages</h3><p>在之前你只是在本地把博客跑起来了，现在我们需要把它部署到GitHub Pages上。</p>
+<p>在Git Bash中cd到你的站点（即存放博客的文件夹），或在站点中右键选择Git Bash Here。然后输入以下命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo-deployer-git --save</div></pre></td></tr></table></figure>
+<p>然后以文本编辑器打开站点的_config.yml文件，并滚动到最下面添加如下配置信息（注意最下边有deploy和type字段，需要覆盖这两个字段）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">type: git</div><div class="line">repo: https://github.com/szm1002/szm1002.github.io.git</div><div class="line">branch: master</div></pre></td></tr></table></figure>
+<blockquote>
+<p>其中repo字段的值是你的GitHub Pages提交代码的git地址。</p>
+</blockquote>
+<p>然后你就可以用以下命令把博客发布到GitHub上了。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ hexo clean  <span class="comment">#清除缓存</span></div><div class="line">$ hexo g  <span class="comment">#生成本地发布文件夹</span></div><div class="line">$ hexo d  <span class="comment">#deploy到GitHub</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p><code>hexo g</code> 与 <code>hexo d</code> 两条命令可合并写成 <code>hexo d -g</code> 。</p>
+</blockquote>
+<p><strong>至此，博客已经搭建完成。</strong>你可以通过<code>http://yourusername.github.io</code>来访问你的博客了！</p>
+<blockquote>
+<p>Hexo有很多主题，读者可以自行搜索选择，笔者使用的主题是 <a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="external">NexT</a>。主题使用方法你通过它的文档获取，在此不赘述。</p>
+<p>附上 <a href="https://github.com/hexojs/hexo/wiki/Themes" target="_blank" rel="external">Hexo主题大全</a> 。</p>
+</blockquote>
+<h2 id="第三步，域名绑定（可选，非必需）"><a href="#第三步，域名绑定（可选，非必需）" class="headerlink" title="第三步，域名绑定（可选，非必需）"></a>第三步，域名绑定（可选，非必需）</h2><h3 id="购买域名"><a href="#购买域名" class="headerlink" title="购买域名"></a>购买域名</h3><p>笔者是在 <a href="https://wanwang.aliyun.com/" target="_blank" rel="external">万网</a> 购买的域名（<a href="http://songziming.com.cn" target="_blank" rel="external">songziming.com.cn</a>)。也有很多人去国外一个很出名评价很好的购买域名网站 <a href="https://sg.godaddy.com/zh/" target="_blank" rel="external">GoDaddy</a> 购买。关于如何购买以及实名认证等这里不赘述，很简单。</p>
+<h3 id="域名与GitHub-Pages绑定"><a href="#域名与GitHub-Pages绑定" class="headerlink" title="域名与GitHub Pages绑定"></a>域名与GitHub Pages绑定</h3><p>如果在万网购买的域名，可以使用万网的DNS解析，请直接跳到给域名添加纪录那一步。但万网的解析好像不是很稳定，所以笔者使用的是DNSPod解析。</p>
+<p>首先，修改你域名的DNS地址为 <code>f1g1ns1.dnspod.net</code> 和 <code>f1g1ns2.dnspod.net</code> 。</p>
+<p><img src="images/5.jpg" alt="DNS"></p>
+<p>然后在你的本地站点目录里的source目录下添加一个CNAME文件，不带后缀，<strong>注意文件名要大写</strong>。</p>
+<p><img src="images/6.jpg" alt="CNAME"></p>
+<p>以文本编辑器打开CNAME，里面添加你的域名信息（不加http://） 如 <code>songziming.com.cn</code> 。</p>
+<blockquote>
+<p>完成之后需要deploy到GitHub上。（<code>hexo d -g</code> ）</p>
+</blockquote>
+<p>最后，注册<a href="https://www.dnspod.cn/" target="_blank" rel="external">DNSPod</a>，并添加域名，添加记录。</p>
+<p><img src="images/7.jpg" alt="添加域名"></p>
+<p><img src="images/8.jpg" alt="添加记录"></p>
+<p>添加记录时按照图中的记录添加即可。如果使用万网的DNS解析，无须添加记录类型是NS的那两条。</p>
+<blockquote>
+<p>在记录中，<code>192.30.252.153</code> 与 <code>192.30.252.153</code> 是Github Pages服务器指定的IP地址，访问该IP地址即表示访问Github Pages。<br>记录类型为CNAME，记录值是szm1002.github.io.。表示将<code>http://songziming.com.cn</code>这个主域名映射szm1002.github.io。这里需要注意，在记录值中.io后面还有一个小数点。</p>
+</blockquote>
+<p>把你的更改都deploy到GitHub上去吧。</p>
+<p>现在，域名已经绑定好了。尽情使用你的博客吧！</p>
+<blockquote>
+<p>PS.域名解析生效可能需要一段时间</p>
+</blockquote>
 ]]></content>
     </entry>
     
