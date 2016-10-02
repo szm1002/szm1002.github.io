@@ -6,7 +6,26 @@
     <entry>
       <title><![CDATA[如何搭建个人博客（GitHub Pages + Hexo + 域名绑定）]]></title>
       <url>http://yoursite.com/2016/10/02/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%88GitHub-Pages-Hexo-%E5%9F%9F%E5%90%8D%E7%BB%91%E5%AE%9A%EF%BC%89/</url>
-      <content type="html"></content>
+      <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>本文主要记载了笔者在Window下一步步搭建博客的过程，主要用到了GitHub Pages与Hexo，域名绑定不是必须的，读者可自行取舍。在Mac下搭建博客的步骤应该也是一样的。</p>
+<h2 id="第一步，GitHub-Pages"><a href="#第一步，GitHub-Pages" class="headerlink" title="第一步，GitHub Pages"></a>第一步，GitHub Pages</h2><p>GitHub是世界上最大的代码存放网站和开源社区。而github Pages可以被认为是用户编写的、托管在github上的静态网页。免费稳定，用它来放博客，最合适不过了。</p>
+<p><img src="images/1.jpg" alt="GitHub Pages"></p>
+<h3 id="创建GitHub-Pages"><a href="#创建GitHub-Pages" class="headerlink" title="创建GitHub Pages"></a>创建GitHub Pages</h3><p>首先你需要有一个GitHub账号，然后只要创建一个repository就行了。但是这个仓库是有规则的，其名字格式必须为：<code>yourusername.github.io</code>。创建好之后，这个仓库就是你的GitHub Pages了。</p>
+<p><img src="images/2.jpg" alt="GitHub Pages"></p>
+<blockquote>
+<p>仓库命名格式中的<code>yourusername</code>是你的github用户名。笔者的github用户名是szm1002。所以仓库命名格式则是<code>szm1002.github.io</code>。</p>
+</blockquote>
+<h2 id="第二步，Hexo"><a href="#第二步，Hexo" class="headerlink" title="第二步，Hexo"></a>第二步，Hexo</h2><p><a href="https://hexo.io/zh-cn/docs/index.html" target="_blank" rel="external">Hexo</a>是一个快速、简洁且高效的博客框架。Hexo 使用 <a href="http://daringfireball.net/projects/markdown/" target="_blank" rel="external">Markdown</a>（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。在安装Hexo之前，需要先安装Node.js以及Git。</p>
+<h3 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h3><p>可以到它的<a href="https://nodejs.org/zh-cn/" target="_blank" rel="external">官网</a>下载适合自己电脑系统的版本进行安装即可，推荐更稳定的LTS版本。笔者选择的是LTS的.msi文件进行安装（Windows 64-bit）。</p>
+<h3 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h3><ul>
+<li>Windows：下载并安装<a href="https://git-scm.com/download/win" target="_blank" rel="external">Git</a></li>
+<li>Mac：使用 <a href="http://mxcl.github.com/homebrew/" target="_blank" rel="external">Homebrew</a>, <a href="http://www.macports.org/" target="_blank" rel="external">MacPorts</a> 或下载 <a href="http://sourceforge.net/projects/git-osx-installer/" target="_blank" rel="external">安装程序</a> 安装。</li>
+<li>Linux (Ubuntu, Debian)：<code>sudo apt-get install git-core</code></li>
+<li>Linux (Fedora, Red Hat, CentOS)：<code>sudo yum install git-core</code></li>
+</ul>
+<h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><p>Node.js和Hexo安装完毕后，终于可以安装Hexo啦！</p>
+<p>打开Git Bash，输入以下命令即可完成安装。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install -g hexo-cli</div></pre></td></tr></table></figure>
+]]></content>
     </entry>
     
     <entry>
