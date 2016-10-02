@@ -94,20 +94,20 @@
 <meta property="og:site_name" content="Mr.Song's BLOG">
 <meta property="og:description" content="前言本文主要记载了笔者在Window下一步步搭建博客的过程，主要用到了GitHub Pages与Hexo，域名绑定不是必须的，读者可自行取舍。在Mac下搭建博客的步骤应该也是一样的。
 第一步，HexoHexo是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。在安装Hexo之前，需要先安装Node.js以及Git。">
-<meta property="og:image" content="http://yoursite.com/images/3.jpg">
-<meta property="og:image" content="http://yoursite.com/images/4.jpg">
-<meta property="og:image" content="http://yoursite.com/images/1.jpg">
-<meta property="og:image" content="http://yoursite.com/images/2.jpg">
-<meta property="og:image" content="http://yoursite.com/images/5.jpg">
-<meta property="og:image" content="http://yoursite.com/images/6.jpg">
-<meta property="og:image" content="http://yoursite.com/images/7.jpg">
-<meta property="og:image" content="http://yoursite.com/images/8.jpg">
-<meta property="og:updated_time" content="2016-10-02T15:59:17.696Z">
+<meta property="og:image" content="http://yoursite.com/2016/10/02/如何搭建个人博客（GitHub-Pages-Hexo-域名绑定）/3.jpg">
+<meta property="og:image" content="http://yoursite.com/2016/10/02/如何搭建个人博客（GitHub-Pages-Hexo-域名绑定）/4.jpg">
+<meta property="og:image" content="http://yoursite.com/2016/10/02/如何搭建个人博客（GitHub-Pages-Hexo-域名绑定）/1.jpg">
+<meta property="og:image" content="http://yoursite.com/2016/10/02/如何搭建个人博客（GitHub-Pages-Hexo-域名绑定）/2.jpg">
+<meta property="og:image" content="http://yoursite.com/2016/10/02/如何搭建个人博客（GitHub-Pages-Hexo-域名绑定）/5.jpg">
+<meta property="og:image" content="http://yoursite.com/2016/10/02/如何搭建个人博客（GitHub-Pages-Hexo-域名绑定）/6.jpg">
+<meta property="og:image" content="http://yoursite.com/2016/10/02/如何搭建个人博客（GitHub-Pages-Hexo-域名绑定）/7.jpg">
+<meta property="og:image" content="http://yoursite.com/2016/10/02/如何搭建个人博客（GitHub-Pages-Hexo-域名绑定）/8.jpg">
+<meta property="og:updated_time" content="2016-10-02T16:15:38.287Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="如何搭建个人博客（GitHub Pages + Hexo + 域名绑定）">
 <meta name="twitter:description" content="前言本文主要记载了笔者在Window下一步步搭建博客的过程，主要用到了GitHub Pages与Hexo，域名绑定不是必须的，读者可自行取舍。在Mac下搭建博客的步骤应该也是一样的。
 第一步，HexoHexo是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。在安装Hexo之前，需要先安装Node.js以及Git。">
-<meta name="twitter:image" content="http://yoursite.com/images/3.jpg">
+<meta name="twitter:image" content="http://yoursite.com/2016/10/02/如何搭建个人博客（GitHub-Pages-Hexo-域名绑定）/3.jpg">
 
 
 
@@ -337,21 +337,21 @@
 <p>以笔者为例，笔者打算把博客的本地文件放到D盘的Blog文件夹下。</p>
 </blockquote>
 <p>进入D盘根目录，新建Blog文件夹。然后在D盘空白处单击右键，</p>
-<p><img src="images/3.jpg" alt="Git Bash"></p>
+<img src="/2016/10/02/如何搭建个人博客（GitHub-Pages-Hexo-域名绑定）/3.jpg" alt="Git Bash" title="Git Bash">
 <p>选择Git Bash Here。然后输入以下命令：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ hexo init B<span class="built_in">log</span></div><div class="line">$ <span class="built_in">cd</span> B<span class="built_in">log</span></div><div class="line">$ npm install</div></pre></td></tr></table></figure>
 <p>到此，Hexo站点本地部署完成。然后在d:/Blog文件夹下用Git Bash执行以下命令：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ hexo g  <span class="comment">#生成本地发布文件夹</span></div><div class="line">$ hexo s  <span class="comment">#开启服务</span></div></pre></td></tr></table></figure>
 <p>会出现如下反馈：</p>
-<p><img src="images/4.jpg" alt="hexo service"></p>
+<img src="/2016/10/02/如何搭建个人博客（GitHub-Pages-Hexo-域名绑定）/4.jpg" alt="hexo service" title="hexo service">
 <p>然后你就可以浏览器输入<code>localhost:4000</code>预览你的博客了。</p>
 <blockquote>
 <p>别高兴的太早，这只是在你本地跑起来了，接下来需要把博客部署到网上（也就是GitHub Pages上）。</p>
 </blockquote>
 <h2 id="第二步，GitHub-Pages"><a href="#第二步，GitHub-Pages" class="headerlink" title="第二步，GitHub Pages"></a>第二步，GitHub Pages</h2><p>GitHub是世界上最大的代码存放网站和开源社区。而github Pages可以被认为是用户编写的、托管在github上的静态网页。免费稳定，用它来放博客，最合适不过了。</p>
-<p><img src="images/1.jpg" alt="GitHub Pages"></p>
+<img src="/2016/10/02/如何搭建个人博客（GitHub-Pages-Hexo-域名绑定）/1.jpg" alt="GitHub Pages" title="GitHub Pages">
 <h3 id="创建GitHub-Pages"><a href="#创建GitHub-Pages" class="headerlink" title="创建GitHub Pages"></a>创建GitHub Pages</h3><p>首先你需要有一个GitHub账号，然后只要创建一个repository就行了。但是这个仓库是有规则的，其名字格式必须为：<code>yourusername.github.io</code>。创建好之后，这个仓库就是你的GitHub Pages了。</p>
-<p><img src="images/2.jpg" alt="GitHub Pages"></p>
+<img src="/2016/10/02/如何搭建个人博客（GitHub-Pages-Hexo-域名绑定）/2.jpg" alt="GitHub Pages" title="GitHub Pages">
 <blockquote>
 <p>仓库命名格式中的<code>yourusername</code>是你的github用户名。笔者的github用户名是szm1002。所以仓库命名格式则是<code>szm1002.github.io</code>。</p>
 </blockquote>
@@ -399,16 +399,16 @@
 <h2 id="第三步，域名绑定（可选，非必需）"><a href="#第三步，域名绑定（可选，非必需）" class="headerlink" title="第三步，域名绑定（可选，非必需）"></a>第三步，域名绑定（可选，非必需）</h2><h3 id="购买域名"><a href="#购买域名" class="headerlink" title="购买域名"></a>购买域名</h3><p>笔者是在 <a href="https://wanwang.aliyun.com/" target="_blank" rel="external">万网</a> 购买的域名（<a href="http://songziming.com.cn" target="_blank" rel="external">songziming.com.cn</a>)。也有很多人去国外一个很出名评价很好的购买域名网站 <a href="https://sg.godaddy.com/zh/" target="_blank" rel="external">GoDaddy</a> 购买。关于如何购买以及实名认证等这里不赘述，很简单。</p>
 <h3 id="域名与GitHub-Pages绑定"><a href="#域名与GitHub-Pages绑定" class="headerlink" title="域名与GitHub Pages绑定"></a>域名与GitHub Pages绑定</h3><p>如果在万网购买的域名，可以使用万网的DNS解析，请直接跳到给域名添加纪录那一步。但万网的解析好像不是很稳定，所以笔者使用的是DNSPod解析。</p>
 <p>首先，修改你域名的DNS地址为 <code>f1g1ns1.dnspod.net</code> 和 <code>f1g1ns2.dnspod.net</code> 。</p>
-<p><img src="images/5.jpg" alt="DNS"></p>
+<img src="/2016/10/02/如何搭建个人博客（GitHub-Pages-Hexo-域名绑定）/5.jpg" alt="DNS" title="DNS">
 <p>然后在你的本地站点目录里的source目录下添加一个CNAME文件，不带后缀，<strong>注意文件名要大写</strong>。</p>
-<p><img src="images/6.jpg" alt="CNAME"></p>
+<img src="/2016/10/02/如何搭建个人博客（GitHub-Pages-Hexo-域名绑定）/6.jpg" alt="CNAME" title="CNAME">
 <p>以文本编辑器打开CNAME，里面添加你的域名信息（不加http://） 如 <code>songziming.com.cn</code> 。</p>
 <blockquote>
 <p>完成之后需要deploy到GitHub上。（<code>hexo d -g</code> ）</p>
 </blockquote>
 <p>最后，注册<a href="https://www.dnspod.cn/" target="_blank" rel="external">DNSPod</a>，并添加域名，添加记录。</p>
-<p><img src="images/7.jpg" alt="添加域名"></p>
-<p><img src="images/8.jpg" alt="添加记录"></p>
+<img src="/2016/10/02/如何搭建个人博客（GitHub-Pages-Hexo-域名绑定）/7.jpg" alt="添加域名" title="添加域名">
+<img src="/2016/10/02/如何搭建个人博客（GitHub-Pages-Hexo-域名绑定）/8.jpg" alt="添加记录" title="添加记录">
 <p>添加记录时按照图中的记录添加即可。如果使用万网的DNS解析，无须添加记录类型是NS的那两条。</p>
 <blockquote>
 <p>在记录中，<code>192.30.252.153</code> 与 <code>192.30.252.153</code> 是Github Pages服务器指定的IP地址，访问该IP地址即表示访问Github Pages。<br>记录类型为CNAME，记录值是szm1002.github.io.。表示将<code>http://songziming.com.cn</code>这个主域名映射szm1002.github.io。这里需要注意，在记录值中.io后面还有一个小数点。<br>DNS解析可能需要一段时间才生效。</p>
