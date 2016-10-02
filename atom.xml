@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-10-02T15:53:06.621Z</updated>
+  <updated>2016-10-02T15:59:17.696Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yoursite.com/2016/10/02/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%88GitHub-Pages-Hexo-%E5%9F%9F%E5%90%8D%E7%BB%91%E5%AE%9A%EF%BC%89/"/>
     <id>http://yoursite.com/2016/10/02/如何搭建个人博客（GitHub-Pages-Hexo-域名绑定）/</id>
     <published>2016-10-02T06:21:27.000Z</published>
-    <updated>2016-10-02T15:53:06.621Z</updated>
+    <updated>2016-10-02T15:59:17.696Z</updated>
     
     <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>本文主要记载了笔者在Window下一步步搭建博客的过程，主要用到了GitHub Pages与Hexo，域名绑定不是必须的，读者可自行取舍。在Mac下搭建博客的步骤应该也是一样的。</p>
 <h2 id="第一步，Hexo"><a href="#第一步，Hexo" class="headerlink" title="第一步，Hexo"></a>第一步，Hexo</h2><p><a href="https://hexo.io/zh-cn/docs/index.html" target="_blank" rel="external">Hexo</a>是一个快速、简洁且高效的博客框架。Hexo 使用 <a href="http://daringfireball.net/projects/markdown/" target="_blank" rel="external">Markdown</a>（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。在安装Hexo之前，需要先安装Node.js以及Git。</p>
@@ -113,13 +113,10 @@
 <p><img src="images/8.jpg" alt="添加记录"></p>
 <p>添加记录时按照图中的记录添加即可。如果使用万网的DNS解析，无须添加记录类型是NS的那两条。</p>
 <blockquote>
-<p>在记录中，<code>192.30.252.153</code> 与 <code>192.30.252.153</code> 是Github Pages服务器指定的IP地址，访问该IP地址即表示访问Github Pages。<br>记录类型为CNAME，记录值是szm1002.github.io.。表示将<code>http://songziming.com.cn</code>这个主域名映射szm1002.github.io。这里需要注意，在记录值中.io后面还有一个小数点。</p>
+<p>在记录中，<code>192.30.252.153</code> 与 <code>192.30.252.153</code> 是Github Pages服务器指定的IP地址，访问该IP地址即表示访问Github Pages。<br>记录类型为CNAME，记录值是szm1002.github.io.。表示将<code>http://songziming.com.cn</code>这个主域名映射szm1002.github.io。这里需要注意，在记录值中.io后面还有一个小数点。<br>DNS解析可能需要一段时间才生效。</p>
 </blockquote>
 <p>把你的更改都deploy到GitHub上去吧。</p>
-<p>现在，域名已经绑定好了。尽情使用你的博客吧！</p>
-<blockquote>
-<p>PS.域名解析生效可能需要一段时间</p>
-</blockquote>
+<p>现在，<strong>域名已经绑定好了</strong>。尽情使用你的博客吧！</p>
 ]]></content>
     
     <summary type="html">
