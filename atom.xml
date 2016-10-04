@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://songziming.com.cn/"/>
-  <updated>2016-10-03T16:28:31.107Z</updated>
+  <updated>2016-10-04T07:09:38.650Z</updated>
   <id>http://songziming.com.cn/</id>
   
   <author>
@@ -20,10 +20,10 @@
     <link href="http://songziming.com.cn/2016/10/02/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%88GitHub-Pages-Hexo-%E5%9F%9F%E5%90%8D%E7%BB%91%E5%AE%9A%EF%BC%89/"/>
     <id>http://songziming.com.cn/2016/10/02/如何搭建个人博客（GitHub-Pages-Hexo-域名绑定）/</id>
     <published>2016-10-02T06:21:27.000Z</published>
-    <updated>2016-10-03T16:28:31.107Z</updated>
+    <updated>2016-10-04T07:09:38.650Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>自己搭建一个博客似乎是一件很<em>极(zhuang)客(bi)</em>的事情，笔者觉得很好玩，所以抱着试试的态度搭建了本博客，请各位看官轻拍。</p>
-<p>本文记载了笔者在Windows下一步步搭建博客并绑定域名的过程。搭建博客主要用了Hexo与GitHub Pages，域名绑定不是必须的，读者可自行取舍。在Mac下搭建博客的步骤也是一样的。</p>
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>自己搭建一个独立博客似乎是一件很<em>极(zhuang)客(bi)</em>的事情，笔者觉得很好玩，所以抱着试试的态度搭建了本博客，请各位看官轻拍。</p>
+<p>本文记载了笔者在Windows下一步步搭建博客并绑定域名的过程。搭建博客主要用了Hexo与GitHub Pages，域名绑定不是必须，读者可自行取舍。在Mac下搭建博客的步骤也是一样的。</p>
 <h2 id="第一步，Hexo"><a href="#第一步，Hexo" class="headerlink" title="第一步，Hexo"></a>第一步，Hexo</h2><p><a href="https://hexo.io/zh-cn/docs/index.html" target="_blank" rel="external">Hexo</a> 是一个快速、简洁且高效的博客框架。Hexo 使用 <a href="http://daringfireball.net/projects/markdown/" target="_blank" rel="external">Markdown</a>（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。在安装Hexo之前，需要先安装Node.js以及Git。</p>
 <h3 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h3><p>到Node.js的 <a href="https://nodejs.org/zh-cn/" target="_blank" rel="external">官网</a> 下载适合自己电脑系统的版本进行安装即可，推荐更稳定的LTS版本。</p>
 <blockquote>
@@ -55,17 +55,20 @@
 <blockquote>
 <p>别高兴的太早，这只是在你本地跑起来了，接下来需要把博客部署到网上（也就是GitHub Pages上）。</p>
 </blockquote>
-<h2 id="第二步，GitHub-Pages"><a href="#第二步，GitHub-Pages" class="headerlink" title="第二步，GitHub Pages"></a>第二步，GitHub Pages</h2><p><a href="https://github.com/" target="_blank" rel="external">GitHub</a> 是世界上最大的代码存放网站和开源社区。而 <a href="https://pages.github.com/" target="_blank" rel="external">GitHub Pages</a> 可以被认为是用户编写的、托管在GitHub上的静态网页。免费稳定，用它来放博客，最合适不过了。</p>
+<h2 id="第二步，GitHub-Pages"><a href="#第二步，GitHub-Pages" class="headerlink" title="第二步，GitHub Pages"></a>第二步，GitHub Pages</h2><p><a href="https://github.com/" target="_blank" rel="external">GitHub</a> 是世界上最大的代码存放网站和开源社区。而 <a href="https://pages.github.com/" target="_blank" rel="external">GitHub Pages</a> 可以被认为是用户编写的、托管在GitHub上的静态网页。免费又稳定，用它来放博客，再合适不过了。</p>
 <img src="/2016/10/02/如何搭建个人博客（GitHub-Pages-Hexo-域名绑定）/1.jpg" alt="GitHub Pages" title="GitHub Pages">
 <h3 id="创建GitHub-Pages"><a href="#创建GitHub-Pages" class="headerlink" title="创建GitHub Pages"></a>创建GitHub Pages</h3><p>你需要有一个GitHub账号，然后只要创建一个Repository（代码仓库）就行了。但这个仓库是有规则的，其名字格式必须为：<code>yourusername.github.io</code>。创建好之后，这个仓库就是你的GitHub Pages了。</p>
 <img src="/2016/10/02/如何搭建个人博客（GitHub-Pages-Hexo-域名绑定）/2.jpg" alt="GitHub Pages" title="GitHub Pages">
 <blockquote>
-<p>仓库命名格式中的<code>yourusername</code>是你的GitHub用户名。笔者的GitHub用户名是szm1002。所以仓库命名格式则是<code>szm1002.github.io</code>。</p>
+<p>仓库命名格式中的<code>yourusername</code>是你的GitHub用户名。笔者的GitHub用户名是szm1002，所以仓库命名为<code>szm1002.github.io</code>。</p>
 </blockquote>
 <h3 id="配置和使用GitHub"><a href="#配置和使用GitHub" class="headerlink" title="配置和使用GitHub"></a>配置和使用GitHub</h3><p>我们需要设置SSH keys来让本地Git项目与GitHub建立联系。</p>
 <h4 id="配置SSH-Keys"><a href="#配置SSH-Keys" class="headerlink" title="配置SSH Keys"></a>配置SSH Keys</h4><p>首先生成一个新的SSH key：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ ssh-keygen -t rsa -C <span class="string">"szm1002@126.com"</span></div><div class="line">Generating public/private rsa key pair.</div><div class="line">Enter file <span class="keyword">in</span> <span class="built_in">which</span> to save the key (/Users/your_user_directory/.ssh/id_rsa):</div></pre></td></tr></table></figure>
-<p>此时回车就好。注意，把<em>邮箱地址</em>替换成你自己的邮箱地址，且此处 <code>-C</code> 是大写。</p>
+<blockquote>
+<p>注意，需要把<em>邮箱地址</em>替换成你自己的邮箱地址，且此处 <code>-C</code> 是大写。</p>
+</blockquote>
+<p>此时回车就好。</p>
 <p>然后系统会要你输入密码，这个密码会在你提交项目时使用，如果为空的话提交项目时则不用输入。这个设置是防止别人往你的项目里提交内容。</p>
 <blockquote>
 <p>注意：输入密码的时候没有*字样的，你直接输入就可以了。</p>
@@ -82,11 +85,12 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">The authenticity of host &apos;github.com (207.97.227.239)&apos; can&apos;t be established.</div><div class="line">RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.</div><div class="line">Are you sure you want to continue connecting (yes/no)?</div></pre></td></tr></table></figure>
 <p>输入yes，然后会看到：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Hi szm1002! You&apos;ve successfully authenticated, but GitHub does not provide shell access.</div></pre></td></tr></table></figure>
-<h4 id="设置用户信息"><a href="#设置用户信息" class="headerlink" title="设置用户信息"></a>设置用户信息</h4><p>接下来需要输入下面的代码进行个人信息的设置，把名称和邮箱替换成你自己的：</p>
+<p>此时，你的PC已经与GitHub建立联系，但还需要设置你的用户信息。</p>
+<h4 id="设置用户信息"><a href="#设置用户信息" class="headerlink" title="设置用户信息"></a>设置用户信息</h4><p>输入下面的代码进行个人信息的设置，把名称和邮箱替换成你自己的：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git config --global user.name <span class="string">"szm1002"</span></div><div class="line">$ git config --global user.email  <span class="string">"szm1002@126.com"</span></div></pre></td></tr></table></figure>
-<p>现在，你的PC已成功通过SSH链接到GitHub。</p>
+<p>现在，你的PC就成功通过SSH链接到了GitHub了。</p>
 <h3 id="Hexo部署到GitHub-Pages"><a href="#Hexo部署到GitHub-Pages" class="headerlink" title="Hexo部署到GitHub Pages"></a>Hexo部署到GitHub Pages</h3><p>在之前你只是在本地把博客跑起来了，现在我们需要把它部署到GitHub Pages上。</p>
-<p>在Git Bash中cd到你的站点（即存放博客的文件夹），或在站点中右键选择Git Bash Here。然后输入以下命令：</p>
+<p>在Git Bash中cd到你的站点（以笔者为例，是d:/Blog文件夹），或在站点中右键选择Git Bash Here。输入以下命令：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo-deployer-git --save</div></pre></td></tr></table></figure>
 <p>然后以文本编辑器打开站点的_config.yml文件，并滚动到最下面添加如下配置信息（注意最下边有deploy和type字段，需要覆盖这两个字段）：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">type: git</div><div class="line">repo: https://github.com/szm1002/szm1002.github.io.git</div><div class="line">branch: master</div></pre></td></tr></table></figure>
@@ -100,16 +104,16 @@
 </blockquote>
 <p><strong>至此，博客已经搭建完成。</strong>你可以通过<code>http://yourusername.github.io</code>来访问你的博客了！</p>
 <blockquote>
-<p>Hexo有很多主题，你可以自行选择喜欢的主题，笔者使用的是 <a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="external">NexT</a>。主题使用方法你通过它的文档获取，在此不赘述。</p>
+<p>Hexo博客有很多定制的主题，若你不喜欢默认的主题landscape，可自行选择其他的。笔者使用的是 <a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="external">NexT</a>。主题使用方法可以通过它的文档获取，在此不赘述。</p>
 <p>附上 <a href="https://github.com/hexojs/hexo/wiki/Themes" target="_blank" rel="external">Hexo主题大全</a> 。</p>
 </blockquote>
-<h2 id="第三步，域名绑定（可选，非必需）"><a href="#第三步，域名绑定（可选，非必需）" class="headerlink" title="第三步，域名绑定（可选，非必需）"></a>第三步，域名绑定（可选，非必需）</h2><h3 id="购买域名"><a href="#购买域名" class="headerlink" title="购买域名"></a>购买域名</h3><p>笔者是在 <a href="https://wanwang.aliyun.com/" target="_blank" rel="external">万网</a> 购买的域名（<a href="http://songziming.com.cn">songziming.com.cn</a>)。也有很多人去国外一个很出名评价很好的网站 <a href="https://sg.godaddy.com/zh/" target="_blank" rel="external">GoDaddy</a> 购买。关于如何购买以及实名认证等这里不赘述，很简单。</p>
+<h2 id="第三步，域名绑定（可选，非必需）"><a href="#第三步，域名绑定（可选，非必需）" class="headerlink" title="第三步，域名绑定（可选，非必需）"></a>第三步，域名绑定（可选，非必需）</h2><h3 id="购买域名"><a href="#购买域名" class="headerlink" title="购买域名"></a>购买域名</h3><p>笔者是在 <a href="https://wanwang.aliyun.com/" target="_blank" rel="external">万网</a> 购买的域名（<a href="http://songziming.com.cn">songziming.com.cn</a>)。也有很多人推荐去国外一个很出名评价很好的网站 <a href="https://sg.godaddy.com/zh/" target="_blank" rel="external">GoDaddy</a> 购买。关于如何购买域名以及实名认证等这里不赘述，很简单。</p>
 <h3 id="域名与GitHub-Pages绑定"><a href="#域名与GitHub-Pages绑定" class="headerlink" title="域名与GitHub Pages绑定"></a>域名与GitHub Pages绑定</h3><p>如果在万网购买的域名，可以使用万网的DNS解析，请直接跳到给域名添加记录那一步。但万网的解析好像不是很稳定，所以笔者使用的是DNSPod解析。</p>
 <p>首先，修改你域名的DNS地址为 <code>f1g1ns1.dnspod.net</code> 和 <code>f1g1ns2.dnspod.net</code> 。</p>
 <img src="/2016/10/02/如何搭建个人博客（GitHub-Pages-Hexo-域名绑定）/5.jpg" alt="DNS" title="DNS">
 <p>然后在你的本地站点目录里的source目录下添加一个CNAME文件，不带后缀，<strong>注意文件名要大写</strong>。</p>
 <img src="/2016/10/02/如何搭建个人博客（GitHub-Pages-Hexo-域名绑定）/6.jpg" alt="CNAME" title="CNAME">
-<p>以文本编辑器打开CNAME，里面添加你的域名信息（不加<a href="http://）。如" target="_blank" rel="external">http://）。如</a> <code>songziming.com.cn</code> 。</p>
+<p>以文本编辑器打开CNAME，里面添加你的域名信息（不加<code>http://</code>）。如：添加 <code>songziming.com.cn</code> 。</p>
 <blockquote>
 <p>完成之后需要deploy到GitHub上。（<code>hexo d -g</code> ）</p>
 </blockquote>
@@ -126,8 +130,8 @@
     
     <summary type="html">
     
-      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;自己搭建一个博客似乎是一件很&lt;em&gt;极(zhuang)客(bi)&lt;/em&gt;的事情，笔者觉得很好玩，所以抱着试试的态度搭建了本博客，请各位看官轻拍。&lt;/p&gt;
-&lt;p&gt;本文记载了笔者在Windows下一步步搭建博客并绑定域名的过程。搭建博客主要用了Hexo与GitHub Pages，域名绑定不是必须的，读者可自行取舍。在Mac下搭建博客的步骤也是一样的。&lt;/p&gt;
+      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;自己搭建一个独立博客似乎是一件很&lt;em&gt;极(zhuang)客(bi)&lt;/em&gt;的事情，笔者觉得很好玩，所以抱着试试的态度搭建了本博客，请各位看官轻拍。&lt;/p&gt;
+&lt;p&gt;本文记载了笔者在Windows下一步步搭建博客并绑定域名的过程。搭建博客主要用了Hexo与GitHub Pages，域名绑定不是必须，读者可自行取舍。在Mac下搭建博客的步骤也是一样的。&lt;/p&gt;
 &lt;h2 id=&quot;第一步，Hexo&quot;&gt;&lt;a href=&quot;#第一步，Hexo&quot; class=&quot;headerlink&quot; title=&quot;第一步，Hexo&quot;&gt;&lt;/a&gt;第一步，Hexo&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://hexo.io/zh-cn/docs/index.html&quot;&gt;Hexo&lt;/a&gt; 是一个快速、简洁且高效的博客框架。Hexo 使用 &lt;a href=&quot;http://daringfireball.net/projects/markdown/&quot;&gt;Markdown&lt;/a&gt;（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。在安装Hexo之前，需要先安装Node.js以及Git。&lt;/p&gt;
 &lt;h3 id=&quot;安装Node-js&quot;&gt;&lt;a href=&quot;#安装Node-js&quot; class=&quot;headerlink&quot; title=&quot;安装Node.js&quot;&gt;&lt;/a&gt;安装Node.js&lt;/h3&gt;&lt;p&gt;到Node.js的 &lt;a href=&quot;https://nodejs.org/zh-cn/&quot;&gt;官网&lt;/a&gt; 下载适合自己电脑系统的版本进行安装即可，推荐更稳定的LTS版本。&lt;/p&gt;
 &lt;blockquote&gt;
