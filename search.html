@@ -4,6 +4,61 @@
   
     
     <entry>
+      <title><![CDATA[简单谈谈 GET 与 POST 的区别]]></title>
+      <url>http://songziming.com.cn/2016/10/19/get-vs-post/</url>
+      <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><a href="https://zh.wikipedia.org/wiki/%E8%B6%85%E6%96%87%E6%9C%AC%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE" title="HyperText Transfer Protocol" target="_blank" rel="external">HTTP（超文本传输协议)</a> 是目前互联网上应用最为广泛的一种<a href="https://zh.wikipedia.org/wiki/%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE" target="_blank" rel="external">网络协议</a>，Web 里<a href="https://zh.wikipedia.org/wiki/%E5%AE%A2%E6%88%B7%E7%AB%AF" target="_blank" rel="external">客户端(Client)</a>到<a href="https://zh.wikipedia.org/wiki/%E6%9C%8D%E5%8A%A1%E5%99%A8" target="_blank" rel="external">服务器端(Server)</a>的通信就是建立在 HTTP 协议上的。</p>
+<img src="/2016/10/19/get-vs-post/request.png" alt="Communication between Client and Server." title="Communication between Client and Server.">
+<p>HTTP 定义了几种客户端向服务器端发出请求的方法，如 GET、POST、HEAD、DELETE、OPTIONS、TRACE、CONNECT 等。但最常用的还是 GET 与 POST 方法，这两个方法之间的区别也是很多互联网公司面试官喜欢问的问题，下面笔者就来简单谈谈。</p>
+<a id="more"></a>
+<h2 id="GET-方法"><a href="#GET-方法" class="headerlink" title="GET 方法"></a>GET 方法</h2><p>1.<strong>GET 方法主要用于对服务器资源的获取。</strong>根据 HTTP 规范，它应该是<strong>安全</strong>的和<a href="https://zh.wikipedia.org/wiki/%E5%86%AA%E7%AD%89" target="_blank" rel="external"><strong>幂等</strong></a>的。</p>
+<blockquote>
+<p><em>安全</em> 指的是它的操作应该是无损害(non-destructive)的。通过 GET 方法，你（客户端）仅仅是从服务器端<code>获取</code>信息，而不会增加、修改数据，不会更改服务器上的资源。</p>
+<p><em>幂等</em> 指的是客户端对同一 <a href="https://zh.wikipedia.org/wiki/%E7%BB%9F%E4%B8%80%E8%B5%84%E6%BA%90%E5%AE%9A%E4%BD%8D%E7%AC%A6" target="_blank" rel="external">URL</a> 的多次请求应该返回同样的结果。</p>
+</blockquote>
+<p>2.<strong>GET 请求的查询字符串（键值对）是随 URL 一起发送的。</strong>URL 和传输数据以 <code>?</code> 分割，参数之间以 <code>&amp;</code> 相连，如 <code>/test/demo_form.asp?name1=value1&amp;name2=value2</code> 。</p>
+<blockquote>
+<p>正因如此，处理敏感数据（如密码）时，不应使用 GET 方法。</p>
+</blockquote>
+<p>3.<strong>GET 方法传输数据的长度是有限制的。</strong></p>
+<blockquote>
+<p>虽然在 HTTP 规范中，GET 请求数据的长度和 URL 长度都是无限制的，但实际上，大多数浏览器会限制 URL 长度(如 IE 浏览器限制在2083 bit）。因此 GET 请求传输数据的长度会有所限制。</p>
+</blockquote>
+<p>4.<strong>GET 请求可以被浏览器缓存。</strong></p>
+<blockquote>
+<p>因此，通过 GET 方法返回的数据可能是浏览器缓存的数据。</p>
+</blockquote>
+<p>5.<strong>GET 请求保留在浏览器历史记录中且可被收藏为书签。</strong></p>
+<blockquote>
+<p>笔者认为这一点也是 <em>查询字符串会随 URL 一起发送</em> 的缘故。</p>
+</blockquote>
+<p>6.<strong>GET 方法传输的数据只能是 ASCII 码格式，否则需要 URL 编码才能进行传输。</strong></p>
+<blockquote>
+<p>这也是由于 URL 的编码格式采用的是 ASCII 码，而不是 Unicode。</p>
+</blockquote>
+<h2 id="POST-方法"><a href="#POST-方法" class="headerlink" title="POST 方法"></a>POST 方法</h2><p>1.<strong>POST 方法主要用于向指定的资源提交数据。</strong>服务器端会获取这些数据并处理，然后进行回应。</p>
+<blockquote>
+<p>也就是说，POST 请求的操作是有损害(destructive)的，在发出请求的同时会有数据传送到服务器端，你（客户端）会对服务器端的数据进行更改。</p>
+</blockquote>
+<p>2.<strong>POST 请求的查询字符串（键值对）是在该请求的 HTTP 消息主体(request body)中发送的</strong>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">POST /test/demo_form.asp HTTP/1.1</div><div class="line">Host: w3schools.com</div><div class="line">name1=value1&amp;name2=value2</div></pre></td></tr></table></figure>
+<blockquote>
+<p>正因如此，POST 请求相对 GET 请求在数据传输方面更加安全。（注意：此<em>安全</em>区别于上文提到的 GET 方法的安全性）</p>
+</blockquote>
+<p>3.<strong>POST 方法传输的数据长度没有限制。</strong></p>
+<blockquote>
+<p>在 HTTP 规范中，没有对 POST 请求传输的数据长度进行限制，而 POST 方法不依赖 URL ，所以没有限制。</p>
+</blockquote>
+<p>4.<strong>POST 请求不会被浏览器缓存。</strong></p>
+<blockquote>
+<p>如果你想，也可以通过手动设置的方法让浏览器进行缓存，不过通常不会这样做。</p>
+</blockquote>
+<p>5.<strong>POST 请求不会被保存在浏览器历史记录中，因此也无法被收藏为书签。</strong></p>
+<p>6.<strong>POST 方法传输的数据对格式没有要求，比如，它允许是二进制数据。</strong></p>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>以上就是笔者对于 HTTP 协议中 GET 方法与 POST 方法两者区别的理解。若在以后学习过程中有新的发现或理解，笔者会及时更新。</p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[如何搭建个人博客（GitHub Pages + Hexo + 域名绑定）]]></title>
       <url>http://songziming.com.cn/2016/10/02/how-to-set-up-blog/</url>
       <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>自己搭建一个独立博客似乎是一件很<em>极(zhuang)客(bi)</em>的事情，笔者觉得很好玩，所以抱着试试的态度搭建了本博客，请各位看官轻拍。</p>
