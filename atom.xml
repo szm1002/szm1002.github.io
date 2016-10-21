@@ -95,7 +95,7 @@
     <link href="http://songziming.com.cn/2016/10/02/how-to-set-up-blog/"/>
     <id>http://songziming.com.cn/2016/10/02/how-to-set-up-blog/</id>
     <published>2016-10-02T06:21:27.000Z</published>
-    <updated>2016-10-04T11:24:56.244Z</updated>
+    <updated>2016-10-21T13:00:22.847Z</updated>
     
     <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>自己搭建一个独立博客似乎是一件很<em>极(zhuang)客(bi)</em>的事情，笔者觉得很好玩，所以抱着试试的态度搭建了本博客，请各位看官轻拍。</p>
 <p>本文记载了笔者在Windows下一步步搭建博客并绑定域名的过程。搭建博客主要用了Hexo与GitHub Pages，域名绑定不是必须，读者可自行取舍。在Mac下搭建博客的步骤也是一样的。</p>
@@ -168,7 +168,7 @@
 <p>在Git Bash中cd到你的站点（以笔者为例，是d:/Blog文件夹），或在站点中右键选择Git Bash Here。输入以下命令：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo-deployer-git --save</div></pre></td></tr></table></figure>
 <p>然后以文本编辑器打开站点的_config.yml文件，并滚动到最下面添加如下配置信息（注意最下边有deploy和type字段，需要覆盖这两个字段）：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">type: git</div><div class="line">repo: https://github.com/szm1002/szm1002.github.io.git</div><div class="line">branch: master</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repo: https://github.com/szm1002/szm1002.github.io.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure>
 <blockquote>
 <p>其中repo字段的值是你的GitHub Pages提交代码的git地址。</p>
 </blockquote>
