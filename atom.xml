@@ -301,7 +301,7 @@
     <link href="http://songziming.com.cn/2016/10/01/hello-world/"/>
     <id>http://songziming.com.cn/2016/10/01/hello-world/</id>
     <published>2016-10-01T02:59:17.933Z</published>
-    <updated>2016-10-02T05:51:52.248Z</updated>
+    <updated>2016-11-05T13:31:13.440Z</updated>
     
     <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
@@ -322,6 +322,8 @@
 &lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/writing.html&quot;&gt;Writing&lt;/a&gt;&lt;/p&gt;
     
     </summary>
+    
+      <category term="Other Notes" scheme="http://songziming.com.cn/categories/Other-Notes/"/>
     
     
   </entry>
