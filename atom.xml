@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://songziming.com.cn/"/>
-  <updated>2016-11-05T09:26:28.198Z</updated>
+  <updated>2016-11-05T10:11:23.138Z</updated>
   <id>http://songziming.com.cn/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://songziming.com.cn/2016/10/30/callback/"/>
     <id>http://songziming.com.cn/2016/10/30/callback/</id>
     <published>2016-10-30T14:48:39.000Z</published>
-    <updated>2016-11-05T09:26:28.198Z</updated>
+    <updated>2016-11-05T10:11:23.138Z</updated>
     
     <content type="html"><![CDATA[<h2 id="什么是回调函数"><a href="#什么是回调函数" class="headerlink" title="什么是回调函数"></a>什么是回调函数</h2><p><a href="http://https://zh.wikipedia.org/wiki/%E5%9B%9E%E8%B0%83%E5%87%BD%E6%95%B0" target="_blank" rel="external">回调函数（Callback）</a> 是一段可执行的代码段（通常包装成一个函数），它会作为一个参数传递给其他的代码（通常也是一个函数）。回调函数会等待父函数执行完毕后立即执行，而与此同时，其他函数的调用不会受到阻塞。</p>
 <blockquote>
@@ -72,8 +72,6 @@
     
     </summary>
     
-      <category term="JavaScript" scheme="http://songziming.com.cn/categories/JavaScript/"/>
-    
     
       <category term="JavaScript" scheme="http://songziming.com.cn/tags/JavaScript/"/>
     
@@ -88,7 +86,7 @@
     <link href="http://songziming.com.cn/2016/10/19/get-vs-post/"/>
     <id>http://songziming.com.cn/2016/10/19/get-vs-post/</id>
     <published>2016-10-19T15:29:42.000Z</published>
-    <updated>2016-11-05T09:25:54.203Z</updated>
+    <updated>2016-11-05T10:11:34.298Z</updated>
     
     <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><a href="https://zh.wikipedia.org/wiki/%E8%B6%85%E6%96%87%E6%9C%AC%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE" title="HyperText Transfer Protocol" target="_blank" rel="external">HTTP（超文本传输协议)</a> 是目前互联网上应用最为广泛的一种 <a href="https://zh.wikipedia.org/wiki/%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE" target="_blank" rel="external">网络协议</a> ，Web 网络中 <a href="https://zh.wikipedia.org/wiki/%E5%AE%A2%E6%88%B7%E7%AB%AF" target="_blank" rel="external">客户端(Client)</a> 到 <a href="https://zh.wikipedia.org/wiki/%E6%9C%8D%E5%8A%A1%E5%99%A8" target="_blank" rel="external">服务器端(Server)</a> 的通信就是建立在 HTTP 协议上。</p>
 <img src="/2016/10/19/get-vs-post/request.png" alt="Communication between Client and Server." title="Communication between Client and Server.">
@@ -149,8 +147,6 @@
     
     </summary>
     
-      <category term="JavaScript" scheme="http://songziming.com.cn/categories/JavaScript/"/>
-    
     
       <category term="HTTP" scheme="http://songziming.com.cn/tags/HTTP/"/>
     
@@ -165,7 +161,7 @@
     <link href="http://songziming.com.cn/2016/10/02/how-to-set-up-blog/"/>
     <id>http://songziming.com.cn/2016/10/02/how-to-set-up-blog/</id>
     <published>2016-10-02T06:21:27.000Z</published>
-    <updated>2016-11-05T09:28:06.178Z</updated>
+    <updated>2016-11-05T10:11:50.378Z</updated>
     
     <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>自己搭建一个独立博客似乎是一件很<em>极(zhuang)客(bi)</em>的事情，笔者觉得很好玩，所以抱着试试的态度搭建了本博客，请各位看官轻拍。</p>
 <p>本文记载了笔者在Windows下一步步搭建博客并绑定域名的过程。搭建博客主要用了Hexo与GitHub Pages，域名绑定不是必须，读者可自行取舍。在Mac下搭建博客的步骤也是一样的。</p>
@@ -284,8 +280,6 @@
 &lt;/blockquote&gt;
     
     </summary>
-    
-      <category term="Other Notes" scheme="http://songziming.com.cn/categories/Other-Notes/"/>
     
     
       <category term="GitHub" scheme="http://songziming.com.cn/tags/GitHub/"/>

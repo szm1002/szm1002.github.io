@@ -5,7 +5,7 @@
     
   <url>
     <loc>http://songziming.com.cn/2016/10/02/how-to-set-up-blog/</loc>
-    <lastmod>2016-11-05T09:28:06.178Z</lastmod>
+    <lastmod>2016-11-05T10:11:50.378Z</lastmod>
     <data>
         <display>
         <title>如何搭建个人博客（GitHub Pages + Hexo + 域名绑定）</title>
@@ -19,33 +19,6 @@
          
          
            
-             
-              <breadCrumb title="Other Notes" url="http://songziming.com.cn/categories/Other-Notes/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://songziming.com.cn/2016/10/30/callback/</loc>
-    <lastmod>2016-11-05T09:26:28.198Z</lastmod>
-    <data>
-        <display>
-        <title>JavaScript中的回调函数</title>
-        <pubTime>2016-10-30T14:48:39.000Z</pubTime>
-        
-        <tag>JavaScript</tag>
-         
-        <tag>回调函数</tag>
-         
-        <tag>Callback</tag>
-         
-         
-           
-             
-              <breadCrumb title="JavaScript" url="http://songziming.com.cn/categories/JavaScript/"/>
-          
         </display>
     </data>
     </url>
@@ -53,7 +26,7 @@
     
   <url>
     <loc>http://songziming.com.cn/2016/10/19/get-vs-post/</loc>
-    <lastmod>2016-11-05T09:25:54.203Z</lastmod>
+    <lastmod>2016-11-05T10:11:34.298Z</lastmod>
     <data>
         <display>
         <title>简单谈谈 GET 与 POST 的区别</title>
@@ -67,9 +40,27 @@
          
          
            
-             
-              <breadCrumb title="JavaScript" url="http://songziming.com.cn/categories/JavaScript/"/>
-          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://songziming.com.cn/2016/10/30/callback/</loc>
+    <lastmod>2016-11-05T10:11:23.138Z</lastmod>
+    <data>
+        <display>
+        <title>JavaScript中的回调函数</title>
+        <pubTime>2016-10-30T14:48:39.000Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+        <tag>回调函数</tag>
+         
+        <tag>Callback</tag>
+         
+         
+           
         </display>
     </data>
     </url>
