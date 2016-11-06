@@ -4,6 +4,21 @@
   
     
     <entry>
+      <title><![CDATA[PHP 中单引号与双引号的区别]]></title>
+      <url>http://songziming.com.cn/2016/11/06/php-quote-md/</url>
+      <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>应该大部分人都知道，在 C、 C++、 Java 等语言中，单引号引用的是单个字符，双引号引用的是一个字符串。笔者之前接触 JavaScript 比较多，在 JavaScript 中单双引号是没有区别的，都可用于引用 string 类型的变量（ <em>在 JSON 中，字符串必须加双引号，单引号会导致语法错误</em> ）。但笔者最近才发现，在 PHP 中单双引号的区别与这些语言都不一样，以下谨作为记录。</p>
+<h2 id="单引号"><a href="#单引号" class="headerlink" title="单引号"></a>单引号</h2><p>在 PHP 中，用单引号（’）把一个字符串包围起来，代表引用的仅仅是这个字符串本身。也就是说变量 <code>$test</code> 以及转义序列 <code>\n</code> 或者 <code>\r</code> 等并不代表任何含义，就单纯是这几个字符串本身。举几个简单栗子如下：</p>
+<a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$test = &apos;data&apos;;</div><div class="line">echo &apos;$test is a variable.&apos;;        //输出 $test is a variable.</div><div class="line">echo &apos;$test is a variable.\n&apos;;      //输出 $test is a variable.\n</div></pre></td></tr></table></figure>
+<h2 id="双引号"><a href="#双引号" class="headerlink" title="双引号"></a>双引号</h2><p>与上述所说的单引号不同，PHP中的双引号（”）则会对变量、转义字符等特殊字符进行解析。举几个栗子如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$test = &apos;data&apos;;</div><div class="line">echo &quot;$test is a variable.&quot;;        //输出 data is a variable.</div><div class="line">echo &quot;$test is a variable.\n&quot;;      //输出 data is a variable.（同时换行）</div></pre></td></tr></table></figure>
+<h2 id="结束语"><a href="#结束语" class="headerlink" title="结束语"></a>结束语</h2><p>总结成一句话就是，<strong> PHP 里的单引号把内容当成纯文本，不经过服务器翻译，而双引号里面的内容则会经过服务器处理</strong>。由于存在这个区别，在PHP中使用引号时结合点操作符（.）操作字符串就可以非常灵活了。比如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$name = &apos;szm&apos;;</div><div class="line">echo &apos;My name is &apos;.$name.&apos;.&apos;;</div><div class="line">echo &quot;My name is $name.&quot;;</div><div class="line"></div><div class="line">//两个输出都是 My name is szm.</div></pre></td></tr></table></figure>
+<p>怎么样，是不是觉得PHP的这个特性很神奇？</p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[JavaScript中的回调函数]]></title>
       <url>http://songziming.com.cn/2016/10/30/callback/</url>
       <content type="html"><![CDATA[<h2 id="什么是回调函数"><a href="#什么是回调函数" class="headerlink" title="什么是回调函数"></a>什么是回调函数</h2><p><a href="http://https://zh.wikipedia.org/wiki/%E5%9B%9E%E8%B0%83%E5%87%BD%E6%95%B0" target="_blank" rel="external">回调函数（Callback）</a> 是一段可执行的代码段（通常包装成一个函数），它会作为一个参数传递给其他的代码（通常也是一个函数）。回调函数会等待父函数执行完毕后立即执行，而与此同时，其他函数的调用不会受到阻塞。</p>
