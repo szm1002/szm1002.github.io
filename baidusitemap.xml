@@ -4,6 +4,32 @@
 
     
   <url>
+    <loc>http://songziming.com.cn/2016/12/02/RegExp-in-JavaScript/</loc>
+    <lastmod>2016-12-02T14:53:29.690Z</lastmod>
+    <data>
+        <display>
+        <title>JavaScript 中的正则表达式</title>
+        <pubTime>2016-12-02T13:59:44.000Z</pubTime>
+        
+        <tag>正则表达式</tag>
+         
+        <tag>RegExp</tag>
+         
+        <tag>字符串</tag>
+         
+        <tag>模式匹配</tag>
+         
+         
+           
+             
+              <breadCrumb title="JavaScript" url="http://songziming.com.cn/categories/JavaScript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://songziming.com.cn/2016/11/06/php-quote-md/</loc>
     <lastmod>2016-11-06T12:46:52.833Z</lastmod>
     <data>
