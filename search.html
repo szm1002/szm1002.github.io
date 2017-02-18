@@ -4,6 +4,94 @@
   
     
     <entry>
+      <title><![CDATA[CSS 中的层叠与特殊性]]></title>
+      <url>http://songziming.com.cn/2017/02/18/css-cascade/</url>
+      <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在样式表中，同一个文档元素可能被定义了多条样式规则。碰到这种情况时，CSS 通过一个被称为 <strong>层叠（Cascade）</strong> 的过程来处理冲突。本文介绍了层叠的重要度次序以及样式表规则的特殊性。</p>
+<h2 id="层叠"><a href="#层叠" class="headerlink" title="层叠"></a>层叠</h2><p>CSS 层叠是指 CSS 样式在针对同一元素配置同一属性时，依据层叠规则（权重）来处理冲突，它会选择应用权重高的 CSS 选择器所指定的属性。这个过程一般也被描述为权重高的规则覆盖权重低的规则。</p>
+<a id="more"></a>
+<p>层叠给每个规则分配一个重要度，它的重要度次序如下：</p>
+<ol>
+<li>标有 <code>!important</code> 的用户样式</li>
+<li>标有 <code>!important</code> 的作者样式</li>
+<li>作者样式</li>
+<li>用户样式</li>
+<li>浏览器/用户代理应用的默认样式</li>
+</ol>
+<p>作者的样式表是由站点开发者编写的，被认为是最重要的样式表。用户可以通过浏览器应用自己的样式，这些样式表的重要度低一级。最后是浏览器或用户代理使用的默认样式表，它们的重要度是最低的。但是，如果用户一定要使用自己的样式，可以通过将规则指定为 <code>!important</code> 来提高它的重要度，让它优先于任何规则，甚至优先于作者加上 <code>!important</code> 标志的规则。</p>
+<p>在比较了样式规则的重要度之后，CSS 还会根据选择器的 <strong>特殊性</strong> 来决定规则的次序。具有更特殊选择器的规则优先于具有一般选择器的规则。如果两个规则的重要度、来源、特殊性都相同，则后定义的规则优先。</p>
+<h2 id="特殊性"><a href="#特殊性" class="headerlink" title="特殊性"></a>特殊性</h2><p>特殊性指的是 CSS 选择器的特殊性。在样式表中，每个 CSS 选择器会被分配一个数字值，将规则的每个选择器的值加在一起，就计算出了规则的特殊性。</p>
+<p>选择器的特殊性分为四个等级：a、b、c、d。</p>
+<ul>
+<li>如果是行内样式，那么a = 1，否则a = 0</li>
+<li>b = ID选择器的数量</li>
+<li>c = 类、伪类、属性选择器的数量</li>
+<li>d = 元素选择器和伪元素选择器的数量</li>
+</ul>
+<p>使用这些规则可以计算出任何 CSS 选择器的特殊性，abcd四个数字组合的数值最大的特殊性最大，优先级最大。</p>
+<blockquote>
+<p>注意：通用选择器、子选择器、相邻同胞选择器的特殊性为空。</p>
+</blockquote>
+<p>下表给出了一系列选择器及其相应的特殊性：</p>
+<table>
+<thead>
+<tr>
+<th>选择器</th>
+<th>特殊性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>style = “”</td>
+<td>1, 0, 0, 0</td>
+</tr>
+<tr>
+<td>#wrapper #content {}</td>
+<td>0, 2, 0, 0</td>
+</tr>
+<tr>
+<td>#content .datePosted {}</td>
+<td>0, 1, 1, 0</td>
+</tr>
+<tr>
+<td>div#content {}</td>
+<td>0, 1, 0, 1</td>
+</tr>
+<tr>
+<td>#content {}</td>
+<td>0, 1, 0, 0</td>
+</tr>
+<tr>
+<td>p.comment .datePosted {}</td>
+<td>0, 0, 2, 1</td>
+</tr>
+<tr>
+<td>p.comment {}</td>
+<td>0, 0, 1, 1</td>
+</tr>
+<tr>
+<td>div p {}</td>
+<td>0, 0, 0, 2</td>
+</tr>
+<tr>
+<td>p {}</td>
+<td>0, 0, 0, 1</td>
+</tr>
+</tbody>
+</table>
+<p>基本上，行内样式总是比其他任何规则特殊，具有ID选择器的规则比没有ID选择器的规则特殊，具有类选择器的规则比只有元素选择器的规则特殊。</p>
+<blockquote>
+<p>记住，如果两个规则的特殊性相同，那么后定义的规则胜出。</p>
+</blockquote>
+<h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><p>继承指的是子元素的样式继承父元素的样式。</p>
+<blockquote>
+<p>很多人将继承和层叠混为一谈，虽然它们初看上去有点相似，但这两个概念实际上是很不一样的。 </p>
+</blockquote>
+<p>继承不是层叠。层叠是权重高的样式覆盖权重低的样式，而继承是子元素样式继承父元素样式。</p>
+<p><strong>继承而来的样式的特殊性为空</strong>（连0特殊性都没有）。如果你在父元素设置了样式，而子元素的样式并没有和父元素样式一样，出现这种情况是因为浏览器带有默认的样式，而继承的样式被浏览器默认的样式覆盖。所以如果不希望使用浏览器的默认样式，需要在样式表开头对样式重置。</p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[JavaScript 运算符优先级]]></title>
       <url>http://songziming.com.cn/2017/01/03/operator-precedence/</url>
       <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>JavaScript 中的 <strong><a href="http://baike.baidu.com/view/262524.htm" title="运算符优先级" target="_blank" rel="external">运算符优先级</a></strong> 是一套规则，它规定了在表达式中运算执行的先后顺序，优先级高的运算符执行总是先于优先级低的运算符。如下例所示，乘法运算符 <code>*</code> 的优先级高于加法运算符 <code>+</code> ，所以在无括号的情况下乘法运算总是先于加法运算进行的。</p>
