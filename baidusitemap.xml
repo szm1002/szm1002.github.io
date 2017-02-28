@@ -4,6 +4,50 @@
 
     
   <url>
+    <loc>http://songziming.com.cn/2017/02/28/es6-top-ten-properties/</loc>
+    <lastmod>2017-02-28T15:49:24.367Z</lastmod>
+    <data>
+        <display>
+        <title>[转载]前端开发者不得不知的 ES6 十大特性</title>
+        <pubTime>2017-02-28T15:41:33.000Z</pubTime>
+        
+        <tag>ES6</tag>
+         
+         
+           
+             
+              <breadCrumb title="ES6" url="http://songziming.com.cn/categories/ES6/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://songziming.com.cn/2017/01/18/css-cascade/</loc>
+    <lastmod>2017-02-28T15:13:54.547Z</lastmod>
+    <data>
+        <display>
+        <title>CSS 中的层叠与特殊性</title>
+        <pubTime>2017-01-18T02:58:16.000Z</pubTime>
+        
+        <tag>层叠</tag>
+         
+        <tag>特殊性</tag>
+         
+        <tag>继承</tag>
+         
+         
+           
+             
+              <breadCrumb title="CSS" url="http://songziming.com.cn/categories/CSS/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://songziming.com.cn/2017/02/28/http-status-code/</loc>
     <lastmod>2017-02-28T04:45:26.366Z</lastmod>
     <data>
@@ -17,30 +61,6 @@
            
              
               <breadCrumb title="HTTP" url="http://songziming.com.cn/categories/HTTP/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://songziming.com.cn/2017/02/18/css-cascade/</loc>
-    <lastmod>2017-02-18T05:00:34.572Z</lastmod>
-    <data>
-        <display>
-        <title>CSS 中的层叠与特殊性</title>
-        <pubTime>2017-02-18T02:58:16.000Z</pubTime>
-        
-        <tag>层叠</tag>
-         
-        <tag>特殊性</tag>
-         
-        <tag>继承</tag>
-         
-         
-           
-             
-              <breadCrumb title="CSS" url="http://songziming.com.cn/categories/CSS/"/>
           
         </display>
     </data>
