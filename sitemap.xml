@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://songziming.com.cn/2017/02/28/es6-top-ten-properties/</loc>
+    <loc>http://songziming.com.cn/2017/02/17/es6-core/</loc>
     
-    <lastmod>2017-02-28T15:49:24.367Z</lastmod>
+    <lastmod>2017-02-28T16:08:36.248Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://songziming.com.cn/2017/02/17/es6-top-ten-properties/</loc>
+    
+    <lastmod>2017-02-28T16:07:48.280Z</lastmod>
     
   </url>
   

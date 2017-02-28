@@ -4,12 +4,32 @@
 
     
   <url>
-    <loc>http://songziming.com.cn/2017/02/28/es6-top-ten-properties/</loc>
-    <lastmod>2017-02-28T15:49:24.367Z</lastmod>
+    <loc>http://songziming.com.cn/2017/02/17/es6-core/</loc>
+    <lastmod>2017-02-28T16:08:36.248Z</lastmod>
     <data>
         <display>
-        <title>[转载]前端开发者不得不知的 ES6 十大特性</title>
-        <pubTime>2017-02-28T15:41:33.000Z</pubTime>
+        <title>30分钟掌握ES6/ES2015核心内容[转载]</title>
+        <pubTime>2017-02-17T15:27:29.000Z</pubTime>
+        
+        <tag>ES6</tag>
+         
+         
+           
+             
+              <breadCrumb title="ES6" url="http://songziming.com.cn/categories/ES6/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://songziming.com.cn/2017/02/17/es6-top-ten-properties/</loc>
+    <lastmod>2017-02-28T16:07:48.280Z</lastmod>
+    <data>
+        <display>
+        <title>前端开发者不得不知的 ES6 十大特性[转载]</title>
+        <pubTime>2017-02-17T15:41:33.000Z</pubTime>
         
         <tag>ES6</tag>
          

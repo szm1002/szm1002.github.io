@@ -4,13 +4,75 @@
   
     
     <entry>
-      <title><![CDATA[[转载]前端开发者不得不知的 ES6 十大特性]]></title>
-      <url>http://songziming.com.cn/2017/02/28/es6-top-ten-properties/</url>
+      <title><![CDATA[HTTP 状态码]]></title>
+      <url>http://songziming.com.cn/2017/02/28/http-status-code/</url>
+      <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>HTTP 状态码</strong>（HTTP Status Code）是用以表示网页服务器HTTP响应状态的3位数字代码。它的职责是当客户端向服务器端发送请求时，描述返回的请求结果。借助状态码，用户可以知道服务器端是正常处理了请求，还是出现了错误。</p>
+<p>状态码的类别如下表所示：</p>
+<table class="table table-bordered table-striped table-condensed">   <tr>      <th width="20%"></th>      <th width="40%">类别</th>      <th width="40%">原因短语</th>   </tr>   <tr>      <td>1XX</td>      <td>Informational（信息性状态码）</td>      <td>接收的请求正在处理</td>   </tr>   <tr>      <td>2XX</td>      <td>Success（成功状态码）</td>      <td>请求正常处理完毕</td>   </tr>   <tr>      <td>3XX</td>      <td>Redirection（重定向状态码）</td>      <td>需要进行附加操作以完成请求</td>   </tr>   <tr>      <td>4XX</td>      <td>Client Error（客户端错误状态码）</td>      <td>服务器无法处理请求</td>   </tr>   <tr>      <td>5XX</td>      <td>Server Error（服务器错误状态码）</td>      <td>服务器处理请求出错</td>   </tr></table>
+
+<a id="more"></a>
+<p>已定义的HTTP状态码多达60余种，但实际上经常使用的大概是14种。接下来，就介绍一下这些具有代表性的14个状态码。</p>
+<h2 id="2XX-成功"><a href="#2XX-成功" class="headerlink" title="2XX 成功"></a>2XX 成功</h2><p>2XX 的响应结果表明请求被正常处理了。</p>
+<h3 id="200-OK"><a href="#200-OK" class="headerlink" title="200 OK"></a>200 OK</h3><p><strong>200 OK</strong> 表示从客户端发来的请求在服务器端被正常处理了。</p>
+<blockquote>
+<p>在响应报文内，随状态码一起返回的信息会因请求方法的不同而发生改变。比如，使用 GET 方法时，对应请求资源的实体会作为响应返回；而使用 HEAD 方法时，对应请求资源的实体首部不随报文主体作为响应返回（即在响应中只返回首部，不返回实体的主体部分）。</p>
+</blockquote>
+<h3 id="204-No-Content"><a href="#204-No-Content" class="headerlink" title="204 No Content"></a>204 No Content</h3><p><strong>204 No Content</strong> 代表服务器接收的请求已成功处理，但在返回的响应报文中不含主体的实体部分。而且，也不允许返回任何实体的主体。</p>
+<blockquote>
+<p>一般在只需从客户端往服务器发送消息，而对客户端不需发送新信息内容的情况下使用。</p>
+</blockquote>
+<h3 id="206-Partial-Content"><a href="#206-Partial-Content" class="headerlink" title="206 Partial Content"></a>206 Partial Content</h3><p><strong>206 Partial Content</strong> 表示客户端进行了范围请求（请求一部分内容），而服务器成功执行了这部分的 GET 请求。</p>
+<blockquote>
+<p>响应报文中包含由 Content-Range 指定范围的实体内容。</p>
+</blockquote>
+<h2 id="3XX-重定向"><a href="#3XX-重定向" class="headerlink" title="3XX 重定向"></a>3XX 重定向</h2><p>3XX 响应结果表明浏览器需要执行某些特殊的处理以正确处理请求。</p>
+<h3 id="301-Moved-Permanently"><a href="#301-Moved-Permanently" class="headerlink" title="301 Moved Permanently"></a>301 Moved Permanently</h3><p><strong>301 Moved Permanently</strong> 代表永久重定向。该状态码表示请求的资源已被分配了新的 URI，以后应使用资源现在所指的 URI。</p>
+<blockquote>
+<p>如果已经把资源对应的URI存为书签，这时应该按 Location 首部字段提示的 URI 重新保存。</p>
+</blockquote>
+<h3 id="302-Found"><a href="#302-Found" class="headerlink" title="302 Found"></a>302 Found</h3><p><strong>302 Found</strong> 代表临时重定向。该状态码表示请求的资源已被分配了新的 URI，希望用户（本次）能使用新的 URI 访问。</p>
+<blockquote>
+<p>与 301 Moved Permanently 状态码相似，但 302 状态码代表资源不是被永久移动，只是临时性质的。</p>
+</blockquote>
+<h3 id="303-See-Other"><a href="#303-See-Other" class="headerlink" title="303 See Other"></a>303 See Other</h3><p><strong>303 See Other</strong> 表示由于请求对应的资源存在着另一个 URI，应使用 GET 方法定向获取请求的资源。</p>
+<blockquote>
+<p>303 状态码与 302 Found 状态码有着相同的功能，但 303 状态码明确表示客户端应采用 GET 方法获取资源，这点与 302 状态码有区别。</p>
+</blockquote>
+<h3 id="304-Not-Modified"><a href="#304-Not-Modified" class="headerlink" title="304 Not Modified"></a>304 Not Modified</h3><p><strong>304 Not Modified</strong> 表示客户端发送附带条件的请求时，服务器端允许请求访问资源，但因发生请求未满足条件的情况，直接返回 304 Not Modified （服务器端资源未改变，可直接使用客户端未过期的缓存）。304 状态码返回时，不包含任何响应的主体部分。</p>
+<blockquote>
+<p>304 虽然被划分在 3XX 类别中，但和重定向没有关系。</p>
+</blockquote>
+<h3 id="307-Temporary-Redirect"><a href="#307-Temporary-Redirect" class="headerlink" title="307 Temporary Redirect"></a>307 Temporary Redirect</h3><p><strong>307 Temporary Redirect</strong> 也代表临时重定向。该状态码与 302 Found 有相同含义。</p>
+<p>尽管 302 标准禁止 POST 变换成 GET，但实际使用时大家并不遵守。而 307 会遵照浏览器标准，不会从 POST 变成 GET。但是，对于处理响应时的行为，每种浏览器有可能出现不同的情况。</p>
+<h2 id="4XX-客户端错误"><a href="#4XX-客户端错误" class="headerlink" title="4XX 客户端错误"></a>4XX 客户端错误</h2><p>4XX 的响应结果表明客户端是发生错误的原因所在。</p>
+<h3 id="400-Bad-Request"><a href="#400-Bad-Request" class="headerlink" title="400 Bad Request"></a>400 Bad Request</h3><p><strong>400 Bad Request</strong> 表示请求报文中存在语法错误。</p>
+<blockquote>
+<p>当错误发生时，需修改请求的内容后再次发送请求。另外，浏览器会像 200 OK 一样对待该状态码。</p>
+</blockquote>
+<h3 id="401-Unauthorized"><a href="#401-Unauthorized" class="headerlink" title="401 Unauthorized"></a>401 Unauthorized</h3><p><strong>401 Unauthorized</strong> 表示发送的请求需要有通过 HTTP 认证（BASIC 认证、DIGEST 认证）的认证信息。另外若之前已进行过1次请求，则表示用户认证失败。</p>
+<h3 id="403-Forbidden"><a href="#403-Forbidden" class="headerlink" title="403 Forbidden"></a>403 Forbidden</h3><p><strong>403 Forbidden</strong> 表明对请求资源的访问被服务器拒绝了。</p>
+<blockquote>
+<p>服务器端没必要给出拒绝的详细理由，但如果想作说明，可在实体的主体部分对原因进行描述，这样就能让用户看到。</p>
+</blockquote>
+<h3 id="404-Not-Found"><a href="#404-Not-Found" class="headerlink" title="404 Not Found"></a>404 Not Found</h3><p><strong>404 Not Found</strong> 表明服务器上无法找到请求的资源。除此之外，也可以在服务器端拒绝请求且不想说明理由时使用。</p>
+<h2 id="5XX-服务器错误"><a href="#5XX-服务器错误" class="headerlink" title="5XX 服务器错误"></a>5XX 服务器错误</h2><p>5XX 的响应结果表明服务器本身发生错误。</p>
+<h3 id="500-Internal-Server-Error"><a href="#500-Internal-Server-Error" class="headerlink" title="500 Internal Server Error"></a>500 Internal Server Error</h3><p><strong>500 Internal Server Error</strong> 表明服务器端在执行请求时发生了错误。也有可能是 Web 应用存在的 bug 或某些临时的故障。</p>
+<h3 id="503-Service-Unavailable"><a href="#503-Service-Unavailable" class="headerlink" title="503 Service Unavailable"></a>503 Service Unavailable</h3><p><strong>503 Service Unavailable</strong> 表明服务器暂时处于超负载或正在进行停机维护，现在无法处理请求。</p>
+<blockquote>
+<p>如果事先得知解除以上状况需要的时间，最好写入 Retry-After 首部字段再返回给客户端。</p>
+</blockquote>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[前端开发者不得不知的 ES6 十大特性[转载]]]></title>
+      <url>http://songziming.com.cn/2017/02/17/es6-top-ten-properties/</url>
       <content type="html"><![CDATA[<blockquote>
-<p>转载自AlloyTeam：<a href="http://www.alloyteam.com/2016/03/es6-front-end-developers-will-have-to-know-the-top-ten-properties/" target="_blank" rel="external">http://www.alloyteam.com/2016/03/es6-front-end-developers-will-have-to-know-the-top-ten-properties/</a></p>
+<p>转载自AlloyTeam： <a href="http://www.alloyteam.com/2016/03/es6-front-end-developers-will-have-to-know-the-top-ten-properties/" target="_blank">http://www.alloyteam.com/2016/03/es6-front-end-developers-will-have-to-know-the-top-ten-properties/</a></p>
 </blockquote>
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>ES6（ECMAScript2015） 的出现，无疑给前端开发人员带来了新的惊喜，它包含了一些很棒的新特性，可以更加方便的实现很多复杂的操作，提高开发人员的效率。</p>
 <p>本文主要针对 ES6 做一个简要介绍。 主要译自： <a href="http://webapplog.com/ES6/comment-page-1/" target="_blank" rel="external">http://webapplog.com/ES6/comment-page-1/</a>。也许你还不知道 ES6 是什么, 实际上, 它是一种新的 javascript 规范。在这个大家都很忙碌的时代，如果你想对 ES6 有一个快速的了解，那么请继续往下读，去了解当今最流行的编程语言 JavaScript 最新一代的十大特性。</p>
+<a id="more"></a>
 <p>以下是 ES6 排名前十的最佳特性列表（排名不分先后）：</p>
 <ol>
 <li>Default Parameters（默认参数） in ES6</li>
@@ -65,12 +127,12 @@
 <p>如果我们想让它更有意思，我们可以用 Object.create 从 serviceBase 继承原型的方法：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">var accountServiceES5ObjectCreate = Object.create(serviceBase)</div><div class="line">var accountServiceES5ObjectCreate = &#123;</div><div class="line">  getAccounts: getAccounts,</div><div class="line">  toString: function() &#123;</div><div class="line">    return JSON.stringify(this.valueOf());</div><div class="line">  &#125;,</div><div class="line">  getUrl: function() &#123;return &quot;http://&quot; + this.url + &apos;:&apos; + this.port&#125;,</div><div class="line">  valueOf_1_2_3: getAccounts()</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>我们知道，accountServiceES5ObjectCreate 和 accountServiceES5 并不是完全一致的，因为一个对象 (accountServiceES5) 在 <strong>proto</strong> 对象中将有下面这些属性：</p>
-<p>图片1</p>
+<img src="/2017/02/17/es6-top-ten-properties/1.png" alt="1.png" title="">
 <p>为了方便举例，我们将考虑它们的相似处。所以在 ES6 的对象文本中，既可以直接分配 getAccounts: getAccounts,也可以只需用一个 getAccounts，此外，我们在这里通过 <strong>proto</strong> （并不是通过 ’proto’）设置属性，如下所示：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var serviceBase = &#123;port: 3000, url: &apos;azat.co&apos;&#125;,</div><div class="line">getAccounts = function()&#123;return [1,2,3]&#125;;</div><div class="line">var accountService = &#123;</div><div class="line">    __proto__: serviceBase,</div><div class="line">    getAccounts,</div></pre></td></tr></table></figure>
 <p>另外，我们可以调用 super 防范，以及使用动态 key 值 (valueOf_1_2_3):</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">    toString() &#123;</div><div class="line">     return JSON.stringify((super.valueOf()));</div><div class="line">    &#125;,</div><div class="line">    getUrl() &#123;return &quot;http://&quot; + this.url + &apos;:&apos; + this.port&#125;,</div><div class="line">    [ &apos;valueOf_&apos; + getAccounts().join(&apos;_&apos;) ]: getAccounts()</div><div class="line">&#125;;</div><div class="line">console.log(accountService)</div></pre></td></tr></table></figure>
-<p>图片3</p>
+<img src="/2017/02/17/es6-top-ten-properties/3.png" alt="3.png" title="">
 <p>ES6 对象文本是一个很大的进步对于旧版的对象文本来说。</p>
 <h2 id="6-Arrow-Functions-（箭头函数）-in-ES6"><a href="#6-Arrow-Functions-（箭头函数）-in-ES6" class="headerlink" title="6.Arrow Functions （箭头函数） in ES6"></a>6.Arrow Functions （箭头函数） in ES6</h2><p>这是我迫不及待想讲的一个特征，CoffeeScript 就是因为它丰富的箭头函数让很多开发者喜爱。在 ES6 中，也有了丰富的箭头函数。这些丰富的箭头是令人惊讶的因为它们将使许多操作变成现实，比如，以前我们使用闭包，this 总是预期之外地产生改变，而箭头函数的迷人之处在于，现在你的 this 可以按照你的预期使用了，身处箭头函数里面，this 还是原来的 this。</p>
 <p>有了箭头函数在 ES6 中， 我们就不必用 that = this 或 self =  this 或 _this = this 或 .bind(this)。例如，下面的代码用 ES5 就不是很优雅：</p>
@@ -143,7 +205,7 @@
 <p>并不是所有的浏览器都支持 ES6 模块，所以你需要使用一些像 jspm 去支持 ES6 模块。</p>
 <p>更多的信息和例子关于 ES6 模块，请看 <a href="http://exploringjs.com/es6/ch_modules.html">this text</a>。不管怎样，请写模块化的 JavaScript。</p>
 <h2 id="如何使用-ES6-Babel"><a href="#如何使用-ES6-Babel" class="headerlink" title="如何使用 ES6 (Babel)"></a>如何使用 ES6 (Babel)</h2><p>ES6 已经敲定，但并不是所有的浏览器都完全支持，详见：<a href="http://kangax.github.io/compat-table/es6/">http://kangax.github.io/compat-table/es6/</a>。要使用 ES6，需要一个编译器例如： babel。你可以把它作为一个独立的工具使用，也可以把它放在构建中。 grunt，gulp 和 webpack 中都有可以支持 babel 的插件。</p>
-<p>图片2</p>
+<img src="/2017/02/17/es6-top-ten-properties/2.png" alt="2.png" title="">
 <p>这是一个 gulp 案列，安装 gulp-babel 插件：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install --save-dev gulp-babel</div></pre></td></tr></table></figure>
 <p>在 gulpfile.js 中，定义一个任务 build，放入 src/app.js，并且编译它进入构建文件中。</p>
@@ -173,63 +235,87 @@
     </entry>
     
     <entry>
-      <title><![CDATA[HTTP 状态码]]></title>
-      <url>http://songziming.com.cn/2017/02/28/http-status-code/</url>
-      <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>HTTP 状态码</strong>（HTTP Status Code）是用以表示网页服务器HTTP响应状态的3位数字代码。它的职责是当客户端向服务器端发送请求时，描述返回的请求结果。借助状态码，用户可以知道服务器端是正常处理了请求，还是出现了错误。</p>
-<p>状态码的类别如下表所示：</p>
-<table class="table table-bordered table-striped table-condensed">   <tr>      <th width="20%"></th>      <th width="40%">类别</th>      <th width="40%">原因短语</th>   </tr>   <tr>      <td>1XX</td>      <td>Informational（信息性状态码）</td>      <td>接收的请求正在处理</td>   </tr>   <tr>      <td>2XX</td>      <td>Success（成功状态码）</td>      <td>请求正常处理完毕</td>   </tr>   <tr>      <td>3XX</td>      <td>Redirection（重定向状态码）</td>      <td>需要进行附加操作以完成请求</td>   </tr>   <tr>      <td>4XX</td>      <td>Client Error（客户端错误状态码）</td>      <td>服务器无法处理请求</td>   </tr>   <tr>      <td>5XX</td>      <td>Server Error（服务器错误状态码）</td>      <td>服务器处理请求出错</td>   </tr></table>
-
+      <title><![CDATA[30分钟掌握ES6/ES2015核心内容[转载]]]></title>
+      <url>http://songziming.com.cn/2017/02/17/es6-core/</url>
+      <content type="html"><![CDATA[<blockquote>
+<p>本文转载自简书，<a href="http://www.jianshu.com/p/ebfeb687eb70" target="_blank">http://www.jianshu.com/p/ebfeb687eb70</a>，作者：Zachary_Wang。</p>
+</blockquote>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>ECMAScript 6（以下简称ES6）是JavaScript语言的下一代标准。因为当前版本的ES6是在2015年发布的，所以又称ECMAScript 2015。</p>
+<p>也就是说，ES6就是ES2015。</p>
+<p>虽然目前并不是所有浏览器都能兼容ES6全部特性，但越来越多的程序员在实际项目当中已经开始使用ES6了。所以就算你现在不打算使用ES6，但为了看懂别人的你也该懂点ES6的语法了…</p>
 <a id="more"></a>
-<p>已定义的HTTP状态码多达60余种，但实际上经常使用的大概是14种。接下来，就介绍一下这些具有代表性的14个状态码。</p>
-<h2 id="2XX-成功"><a href="#2XX-成功" class="headerlink" title="2XX 成功"></a>2XX 成功</h2><p>2XX 的响应结果表明请求被正常处理了。</p>
-<h3 id="200-OK"><a href="#200-OK" class="headerlink" title="200 OK"></a>200 OK</h3><p><strong>200 OK</strong> 表示从客户端发来的请求在服务器端被正常处理了。</p>
-<blockquote>
-<p>在响应报文内，随状态码一起返回的信息会因请求方法的不同而发生改变。比如，使用 GET 方法时，对应请求资源的实体会作为响应返回；而使用 HEAD 方法时，对应请求资源的实体首部不随报文主体作为响应返回（即在响应中只返回首部，不返回实体的主体部分）。</p>
-</blockquote>
-<h3 id="204-No-Content"><a href="#204-No-Content" class="headerlink" title="204 No Content"></a>204 No Content</h3><p><strong>204 No Content</strong> 代表服务器接收的请求已成功处理，但在返回的响应报文中不含主体的实体部分。而且，也不允许返回任何实体的主体。</p>
-<blockquote>
-<p>一般在只需从客户端往服务器发送消息，而对客户端不需发送新信息内容的情况下使用。</p>
-</blockquote>
-<h3 id="206-Partial-Content"><a href="#206-Partial-Content" class="headerlink" title="206 Partial Content"></a>206 Partial Content</h3><p><strong>206 Partial Content</strong> 表示客户端进行了范围请求（请求一部分内容），而服务器成功执行了这部分的 GET 请求。</p>
-<blockquote>
-<p>响应报文中包含由 Content-Range 指定范围的实体内容。</p>
-</blockquote>
-<h2 id="3XX-重定向"><a href="#3XX-重定向" class="headerlink" title="3XX 重定向"></a>3XX 重定向</h2><p>3XX 响应结果表明浏览器需要执行某些特殊的处理以正确处理请求。</p>
-<h3 id="301-Moved-Permanently"><a href="#301-Moved-Permanently" class="headerlink" title="301 Moved Permanently"></a>301 Moved Permanently</h3><p><strong>301 Moved Permanently</strong> 代表永久重定向。该状态码表示请求的资源已被分配了新的 URI，以后应使用资源现在所指的 URI。</p>
-<blockquote>
-<p>如果已经把资源对应的URI存为书签，这时应该按 Location 首部字段提示的 URI 重新保存。</p>
-</blockquote>
-<h3 id="302-Found"><a href="#302-Found" class="headerlink" title="302 Found"></a>302 Found</h3><p><strong>302 Found</strong> 代表临时重定向。该状态码表示请求的资源已被分配了新的 URI，希望用户（本次）能使用新的 URI 访问。</p>
-<blockquote>
-<p>与 301 Moved Permanently 状态码相似，但 302 状态码代表资源不是被永久移动，只是临时性质的。</p>
-</blockquote>
-<h3 id="303-See-Other"><a href="#303-See-Other" class="headerlink" title="303 See Other"></a>303 See Other</h3><p><strong>303 See Other</strong> 表示由于请求对应的资源存在着另一个 URI，应使用 GET 方法定向获取请求的资源。</p>
-<blockquote>
-<p>303 状态码与 302 Found 状态码有着相同的功能，但 303 状态码明确表示客户端应采用 GET 方法获取资源，这点与 302 状态码有区别。</p>
-</blockquote>
-<h3 id="304-Not-Modified"><a href="#304-Not-Modified" class="headerlink" title="304 Not Modified"></a>304 Not Modified</h3><p><strong>304 Not Modified</strong> 表示客户端发送附带条件的请求时，服务器端允许请求访问资源，但因发生请求未满足条件的情况，直接返回 304 Not Modified （服务器端资源未改变，可直接使用客户端未过期的缓存）。304 状态码返回时，不包含任何响应的主体部分。</p>
-<blockquote>
-<p>304 虽然被划分在 3XX 类别中，但和重定向没有关系。</p>
-</blockquote>
-<h3 id="307-Temporary-Redirect"><a href="#307-Temporary-Redirect" class="headerlink" title="307 Temporary Redirect"></a>307 Temporary Redirect</h3><p><strong>307 Temporary Redirect</strong> 也代表临时重定向。该状态码与 302 Found 有相同含义。</p>
-<p>尽管 302 标准禁止 POST 变换成 GET，但实际使用时大家并不遵守。而 307 会遵照浏览器标准，不会从 POST 变成 GET。但是，对于处理响应时的行为，每种浏览器有可能出现不同的情况。</p>
-<h2 id="4XX-客户端错误"><a href="#4XX-客户端错误" class="headerlink" title="4XX 客户端错误"></a>4XX 客户端错误</h2><p>4XX 的响应结果表明客户端是发生错误的原因所在。</p>
-<h3 id="400-Bad-Request"><a href="#400-Bad-Request" class="headerlink" title="400 Bad Request"></a>400 Bad Request</h3><p><strong>400 Bad Request</strong> 表示请求报文中存在语法错误。</p>
-<blockquote>
-<p>当错误发生时，需修改请求的内容后再次发送请求。另外，浏览器会像 200 OK 一样对待该状态码。</p>
-</blockquote>
-<h3 id="401-Unauthorized"><a href="#401-Unauthorized" class="headerlink" title="401 Unauthorized"></a>401 Unauthorized</h3><p><strong>401 Unauthorized</strong> 表示发送的请求需要有通过 HTTP 认证（BASIC 认证、DIGEST 认证）的认证信息。另外若之前已进行过1次请求，则表示用户认证失败。</p>
-<h3 id="403-Forbidden"><a href="#403-Forbidden" class="headerlink" title="403 Forbidden"></a>403 Forbidden</h3><p><strong>403 Forbidden</strong> 表明对请求资源的访问被服务器拒绝了。</p>
-<blockquote>
-<p>服务器端没必要给出拒绝的详细理由，但如果想作说明，可在实体的主体部分对原因进行描述，这样就能让用户看到。</p>
-</blockquote>
-<h3 id="404-Not-Found"><a href="#404-Not-Found" class="headerlink" title="404 Not Found"></a>404 Not Found</h3><p><strong>404 Not Found</strong> 表明服务器上无法找到请求的资源。除此之外，也可以在服务器端拒绝请求且不想说明理由时使用。</p>
-<h2 id="5XX-服务器错误"><a href="#5XX-服务器错误" class="headerlink" title="5XX 服务器错误"></a>5XX 服务器错误</h2><p>5XX 的响应结果表明服务器本身发生错误。</p>
-<h3 id="500-Internal-Server-Error"><a href="#500-Internal-Server-Error" class="headerlink" title="500 Internal Server Error"></a>500 Internal Server Error</h3><p><strong>500 Internal Server Error</strong> 表明服务器端在执行请求时发生了错误。也有可能是 Web 应用存在的 bug 或某些临时的故障。</p>
-<h3 id="503-Service-Unavailable"><a href="#503-Service-Unavailable" class="headerlink" title="503 Service Unavailable"></a>503 Service Unavailable</h3><p><strong>503 Service Unavailable</strong> 表明服务器暂时处于超负载或正在进行停机维护，现在无法处理请求。</p>
-<blockquote>
-<p>如果事先得知解除以上状况需要的时间，最好写入 Retry-After 首部字段再返回给客户端。</p>
-</blockquote>
+<p>在我们正式讲解ES6语法之前，我们得先了解下Babel。<br><a href="https://babeljs.io/" title="Babel" target="_blank" rel="external">Babel</a></p>
+<p>Babel是一个广泛使用的ES6转码器，可以将ES6代码转为ES5代码，从而在现有环境执行。大家可以选择自己习惯的工具来使用使用Babel，具体过程可直接在Babel官网查看：</p>
+<img src="/2017/02/17/es6-core/1.png" alt="https://babeljs.io/docs/setup/" title="https://babeljs.io/docs/setup/">
+<h2 id="最常用的ES6特性"><a href="#最常用的ES6特性" class="headerlink" title="最常用的ES6特性"></a>最常用的ES6特性</h2><p><code>let, const, class, extends, super, arrow functions, template string, destructuring, default, rest arguments</code></p>
+<p>这些是ES6最常用的几个语法，基本上学会它们，我们就可以走遍天下都不怕啦！我会用最通俗易懂的语言和例子来讲解它们，保证一看就懂，一学就会。</p>
+<h3 id="let-const"><a href="#let-const" class="headerlink" title="let, const"></a>let, const</h3><p>这两个的用途与var类似，都是用来声明变量的，但在实际运用中他俩都有各自的特殊用途。<br>首先来看下面这个例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">var name = &apos;zach&apos;</div><div class="line"></div><div class="line">while (true) &#123;</div><div class="line">    var name = &apos;obama&apos;</div><div class="line">    console.log(name)  //obama</div><div class="line">    break</div><div class="line">&#125;</div><div class="line"></div><div class="line">console.log(name)  //obama</div></pre></td></tr></table></figure>
+<p>使用 <code>var</code> 两次输出都是 obama，这是因为ES5只有全局作用域和函数作用域，没有块级作用域，这带来很多不合理的场景。第一种场景就是你现在看到的内层变量覆盖外层变量。而 <code>let</code> 则实际上为 JavaScript 新增了块级作用域。用它所声明的变量，只在 <code>let</code> 命令所在的代码块内有效。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">let name = &apos;zach&apos;</div><div class="line"></div><div class="line">while (true) &#123;</div><div class="line">    let name = &apos;obama&apos;</div><div class="line">    console.log(name)  //obama</div><div class="line">    break</div><div class="line">&#125;</div><div class="line"></div><div class="line">console.log(name)  //zach</div></pre></td></tr></table></figure>
+<p>另外一个 <code>var</code> 带来的不合理场景就是用来计数的循环变量泄露为全局变量，看下面的例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var a = [];</div><div class="line">for (var i = 0; i &lt; 10; i++) &#123;</div><div class="line">  a[i] = function () &#123;</div><div class="line">    console.log(i);</div><div class="line">  &#125;;</div><div class="line">&#125;</div><div class="line">a[6](); // 10</div></pre></td></tr></table></figure>
+<p>上面代码中，变量 i 是 <code>var</code> 声明的，在全局范围内都有效。所以每一次循环，新的 i 值都会覆盖旧值，导致最后输出的是最后一轮的i的值。而使用 <code>let</code> 则不会出现这个问题。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var a = [];</div><div class="line">for (let i = 0; i &lt; 10; i++) &#123;</div><div class="line">  a[i] = function () &#123;</div><div class="line">    console.log(i);</div><div class="line">  &#125;;</div><div class="line">&#125;</div><div class="line">a[6](); // 6</div></pre></td></tr></table></figure>
+<p>再来看一个更常见的例子，了解下如果不用 ES6，而用闭包如何解决这个问题。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var clickBoxs = document.querySelectorAll(&apos;.clickBox&apos;)</div><div class="line">for (var i = 0; i &lt; clickBoxs.length; i++)&#123;</div><div class="line">    clickBoxs[i].onclick = function()&#123;</div><div class="line">        console.log(i)</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>我们本来希望的是点击不同的 clickBox，显示不同的 i，但事实是无论我们点击哪个 clickBox，输出的都是5。下面我们来看下，如何用闭包搞定它。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">function iteratorFactory(i)&#123;</div><div class="line">    var onclick = function(e)&#123;</div><div class="line">        console.log(i)</div><div class="line">    &#125;</div><div class="line">    return onclick;</div><div class="line">&#125;</div><div class="line">var clickBoxs = document.querySelectorAll(&apos;.clickBox&apos;)</div><div class="line">for (var i = 0; i &lt; clickBoxs.length; i++)&#123;</div><div class="line">    clickBoxs[i].onclick = iteratorFactory(i)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><code>const</code> 也用来声明变量，但是声明的是常量。一旦声明，常量的值就不能改变。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">const PI = Math.PI</div><div class="line"></div><div class="line">PI = 23 //Module build failed: SyntaxError: /es6/app.js: &quot;PI&quot; is read-only</div></pre></td></tr></table></figure>
+<p>当我们尝试去改变用 <code>const</code> 声明的常量时，浏览器就会报错。</p>
+<p><code>const</code> 有一个很好的应用场景，就是当我们引用第三方库的时声明的变量，用 <code>const</code> 来声明可以避免未来不小心重命名而导致出现 bug：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">const monent = require(&apos;moment&apos;)</div></pre></td></tr></table></figure>
+<h3 id="class-extends-super"><a href="#class-extends-super" class="headerlink" title="class, extends, super"></a>class, extends, super</h3><p>这三个特性涉及了 ES5 中最令人头疼的的几个部分：原型、构造函数，继承…你还在为它们复杂难懂的语法而烦恼吗？你还在为指针到底指向哪里而纠结万分吗？</p>
+<p>有了ES6我们不再烦恼！</p>
+<p>ES6提供了更接近传统语言的写法，引入了 Class（类） 这个概念。新的 class 写法让对象原型的写法更加清晰、更像面向对象编程的语法，也更加通俗易懂。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">class Animal &#123;</div><div class="line">    constructor()&#123;</div><div class="line">        this.type = &apos;animal&apos;</div><div class="line">    &#125;</div><div class="line">    says(say)&#123;</div><div class="line">        console.log(this.type + &apos; says &apos; + say)</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">let animal = new Animal()</div><div class="line">animal.says(&apos;hello&apos;) //animal says hello</div><div class="line"></div><div class="line">class Cat extends Animal &#123;</div><div class="line">    constructor()&#123;</div><div class="line">        super()</div><div class="line">        this.type = &apos;cat&apos;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">let cat = new Cat()</div><div class="line">cat.says(&apos;hello&apos;) //cat says hello</div></pre></td></tr></table></figure>
+<p>上面代码首先用 <code>class</code> 定义了一个“类”，可以看到里面有一个 <code>constructor</code> 方法，这就是构造方法，而this关键字则代表实例对象。简单地说，<code>constructor</code> 内定义的方法和属性是实例对象自己的，而 <code>constructor</code> 外定义的方法和属性则是所有实力对象可以共享的。</p>
+<p>Class 之间可以通过 <code>extends</code> 关键字实现继承，这比 ES5 的通过修改原型链实现继承，要清晰和方便很多。上面定义了一个 Cat 类，该类通过 <code>extends</code> 关键字，继承了 Animal 类的所有属性和方法。</p>
+<p><code>super</code> 关键字，它指代父类的实例（即父类的 this 对象）。子类必须在 <code>constructor</code> 方法中调用 <code>super</code> 方法，否则新建实例时会报错。这是因为子类没有自己的 <code>this</code> 对象，而是继承父类的 <code>this</code> 对象，然后对其进行加工。如果不调用 <code>super</code> 方法，子类就得不到 <code>this</code> 对象。</p>
+<p>ES6 的继承机制，实质是先创造父类的实例对象 this （所以必须先调用 super 方法），然后再用子类的构造函数修改 this。</p>
+<p>P.S 如果你写 react 的话，就会发现以上三个东西在最新版 React 中出现得很多。创建的每个 component 都是一个继承 <code>React.Component</code> 的类。详见 <a href="https://facebook.github.io/react/docs/reusable-components.html" target="_blank" rel="external">react 文档</a></p>
+<h3 id="arrow-function"><a href="#arrow-function" class="headerlink" title="arrow function"></a>arrow function</h3><p>这个恐怕是 ES6 最最常用的一个新特性了，用它来写 function 比原来的写法要简洁清晰很多:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">function(i)&#123; return i + 1; &#125; //ES5</div><div class="line">(i) =&gt; i + 1 //ES6</div></pre></td></tr></table></figure>
+<p>简直是简单的不像话对吧…</p>
+<p>如果方程比较复杂，则需要用 <code>{}</code> 把代码包起来：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">function(x, y) &#123; </div><div class="line">    x++;</div><div class="line">    y--;</div><div class="line">    return x + y;</div><div class="line">&#125;</div><div class="line">(x, y) =&gt; &#123;x++; y--; return x+y&#125;</div></pre></td></tr></table></figure>
+<p>除了看上去更简洁以外，arrow function 还有一项超级无敌的功能！</p>
+<p>长期以来，JavaScript 语言的 <code>this</code> 对象一直是一个令人头痛的问题，在对象方法中使用 this，必须非常小心。例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">class Animal &#123;</div><div class="line">    constructor()&#123;</div><div class="line">        this.type = &apos;animal&apos;</div><div class="line">    &#125;</div><div class="line">    says(say)&#123;</div><div class="line">        setTimeout(function()&#123;</div><div class="line">            console.log(this.type + &apos; says &apos; + say)</div><div class="line">        &#125;, 1000)</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"> var animal = new Animal()</div><div class="line"> animal.says(&apos;hi&apos;)  //undefined says hi</div></pre></td></tr></table></figure>
+<p>运行上面的代码会报错，这是因为 <code>setTimeout</code> 中的 <code>this</code> 指向的是全局对象。所以为了让它能够正确的运行，传统的解决方法有两种：</p>
+<p>1.第一种是将 this 传给 self,再用 self 来指代 this</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">says(say)&#123;</div><div class="line">    var self = this;</div><div class="line">    setTimeout(function()&#123;</div><div class="line">        console.log(self.type + &apos; says &apos; + say)</div><div class="line">    &#125;, 1000)</div></pre></td></tr></table></figure>
+<p>2.第二种方法是用 <code>bind(this)</code>,即</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">says(say)&#123;</div><div class="line">    setTimeout(function()&#123;</div><div class="line">        console.log(self.type + &apos; says &apos; + say)</div><div class="line">    &#125;.bind(this), 1000)</div></pre></td></tr></table></figure>
+<p>但现在我们有了箭头函数，就不需要这么麻烦了：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">class Animal &#123;</div><div class="line">    constructor()&#123;</div><div class="line">        this.type = &apos;animal&apos;</div><div class="line">    &#125;</div><div class="line">    says(say)&#123;</div><div class="line">        setTimeout( () =&gt; &#123;</div><div class="line">            console.log(this.type + &apos; says &apos; + say)</div><div class="line">        &#125;, 1000)</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"> var animal = new Animal()</div><div class="line"> animal.says(&apos;hi&apos;)  //animal says hi</div></pre></td></tr></table></figure>
+<p>当我们使用箭头函数时，函数体内的 this 对象，就是定义时所在的对象，而不是使用时所在的对象。</p>
+<p>并不是因为箭头函数内部有绑定 this 的机制，实际原因是箭头函数根本没有自己的 this，它的 this 是继承外面的，因此内部的 this 就是外层代码块的 this。</p>
+<h3 id="template-string"><a href="#template-string" class="headerlink" title="template string"></a>template string</h3><p>这个东西也是非常有用，当我们要插入大段的 html 内容到文档中时，传统的写法非常麻烦，所以之前我们通常会引用一些模板工具库，比如 mustache 等等。</p>
+<p>大家可以先看下面一段代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$(&quot;#result&quot;).append(</div><div class="line">  &quot;There are &lt;b&gt;&quot; + basket.count + &quot;&lt;/b&gt; &quot; +</div><div class="line">  &quot;items in your basket, &quot; +</div><div class="line">  &quot;&lt;em&gt;&quot; + basket.onSale +</div><div class="line">  &quot;&lt;/em&gt; are on sale!&quot;</div><div class="line">);</div></pre></td></tr></table></figure>
+<p>我们要用一堆的 ‘+’ 号来连接文本与变量，而使用 ES6 的新特性模板字符串``后，我们可以直接这么来写：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$(&quot;#result&quot;).append(`</div><div class="line">  There are &lt;b&gt;$&#123;basket.count&#125;&lt;/b&gt; items</div><div class="line">   in your basket, &lt;em&gt;$&#123;basket.onSale&#125;&lt;/em&gt;</div><div class="line">  are on sale!</div><div class="line">`);</div></pre></td></tr></table></figure>
+<p>用反引号 （`） 来标识起始，用 ${} 来引用变量，而且所有的空格和缩进都会被保留在输出之中，是不是非常爽？！</p>
+<p>React Router 从第1.0.3版开始也使用ES6语法了，比如这个例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;Link to=&#123;`/taco/$&#123;taco.name&#125;`&#125;&gt;&#123;taco.name&#125;&lt;/Link&gt;</div></pre></td></tr></table></figure>
+<p><a href="https://github.com/rackt/react-router/blob/latest/examples/passing-props-to-children/app.js" target="_blank" rel="external">React Router</a></p>
+<h3 id="destructuring"><a href="#destructuring" class="headerlink" title="destructuring"></a>destructuring</h3><p>ES6 允许按照一定模式，从数组和对象中提取值，对变量进行赋值，这被称为解构 （Destructuring）。</p>
+<p>看下面的例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">let cat = &apos;ken&apos;</div><div class="line">let dog = &apos;lili&apos;</div><div class="line">let zoo = &#123;cat: cat, dog: dog&#125;</div><div class="line">console.log(zoo)  //Object &#123;cat: &quot;ken&quot;, dog: &quot;lili&quot;&#125;</div></pre></td></tr></table></figure>
+<p>用ES6完全可以像下面这么写：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">let cat = &apos;ken&apos;</div><div class="line">let dog = &apos;lili&apos;</div><div class="line">let zoo = &#123;cat, dog&#125;</div><div class="line">console.log(zoo)  //Object &#123;cat: &quot;ken&quot;, dog: &quot;lili&quot;&#125;</div></pre></td></tr></table></figure>
+<p>反过来可以这么写：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">let dog = &#123;type: &apos;animal&apos;, many: 2&#125;</div><div class="line">let &#123; type, many&#125; = dog</div><div class="line">console.log(type, many)   //animal 2</div></pre></td></tr></table></figure>
+<h3 id="default-rest"><a href="#default-rest" class="headerlink" title="default, rest"></a>default, rest</h3><p>default 很简单，意思就是默认值。大家可以看下面的例子，调用 <code>animal()</code> 方法时忘了传参数，传统的做法就是加上这一句 <code>type = type || &#39;cat&#39;</code> 来指定默认值。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">function animal(type)&#123;</div><div class="line">    type = type || &apos;cat&apos;  </div><div class="line">    console.log(type)</div><div class="line">&#125;</div><div class="line">animal()</div></pre></td></tr></table></figure>
+<p>如果用 ES6 我们而已直接这么写：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">function animal(type = &apos;cat&apos;)&#123;</div><div class="line">    console.log(type)</div><div class="line">&#125;</div><div class="line">animal()</div></pre></td></tr></table></figure>
+<p>最后一个 rest 语法也很简单，直接看例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">function animals(...types)&#123;</div><div class="line">    console.log(types)</div><div class="line">&#125;</div><div class="line">animals(&apos;cat&apos;, &apos;dog&apos;, &apos;fish&apos;) //[&quot;cat&quot;, &quot;dog&quot;, &quot;fish&quot;]</div></pre></td></tr></table></figure>
+<p>而如果不用 ES6 的话，我们则得使用 ES5 的 <code>arguments</code>。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>以上就是 ES6 最常用的一些语法，可以说这 20% 的语法，在 ES6 的日常使用中占了 80%…</p>
 ]]></content>
     </entry>
     
