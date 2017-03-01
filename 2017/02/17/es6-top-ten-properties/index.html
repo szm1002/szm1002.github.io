@@ -98,7 +98,8 @@
 前言ES6（ECMAScript2015） 的出现，无疑给前端开发人员带来了新的惊喜，它包含了一些很棒的新特性，可以更加方便的实现很多复杂的操作，提高开发人员的效率。">
 <meta property="og:image" content="http://songziming.com.cn/2017/02/17/es6-top-ten-properties/1.png">
 <meta property="og:image" content="http://songziming.com.cn/2017/02/17/es6-top-ten-properties/3.png">
-<meta property="og:updated_time" content="2017-02-28T16:07:48.280Z">
+<meta property="og:image" content="http://songziming.com.cn/2017/02/17/es6-top-ten-properties/2.png">
+<meta property="og:updated_time" content="2017-03-01T04:38:41.550Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端开发者不得不知的 ES6 十大特性[转载]">
 <meta name="twitter:description" content="转载自AlloyTeam： http://www.alloyteam.com/2016/03/es6-front-end-developers-will-have-to-know-the-top-ten-properties/
@@ -485,7 +486,7 @@
 <p>结果令人惊讶，输出是：</p>
 <p>Class name: Account Model<br>Data is  32113123123,524214691</p>
 <h2 id="10-Modules-（模块）in-ES6"><a href="#10-Modules-（模块）in-ES6" class="headerlink" title="10.Modules （模块）in ES6"></a>10.Modules （模块）in ES6</h2><p>众所周知，在 ES6 以前 JavaScript 并不支持本地的模块。人们想出了 AMD，RequireJS，CommonJS 以及其它解决方法。现在 ES6 中可以用模块 import 和 export 操作了。 </p>
-<p>在 ES5 中，你可以在 <script> 中直接写可以运行的代码 （简称 IIFE），或者一些库像 AMD。然而在 ES6 中，你可以用 export 导入你的类。下面举个例子，在 ES5 中, module.js 有 port 变量和 getAccounts 方法:</p>
+<p>在 ES5 中，你可以在 <code>script</code> 标签中直接写可以运行的代码 （简称 IIFE），或者一些库像 AMD。然而在 ES6 中，你可以用 export 导入你的类。下面举个例子，在 ES5 中, module.js 有 port 变量和 getAccounts 方法:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">module.exports = &#123;</div><div class="line">  port: 3000,</div><div class="line">  getAccounts: function() &#123;</div><div class="line">    ...</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>在 ES5 中，main.js 需要依赖 require(‘module’)  导入 module.js：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var service = require(&apos;module.js&apos;);</div><div class="line">console.log(service.port); // 3000</div></pre></td></tr></table></figure>
@@ -497,8 +498,8 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">import * as service from &apos;module&apos;;</div><div class="line">console.log(service.port); // 3000</div></pre></td></tr></table></figure>
 <p>从我个人角度来说，我觉得 ES6 模块是让人困惑的。但可以肯定的事，它们使语言更加灵活了。</p>
 <p>并不是所有的浏览器都支持 ES6 模块，所以你需要使用一些像 jspm 去支持 ES6 模块。</p>
-<p>更多的信息和例子关于 ES6 模块，请看 <a href="http://exploringjs.com/es6/ch_modules.html">this text</a>。不管怎样，请写模块化的 JavaScript。</p>
-<h2 id="如何使用-ES6-Babel"><a href="#如何使用-ES6-Babel" class="headerlink" title="如何使用 ES6 (Babel)"></a>如何使用 ES6 (Babel)</h2><p>ES6 已经敲定，但并不是所有的浏览器都完全支持，详见：<a href="http://kangax.github.io/compat-table/es6/">http://kangax.github.io/compat-table/es6/</a>。要使用 ES6，需要一个编译器例如： babel。你可以把它作为一个独立的工具使用，也可以把它放在构建中。 grunt，gulp 和 webpack 中都有可以支持 babel 的插件。</p>
+<p>更多的信息和例子关于 ES6 模块，请看 <a href="http://exploringjs.com/es6/ch_modules.html" target="_blank" rel="external">this text</a>。不管怎样，请写模块化的 JavaScript。</p>
+<h2 id="如何使用-ES6-Babel"><a href="#如何使用-ES6-Babel" class="headerlink" title="如何使用 ES6 (Babel)"></a>如何使用 ES6 (Babel)</h2><p>ES6 已经敲定，但并不是所有的浏览器都完全支持，详见：<a href="http://kangax.github.io/compat-table/es6/" target="_blank" rel="external">http://kangax.github.io/compat-table/es6/</a>。要使用 ES6，需要一个编译器例如： babel。你可以把它作为一个独立的工具使用，也可以把它放在构建中。 grunt，gulp 和 webpack 中都有可以支持 babel 的插件。</p>
 <img src="/2017/02/17/es6-top-ten-properties/2.png" alt="2.png" title="">
 <p>这是一个 gulp 案列，安装 gulp-babel 插件：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install --save-dev gulp-babel</div></pre></td></tr></table></figure>
@@ -519,13 +520,13 @@
 <li>New data structures like Map and Set (新的数据构造对像MAP和set)</li>
 </ol>
 <h2 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h2><ol>
-<li><a href="https://github.com/azat-co/cheatsheets/tree/master/es6">ES6 Cheatsheet</a> (<a href="https://gum.co/LDwVU/git-1CC81D40">FREE PDF</a>)</li>
-<li><a href="http://webapplog.com/ES6/comment-page-1/">http://webapplog.com/ES6/comment-page-1/</a></li>
-<li><a href="https://leanpub.com/understandinges6">Understanding ECMAScript 6 by Nicolas Zakas book</a></li>
-<li><a href="http://ES6-features.org/#DateTimeFormatting">http://ES6-features.org/#DateTimeFormatting</a></li>
+<li><a href="https://github.com/azat-co/cheatsheets/tree/master/es6" target="_blank" rel="external">ES6 Cheatsheet</a> (<a href="https://gum.co/LDwVU/git-1CC81D40" target="_blank" rel="external">FREE PDF</a>)</li>
+<li><a href="http://webapplog.com/ES6/comment-page-1/" target="_blank" rel="external">http://webapplog.com/ES6/comment-page-1/</a></li>
+<li><a href="https://leanpub.com/understandinges6" target="_blank" rel="external">Understanding ECMAScript 6 by Nicolas Zakas book</a></li>
+<li><a href="http://ES6-features.org/#DateTimeFormatting" target="_blank" rel="external">http://ES6-features.org/#DateTimeFormatting</a></li>
 <li>IIFE：立刻运行的函数表达式</li>
 </ol>
-</script></p>
+
       
     </div>
 
@@ -783,7 +784,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Default-Parameters（默认参数）-in-ES6"><span class="nav-number">2.</span> <span class="nav-text">1.Default Parameters（默认参数） in ES6</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Template-Literals（模板对象）-in-ES6"><span class="nav-number">3.</span> <span class="nav-text">2.Template Literals（模板对象） in ES6</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-Multi-line-Strings-（多行字符串）in-ES6"><span class="nav-number">4.</span> <span class="nav-text">3.Multi-line Strings （多行字符串）in ES6</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-Destructuring-Assignment-（解构赋值）in-ES6"><span class="nav-number">5.</span> <span class="nav-text">4.Destructuring Assignment （解构赋值）in ES6</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-Enhanced-Object-Literals-（增强的对象字面量）in-ES6"><span class="nav-number">6.</span> <span class="nav-text">5.Enhanced Object Literals （增强的对象字面量）in ES6</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-Arrow-Functions-（箭头函数）-in-ES6"><span class="nav-number">7.</span> <span class="nav-text">6.Arrow Functions （箭头函数） in ES6</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-Promises-in-ES6"><span class="nav-number">8.</span> <span class="nav-text">7. Promises in ES6</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-Block-Scoped-Constructs-Let-and-Const（块作用域和构造let和const）"><span class="nav-number">9.</span> <span class="nav-text">8.Block-Scoped Constructs Let and Const（块作用域和构造let和const）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-Classes-（类）in-ES6"><span class="nav-number">10.</span> <span class="nav-text">9.Classes （类）in ES6</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-Modules-（模块）in-ES6"><span class="nav-number">11.</span> <span class="nav-text">10.Modules （模块）in ES6</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Default-Parameters（默认参数）-in-ES6"><span class="nav-number">2.</span> <span class="nav-text">1.Default Parameters（默认参数） in ES6</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Template-Literals（模板对象）-in-ES6"><span class="nav-number">3.</span> <span class="nav-text">2.Template Literals（模板对象） in ES6</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-Multi-line-Strings-（多行字符串）in-ES6"><span class="nav-number">4.</span> <span class="nav-text">3.Multi-line Strings （多行字符串）in ES6</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-Destructuring-Assignment-（解构赋值）in-ES6"><span class="nav-number">5.</span> <span class="nav-text">4.Destructuring Assignment （解构赋值）in ES6</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-Enhanced-Object-Literals-（增强的对象字面量）in-ES6"><span class="nav-number">6.</span> <span class="nav-text">5.Enhanced Object Literals （增强的对象字面量）in ES6</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-Arrow-Functions-（箭头函数）-in-ES6"><span class="nav-number">7.</span> <span class="nav-text">6.Arrow Functions （箭头函数） in ES6</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-Promises-in-ES6"><span class="nav-number">8.</span> <span class="nav-text">7. Promises in ES6</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-Block-Scoped-Constructs-Let-and-Const（块作用域和构造let和const）"><span class="nav-number">9.</span> <span class="nav-text">8.Block-Scoped Constructs Let and Const（块作用域和构造let和const）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-Classes-（类）in-ES6"><span class="nav-number">10.</span> <span class="nav-text">9.Classes （类）in ES6</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-Modules-（模块）in-ES6"><span class="nav-number">11.</span> <span class="nav-text">10.Modules （模块）in ES6</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何使用-ES6-Babel"><span class="nav-number">12.</span> <span class="nav-text">如何使用 ES6 (Babel)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Node-js-and-ES6"><span class="nav-number">13.</span> <span class="nav-text">Node.js and ES6</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ES6总结"><span class="nav-number">14.</span> <span class="nav-text">ES6总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考文献："><span class="nav-number">15.</span> <span class="nav-text">参考文献：</span></a></li></ol></div>
             
           </div>
         </section>
