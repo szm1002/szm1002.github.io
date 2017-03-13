@@ -87,21 +87,18 @@
 
 
 <meta name="description" content="前言this 是 JavaScript 中的一个关键字，它指向一个对象。在不同场合，this 有不同含义，在 严格模式 与 非严格模式 之间它也有一些区别。
-那么如何判断 this 关键字的指向呢？首先需要记住的一点是，this 所指的对象取决于它使用的时候所处的环境，而不是它定义的时候所处的环境（箭头函数除外）。下面分几种情况来分别讨论。
-全局上下文中的 this 值在全局上下文环境中，this">
+那么如何判断 this 关键字的指向呢？首先需要记住的一点是，this 所指的对象取决于它使用的时候所处的环境，而不是它定义的时候所处的环境（箭头函数除外）。下面分几种情况来分别讨论。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript中的 this 关键字">
 <meta property="og:url" content="http://songziming.com.cn/2017/03/13/javascript-this/index.html">
 <meta property="og:site_name" content="Mr.Song's BLOG">
 <meta property="og:description" content="前言this 是 JavaScript 中的一个关键字，它指向一个对象。在不同场合，this 有不同含义，在 严格模式 与 非严格模式 之间它也有一些区别。
-那么如何判断 this 关键字的指向呢？首先需要记住的一点是，this 所指的对象取决于它使用的时候所处的环境，而不是它定义的时候所处的环境（箭头函数除外）。下面分几种情况来分别讨论。
-全局上下文中的 this 值在全局上下文环境中，this">
-<meta property="og:updated_time" content="2017-03-13T04:53:57.249Z">
+那么如何判断 this 关键字的指向呢？首先需要记住的一点是，this 所指的对象取决于它使用的时候所处的环境，而不是它定义的时候所处的环境（箭头函数除外）。下面分几种情况来分别讨论。">
+<meta property="og:updated_time" content="2017-03-13T14:00:55.175Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript中的 this 关键字">
 <meta name="twitter:description" content="前言this 是 JavaScript 中的一个关键字，它指向一个对象。在不同场合，this 有不同含义，在 严格模式 与 非严格模式 之间它也有一些区别。
-那么如何判断 this 关键字的指向呢？首先需要记住的一点是，this 所指的对象取决于它使用的时候所处的环境，而不是它定义的时候所处的环境（箭头函数除外）。下面分几种情况来分别讨论。
-全局上下文中的 this 值在全局上下文环境中，this">
+那么如何判断 this 关键字的指向呢？首先需要记住的一点是，this 所指的对象取决于它使用的时候所处的环境，而不是它定义的时候所处的环境（箭头函数除外）。下面分几种情况来分别讨论。">
 
 
 
@@ -360,6 +357,7 @@
       
         <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><code>this</code> 是 JavaScript 中的一个关键字，它指向一个对象。在不同场合，<code>this</code> 有不同含义，在 <em>严格模式</em> 与 <em>非严格模式</em> 之间它也有一些区别。</p>
 <p>那么如何判断 this 关键字的指向呢？首先需要记住的一点是，this 所指的对象取决于它使用的时候所处的环境，而不是它定义的时候所处的环境（箭头函数除外）。下面分几种情况来分别讨论。</p>
+<a id="more"></a>
 <h2 id="全局上下文中的-this-值"><a href="#全局上下文中的-this-值" class="headerlink" title="全局上下文中的 this 值"></a>全局上下文中的 this 值</h2><p>在全局上下文环境中，this 总是指代 <strong>全局对象</strong> ，无论是否在严格模式下。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">console.log(this.document === document); // true</div><div class="line"></div><div class="line">console.log(this === window); // true</div><div class="line"></div><div class="line">this.a = 37;</div><div class="line">console.log(window.a); // 37</div></pre></td></tr></table></figure>
 <blockquote>
