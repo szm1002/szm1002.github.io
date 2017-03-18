@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://songziming.com.cn/2016/11/06/php-quote-md/</loc>
+    
+    <lastmod>2017-03-18T05:33:47.815Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://songziming.com.cn/2017/03/18/array-like-to-array/</loc>
     
     <lastmod>2017-03-18T05:27:56.600Z</lastmod>
@@ -61,13 +68,6 @@
     <loc>http://songziming.com.cn/2016/12/02/RegExp-in-JavaScript/</loc>
     
     <lastmod>2016-12-02T14:53:29.690Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://songziming.com.cn/2016/11/06/php-quote-md/</loc>
-    
-    <lastmod>2016-11-06T12:46:52.833Z</lastmod>
     
   </url>
   

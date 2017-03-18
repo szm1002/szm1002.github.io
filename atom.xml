@@ -850,7 +850,7 @@
     <link href="http://songziming.com.cn/2016/11/06/php-quote-md/"/>
     <id>http://songziming.com.cn/2016/11/06/php-quote-md/</id>
     <published>2016-11-06T12:37:16.000Z</published>
-    <updated>2016-11-06T12:46:52.833Z</updated>
+    <updated>2017-03-18T05:33:47.815Z</updated>
     
     <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>应该大部分人都知道，在 C、 C++、 Java 等语言中，单引号引用的是单个字符，双引号引用的是一个字符串。笔者之前接触 JavaScript 比较多，在 JavaScript 中单双引号是没有区别的，都可用于引用 string 类型的变量（ <em>在 JSON 中，字符串必须加双引号，单引号会导致语法错误</em> ）。但笔者最近才发现，在 PHP 中单双引号的区别与这些语言都不一样，以下谨作为记录。</p>
 <h2 id="单引号"><a href="#单引号" class="headerlink" title="单引号"></a>单引号</h2><p>在 PHP 中，用单引号（’）把一个字符串包围起来，代表引用的仅仅是这个字符串本身。也就是说变量 <code>$test</code> 以及转义序列 <code>\n</code> 或者 <code>\r</code> 等并不代表任何含义，就单纯是这几个字符串本身。举几个简单栗子如下：</p>
@@ -874,10 +874,6 @@
     
     
       <category term="PHP" scheme="http://songziming.com.cn/tags/PHP/"/>
-    
-      <category term="单引号" scheme="http://songziming.com.cn/tags/%E5%8D%95%E5%BC%95%E5%8F%B7/"/>
-    
-      <category term="双引号" scheme="http://songziming.com.cn/tags/%E5%8F%8C%E5%BC%95%E5%8F%B7/"/>
     
   </entry>
   

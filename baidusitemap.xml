@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://songziming.com.cn/2016/11/06/php-quote-md/</loc>
+    <lastmod>2017-03-18T05:33:47.815Z</lastmod>
+    <data>
+        <display>
+        <title>PHP 中单引号与双引号的区别</title>
+        <pubTime>2016-11-06T12:37:16.000Z</pubTime>
+        
+        <tag>PHP</tag>
+         
+         
+           
+             
+              <breadCrumb title="PHP" url="http://songziming.com.cn/categories/PHP/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://songziming.com.cn/2017/03/18/array-like-to-array/</loc>
     <lastmod>2017-03-18T05:27:56.600Z</lastmod>
     <data>
@@ -203,30 +223,6 @@
            
              
               <breadCrumb title="JavaScript" url="http://songziming.com.cn/categories/JavaScript/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://songziming.com.cn/2016/11/06/php-quote-md/</loc>
-    <lastmod>2016-11-06T12:46:52.833Z</lastmod>
-    <data>
-        <display>
-        <title>PHP 中单引号与双引号的区别</title>
-        <pubTime>2016-11-06T12:37:16.000Z</pubTime>
-        
-        <tag>PHP</tag>
-         
-        <tag>单引号</tag>
-         
-        <tag>双引号</tag>
-         
-         
-           
-             
-              <breadCrumb title="PHP" url="http://songziming.com.cn/categories/PHP/"/>
           
         </display>
     </data>
