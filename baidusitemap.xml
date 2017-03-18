@@ -4,6 +4,30 @@
 
     
   <url>
+    <loc>http://songziming.com.cn/2017/03/18/array-like-to-array/</loc>
+    <lastmod>2017-03-18T05:27:56.600Z</lastmod>
+    <data>
+        <display>
+        <title>类数组对象转换为数组对象的几种方法</title>
+        <pubTime>2017-03-18T05:04:23.000Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+        <tag>ES6</tag>
+         
+        <tag>数组</tag>
+         
+         
+           
+             
+              <breadCrumb title="JavaScript" url="http://songziming.com.cn/categories/JavaScript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://songziming.com.cn/2017/03/13/javascript-this/</loc>
     <lastmod>2017-03-14T15:22:43.273Z</lastmod>
     <data>
