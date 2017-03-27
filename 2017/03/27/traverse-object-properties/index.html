@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="PHP," />
+  <meta name="keywords" content="JavaScript,对象," />
 
 
 
@@ -86,19 +86,16 @@
 
 
 
-<meta name="description" content="前言应该大部分人都知道，在 C、 C++、 Java 等语言中，单引号引用的是单个字符，双引号引用的是一个字符串。笔者之前接触 JavaScript 比较多，在 JavaScript 中单双引号是没有区别的，都可用于引用 string 类型的变量（ 在 JSON 中，字符串必须加双引号，单引号会导致语法错误 ）。但笔者最近才发现，在 PHP 中单双引号的区别与这些语言都不一样，以下谨作为记录。
-单">
+<meta name="description" content="前言JavaScript 是一门面向对象的编程语言，它内置了一些可以遍历对象属性的方法，如 for...in, Object.keys(), Object.getOwnPropertyNames(), Reflect.ownKeys() 等。本文就来将这几种方法进行一下对比。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="PHP 中单引号与双引号的区别">
-<meta property="og:url" content="http://songziming.com.cn/2016/11/06/php-quote-md/index.html">
+<meta property="og:title" content="JavaScript 遍历对象属性的几种方法">
+<meta property="og:url" content="http://songziming.com.cn/2017/03/27/traverse-object-properties/index.html">
 <meta property="og:site_name" content="Mr.Song's BLOG">
-<meta property="og:description" content="前言应该大部分人都知道，在 C、 C++、 Java 等语言中，单引号引用的是单个字符，双引号引用的是一个字符串。笔者之前接触 JavaScript 比较多，在 JavaScript 中单双引号是没有区别的，都可用于引用 string 类型的变量（ 在 JSON 中，字符串必须加双引号，单引号会导致语法错误 ）。但笔者最近才发现，在 PHP 中单双引号的区别与这些语言都不一样，以下谨作为记录。
-单">
-<meta property="og:updated_time" content="2017-03-18T05:33:47.815Z">
+<meta property="og:description" content="前言JavaScript 是一门面向对象的编程语言，它内置了一些可以遍历对象属性的方法，如 for...in, Object.keys(), Object.getOwnPropertyNames(), Reflect.ownKeys() 等。本文就来将这几种方法进行一下对比。">
+<meta property="og:updated_time" content="2017-03-27T15:28:30.724Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="PHP 中单引号与双引号的区别">
-<meta name="twitter:description" content="前言应该大部分人都知道，在 C、 C++、 Java 等语言中，单引号引用的是单个字符，双引号引用的是一个字符串。笔者之前接触 JavaScript 比较多，在 JavaScript 中单双引号是没有区别的，都可用于引用 string 类型的变量（ 在 JSON 中，字符串必须加双引号，单引号会导致语法错误 ）。但笔者最近才发现，在 PHP 中单双引号的区别与这些语言都不一样，以下谨作为记录。
-单">
+<meta name="twitter:title" content="JavaScript 遍历对象属性的几种方法">
+<meta name="twitter:description" content="前言JavaScript 是一门面向对象的编程语言，它内置了一些可以遍历对象属性的方法，如 for...in, Object.keys(), Object.getOwnPropertyNames(), Reflect.ownKeys() 等。本文就来将这几种方法进行一下对比。">
 
 
 
@@ -119,9 +116,9 @@
 
 
 
-  <link rel="canonical" href="http://songziming.com.cn/2016/11/06/php-quote-md/"/>
+  <link rel="canonical" href="http://songziming.com.cn/2017/03/27/traverse-object-properties/"/>
 
-  <title> PHP 中单引号与双引号的区别 | Mr.Song's BLOG </title>
+  <title> JavaScript 遍历对象属性的几种方法 | Mr.Song's BLOG </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -284,7 +281,7 @@
             
             
               
-                PHP 中单引号与双引号的区别
+                JavaScript 遍历对象属性的几种方法
               
             
           </h1>
@@ -296,8 +293,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-11-06T20:37:16+08:00" content="2016-11-06">
-              2016-11-06
+            <time itemprop="dateCreated" datetime="2017-03-27T23:26:26+08:00" content="2017-03-27">
+              2017-03-27
             </time>
           </span>
 
@@ -310,8 +307,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/PHP/" itemprop="url" rel="index">
-                    <span itemprop="name">PHP</span>
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
                   </a>
                 </span>
 
@@ -326,8 +323,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/11/06/php-quote-md/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/06/php-quote-md/" itemprop="commentsCount"></span>
+                <a href="/2017/03/27/traverse-object-properties/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/27/traverse-object-properties/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -355,15 +352,23 @@
       
 
       
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>应该大部分人都知道，在 C、 C++、 Java 等语言中，单引号引用的是单个字符，双引号引用的是一个字符串。笔者之前接触 JavaScript 比较多，在 JavaScript 中单双引号是没有区别的，都可用于引用 string 类型的变量（ <em>在 JSON 中，字符串必须加双引号，单引号会导致语法错误</em> ）。但笔者最近才发现，在 PHP 中单双引号的区别与这些语言都不一样，以下谨作为记录。</p>
-<h2 id="单引号"><a href="#单引号" class="headerlink" title="单引号"></a>单引号</h2><p>在 PHP 中，用单引号（’）把一个字符串包围起来，代表引用的仅仅是这个字符串本身。也就是说变量 <code>$test</code> 以及转义序列 <code>\n</code> 或者 <code>\r</code> 等并不代表任何含义，就单纯是这几个字符串本身。举几个简单栗子如下：</p>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>JavaScript 是一门面向对象的编程语言，它内置了一些可以遍历对象属性的方法，如 <code>for...in</code>, <code>Object.keys()</code>, <code>Object.getOwnPropertyNames()</code>, <code>Reflect.ownKeys()</code> 等。本文就来将这几种方法进行一下对比。</p>
 <a id="more"></a>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$test = &apos;data&apos;;</div><div class="line">echo &apos;$test is a variable.&apos;;        //输出 $test is a variable.</div><div class="line">echo &apos;$test is a variable.\n&apos;;      //输出 $test is a variable.\n</div></pre></td></tr></table></figure>
-<h2 id="双引号"><a href="#双引号" class="headerlink" title="双引号"></a>双引号</h2><p>与上述所说的单引号不同，PHP中的双引号（”）则会对变量、转义字符等特殊字符进行解析。举几个栗子如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$test = &apos;data&apos;;</div><div class="line">echo &quot;$test is a variable.&quot;;        //输出 data is a variable.</div><div class="line">echo &quot;$test is a variable.\n&quot;;      //输出 data is a variable.（同时换行）</div></pre></td></tr></table></figure>
-<h2 id="结束语"><a href="#结束语" class="headerlink" title="结束语"></a>结束语</h2><p>总结成一句话就是，<strong> PHP 里的单引号把内容当成纯文本，不经过服务器翻译，而双引号里面的内容则会经过服务器处理</strong>。由于存在这个区别，在PHP中使用引号时结合点操作符（.）操作字符串就可以非常灵活了。比如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$name = &apos;szm&apos;;</div><div class="line">echo &apos;My name is &apos;.$name.&apos;.&apos;;</div><div class="line">echo &quot;My name is $name.&quot;;</div><div class="line"></div><div class="line">//两个输出都是 My name is szm.</div></pre></td></tr></table></figure>
-<p>怎么样，是不是觉得PHP的这个特性很神奇？</p>
+<h2 id="for…in"><a href="#for…in" class="headerlink" title="for…in"></a>for…in</h2><p><code>for...in</code> 语句是一种精确的迭代语句，可以用来枚举一个对象的所有 <strong>可枚举属性</strong>，包括从原型链上继承的属性。如下所示：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> obj = &#123;</div><div class="line">    <span class="attr">a</span>: <span class="number">1</span>,</div><div class="line">    <span class="attr">b</span>: <span class="number">2</span>,</div><div class="line">    <span class="attr">c</span>: <span class="number">3</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//增加一个不可枚举的属性</span></div><div class="line"><span class="built_in">Object</span>.defineProperty(obj, <span class="string">'d'</span>, &#123;</div><div class="line">    <span class="attr">value</span>: <span class="number">4</span>,</div><div class="line">    <span class="attr">enumerable</span>: <span class="literal">false</span></div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">//在原型链中添加一个可枚举属性</span></div><div class="line"><span class="built_in">Object</span>.defineProperty(<span class="built_in">Object</span>.prototype, <span class="string">'e'</span>, &#123;</div><div class="line">    <span class="attr">value</span>: <span class="number">5</span>,</div><div class="line">    <span class="attr">enumerable</span>: <span class="literal">true</span></div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="keyword">for</span> (<span class="keyword">let</span> key <span class="keyword">in</span> obj) &#123;</div><div class="line">    <span class="built_in">console</span>.log(key);    <span class="comment">// -&gt; a, b, c, e</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>需要注意的是，由于 ECMAScript 对象的属性没有顺序，通过 <code>for...in</code> 循环输出的属性名的 <strong>顺序是不可预测的</strong>。也就是说，对象的所有属性都会被返回一次，但返回的先后顺序可能因浏览器而异。</p>
+<h2 id="Object-keys"><a href="#Object-keys" class="headerlink" title="Object.keys()"></a>Object.keys()</h2><p><code>Object.keys()</code> 方法会返回一个由目标对象的 <strong>自身可枚举属性</strong> 组成的数组。它只会遍历对象自身的可枚举属性，而不会遍历到从原型链中继承的属性。如下所示：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> obj = &#123;</div><div class="line">    <span class="attr">a</span>: <span class="number">1</span>,</div><div class="line">    <span class="attr">b</span>: <span class="number">2</span>,</div><div class="line">    <span class="attr">c</span>: <span class="number">3</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//增加一个不可枚举的属性</span></div><div class="line"><span class="built_in">Object</span>.defineProperty(obj, <span class="string">'d'</span>, &#123;</div><div class="line">    <span class="attr">value</span>: <span class="number">4</span>,</div><div class="line">    <span class="attr">enumerable</span>: <span class="literal">false</span></div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">//在原型链中添加一个可枚举属性</span></div><div class="line"><span class="built_in">Object</span>.defineProperty(<span class="built_in">Object</span>.prototype, <span class="string">'e'</span>, &#123;</div><div class="line">    <span class="attr">value</span>: <span class="number">5</span>,</div><div class="line">    <span class="attr">enumerable</span>: <span class="literal">true</span></div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.keys(obj));  <span class="comment">// -&gt; ["a", "b", "c"]</span></div></pre></td></tr></table></figure>
+<p>通过 <code>Object.keys()</code> 返回的数组中，属性名的排列顺序和使用 <code>for...in</code> 循环遍历该对象时返回的顺序一致。</p>
+<h2 id="Object-getOwnPropertyNames"><a href="#Object-getOwnPropertyNames" class="headerlink" title="Object.getOwnPropertyNames()"></a>Object.getOwnPropertyNames()</h2><p><code>Object.getOwnPropertyNames()</code> 方法会返回一个由目标对象的<strong>所有自身属性</strong>组成的数组，包括自身的不可枚举属性，但它不会遍历到原型链中继承的属性。如下所示：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> obj = &#123;</div><div class="line">    <span class="attr">a</span>: <span class="number">1</span>,</div><div class="line">    <span class="attr">b</span>: <span class="number">2</span>,</div><div class="line">    <span class="attr">c</span>: <span class="number">3</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//增加一个不可枚举的属性</span></div><div class="line"><span class="built_in">Object</span>.defineProperty(obj, <span class="string">'d'</span>, &#123;</div><div class="line">    <span class="attr">value</span>: <span class="number">4</span>,</div><div class="line">    <span class="attr">enumerable</span>: <span class="literal">false</span></div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">//在原型链中添加一个可枚举属性</span></div><div class="line"><span class="built_in">Object</span>.defineProperty(<span class="built_in">Object</span>.prototype, <span class="string">'e'</span>, &#123;</div><div class="line">    <span class="attr">value</span>: <span class="number">5</span>,</div><div class="line">    <span class="attr">enumerable</span>: <span class="literal">true</span></div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.getOwnPropertyNames(obj));  <span class="comment">// -&gt; ["a", "b", "c", "d"]</span></div></pre></td></tr></table></figure>
+<p>通过 <code>Object.getOwnPropertyNames()</code> 返回的数组中，可枚举属性的排列顺序也与使用 <code>for...in</code> 循环遍历该对象时返回的顺序一致，不可枚举属性的顺序未定义。</p>
+<h2 id="Reflect-ownKeys"><a href="#Reflect-ownKeys" class="headerlink" title="Reflect.ownKeys()"></a>Reflect.ownKeys()</h2><p><code>[Relect](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect &quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect&quot;)</code> 对象是 ES6 为了更好操作对象而提供的新 API，关于 <code>Reflect</code> 对象的介绍在此不做过多阐述，本文主要讨论它的一个静态方法 <code>Reflect.ownKeys()</code>。</p>
+<p><code>Reflect.ownKeys()</code> 方法会返回一个由目标对象 <strong>所有自身属性</strong> 组成的数组，与 <code>Object.getOwnPropertyNames()</code> 相似，但前者返回的数组里还会包括目标对象自身的所有 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol" title="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol" target="_blank" rel="external">symbol</a> 属性键，它的返回值等同于 <code>Object.getOwnPropertyNames(target).concat(Object.getOwnPropertySymbols(target))</code>。如下所示：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> obj = &#123;</div><div class="line">    <span class="attr">a</span>: <span class="number">1</span>,</div><div class="line">    <span class="attr">b</span>: <span class="number">2</span>,</div><div class="line">    <span class="attr">c</span>: <span class="number">3</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//增加一个不可枚举的属性</span></div><div class="line"><span class="built_in">Object</span>.defineProperty(obj, <span class="string">'d'</span>, &#123;</div><div class="line">    <span class="attr">value</span>: <span class="number">4</span>,</div><div class="line">    <span class="attr">enumerable</span>: <span class="literal">false</span></div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">//在原型链中添加一个可枚举属性</span></div><div class="line"><span class="built_in">Object</span>.defineProperty(<span class="built_in">Object</span>.prototype, <span class="string">'e'</span>, &#123;</div><div class="line">    <span class="attr">value</span>: <span class="number">5</span>,</div><div class="line">    <span class="attr">enumerable</span>: <span class="literal">true</span></div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Reflect</span>.ownKeys(obj));  <span class="comment">// -&gt; ["a", "b", "c", "d"]</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>关于 Symbol 属性键，在此也不做过多介绍。</p>
+</blockquote>
 
       
     </div>
@@ -417,7 +422,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/PHP/" rel="tag">#PHP</a>
+            <a href="/tags/JavaScript/" rel="tag">#JavaScript</a>
+          
+            <a href="/tags/对象/" rel="tag">#对象</a>
           
         </div>
       
@@ -426,17 +433,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/10/30/callback/" rel="next" title="JavaScript中的回调函数">
-                <i class="fa fa-chevron-left"></i> JavaScript中的回调函数
+              <a href="/2017/03/18/array-like-to-array/" rel="next" title="类数组对象转换为数组对象的几种方法">
+                <i class="fa fa-chevron-left"></i> 类数组对象转换为数组对象的几种方法
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/12/02/RegExp-in-JavaScript/" rel="prev" title="JavaScript 中的正则表达式">
-                JavaScript 中的正则表达式 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -485,8 +488,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/11/06/php-quote-md/"
-           data-title="PHP 中单引号与双引号的区别" data-url="http://songziming.com.cn/2016/11/06/php-quote-md/">
+      <div class="ds-thread" data-thread-key="2017/03/27/traverse-object-properties/"
+           data-title="JavaScript 遍历对象属性的几种方法" data-url="http://songziming.com.cn/2017/03/27/traverse-object-properties/">
       </div>
     
   </div>
@@ -622,7 +625,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单引号"><span class="nav-number">2.</span> <span class="nav-text">单引号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#双引号"><span class="nav-number">3.</span> <span class="nav-text">双引号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结束语"><span class="nav-number">4.</span> <span class="nav-text">结束语</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#for…in"><span class="nav-number">2.</span> <span class="nav-text">for…in</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Object-keys"><span class="nav-number">3.</span> <span class="nav-text">Object.keys()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Object-getOwnPropertyNames"><span class="nav-number">4.</span> <span class="nav-text">Object.getOwnPropertyNames()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reflect-ownKeys"><span class="nav-number">5.</span> <span class="nav-text">Reflect.ownKeys()</span></a></li></ol></div>
             
           </div>
         </section>
