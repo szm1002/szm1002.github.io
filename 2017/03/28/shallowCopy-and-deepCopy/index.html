@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="HTTP,GET,POST," />
+  <meta name="keywords" content="JavaScript,深复制,浅复制," />
 
 
 
@@ -86,24 +86,16 @@
 
 
 
-<meta name="description" content="前言HTTP（超文本传输协议) 是目前互联网上应用最为广泛的一种 网络协议 ，Web 网络中 客户端(Client) 到 服务器端(Server) 的通信就是建立在 HTTP 协议上。
-
-HTTP 定义了几种客户端向服务器端发出请求的方法，如 GET、POST、HEAD、DELETE、OPTIONS、TRACE、CONNECT 等。但最常用的还是 GET 与 POST 方法，这两个方法之间的区别也">
+<meta name="description" content="前言在 JavaScript 中，对于 Object 与 Array 等引用类型值的复制出现了深复制与浅复制的概念。简单的说，浅复制只复制一层对象的属性，而深复制则递归复制了所有层级。下面介绍一下如何实现对象的深复制与浅复制。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="简单谈谈 GET 与 POST 的区别">
-<meta property="og:url" content="http://songziming.com.cn/2016/10/19/get-vs-post/index.html">
+<meta property="og:title" content="JavaScript 中深复制与浅复制的实现">
+<meta property="og:url" content="http://songziming.com.cn/2017/03/28/shallowCopy-and-deepCopy/index.html">
 <meta property="og:site_name" content="Mr.Song's BLOG">
-<meta property="og:description" content="前言HTTP（超文本传输协议) 是目前互联网上应用最为广泛的一种 网络协议 ，Web 网络中 客户端(Client) 到 服务器端(Server) 的通信就是建立在 HTTP 协议上。
-
-HTTP 定义了几种客户端向服务器端发出请求的方法，如 GET、POST、HEAD、DELETE、OPTIONS、TRACE、CONNECT 等。但最常用的还是 GET 与 POST 方法，这两个方法之间的区别也">
-<meta property="og:image" content="http://songziming.com.cn/2016/10/19/get-vs-post/request.png">
-<meta property="og:updated_time" content="2016-11-05T10:19:20.885Z">
+<meta property="og:description" content="前言在 JavaScript 中，对于 Object 与 Array 等引用类型值的复制出现了深复制与浅复制的概念。简单的说，浅复制只复制一层对象的属性，而深复制则递归复制了所有层级。下面介绍一下如何实现对象的深复制与浅复制。">
+<meta property="og:updated_time" content="2017-03-28T15:58:41.786Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="简单谈谈 GET 与 POST 的区别">
-<meta name="twitter:description" content="前言HTTP（超文本传输协议) 是目前互联网上应用最为广泛的一种 网络协议 ，Web 网络中 客户端(Client) 到 服务器端(Server) 的通信就是建立在 HTTP 协议上。
-
-HTTP 定义了几种客户端向服务器端发出请求的方法，如 GET、POST、HEAD、DELETE、OPTIONS、TRACE、CONNECT 等。但最常用的还是 GET 与 POST 方法，这两个方法之间的区别也">
-<meta name="twitter:image" content="http://songziming.com.cn/2016/10/19/get-vs-post/request.png">
+<meta name="twitter:title" content="JavaScript 中深复制与浅复制的实现">
+<meta name="twitter:description" content="前言在 JavaScript 中，对于 Object 与 Array 等引用类型值的复制出现了深复制与浅复制的概念。简单的说，浅复制只复制一层对象的属性，而深复制则递归复制了所有层级。下面介绍一下如何实现对象的深复制与浅复制。">
 
 
 
@@ -124,9 +116,9 @@ HTTP 定义了几种客户端向服务器端发出请求的方法，如 GET、PO
 
 
 
-  <link rel="canonical" href="http://songziming.com.cn/2016/10/19/get-vs-post/"/>
+  <link rel="canonical" href="http://songziming.com.cn/2017/03/28/shallowCopy-and-deepCopy/"/>
 
-  <title> 简单谈谈 GET 与 POST 的区别 | Mr.Song's BLOG </title>
+  <title> JavaScript 中深复制与浅复制的实现 | Mr.Song's BLOG </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -289,7 +281,7 @@ HTTP 定义了几种客户端向服务器端发出请求的方法，如 GET、PO
             
             
               
-                简单谈谈 GET 与 POST 的区别
+                JavaScript 中深复制与浅复制的实现
               
             
           </h1>
@@ -301,8 +293,8 @@ HTTP 定义了几种客户端向服务器端发出请求的方法，如 GET、PO
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-19T23:29:42+08:00" content="2016-10-19">
-              2016-10-19
+            <time itemprop="dateCreated" datetime="2017-03-28T23:47:50+08:00" content="2017-03-28">
+              2017-03-28
             </time>
           </span>
 
@@ -331,8 +323,8 @@ HTTP 定义了几种客户端向服务器端发出请求的方法，如 GET、PO
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/10/19/get-vs-post/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/19/get-vs-post/" itemprop="commentsCount"></span>
+                <a href="/2017/03/28/shallowCopy-and-deepCopy/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/28/shallowCopy-and-deepCopy/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -360,55 +352,19 @@ HTTP 定义了几种客户端向服务器端发出请求的方法，如 GET、PO
       
 
       
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><a href="https://zh.wikipedia.org/wiki/%E8%B6%85%E6%96%87%E6%9C%AC%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE" title="HyperText Transfer Protocol" target="_blank" rel="external">HTTP（超文本传输协议)</a> 是目前互联网上应用最为广泛的一种 <a href="https://zh.wikipedia.org/wiki/%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE" target="_blank" rel="external">网络协议</a> ，Web 网络中 <a href="https://zh.wikipedia.org/wiki/%E5%AE%A2%E6%88%B7%E7%AB%AF" target="_blank" rel="external">客户端(Client)</a> 到 <a href="https://zh.wikipedia.org/wiki/%E6%9C%8D%E5%8A%A1%E5%99%A8" target="_blank" rel="external">服务器端(Server)</a> 的通信就是建立在 HTTP 协议上。</p>
-<img src="/2016/10/19/get-vs-post/request.png" alt="Communication between Client and Server." title="Communication between Client and Server.">
-<p>HTTP 定义了几种客户端向服务器端发出请求的方法，如 GET、POST、HEAD、DELETE、OPTIONS、TRACE、CONNECT 等。但最常用的还是 GET 与 POST 方法，这两个方法之间的区别也是很多互联网公司面试官喜欢问的问题，下面笔者就来简单谈谈。</p>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在 JavaScript 中，对于 Object 与 Array 等引用类型值的复制出现了深复制与浅复制的概念。简单的说，浅复制只复制一层对象的属性，而深复制则递归复制了所有层级。下面介绍一下如何实现对象的深复制与浅复制。</p>
 <a id="more"></a>
-<h2 id="GET-方法"><a href="#GET-方法" class="headerlink" title="GET 方法"></a>GET 方法</h2><p>1.<strong>GET 方法主要用于对服务器资源的获取。</strong>根据<a href="https://www.w3.org/Protocols/rfc2616/rfc2616.txt" target="_blank" rel="external"> HTTP 规范</a> ，它应该是 <strong>安全</strong> 的和 <a href="https://zh.wikipedia.org/wiki/%E5%86%AA%E7%AD%89" target="_blank" rel="external"><strong>幂等</strong></a> 的。</p>
-<blockquote>
-<p><em>安全</em> 指的是它的操作应该是无损害(non-destructive)的。通过 GET 方法，你（客户端）仅仅是从服务器端<code>获取</code>信息，而不会增加、修改数据，不会更改服务器上的资源。</p>
-<p><em>幂等</em> 指的是客户端对同一 <a href="https://zh.wikipedia.org/wiki/%E7%BB%9F%E4%B8%80%E8%B5%84%E6%BA%90%E5%AE%9A%E4%BD%8D%E7%AC%A6" target="_blank" rel="external">URL</a> 的多次请求应该返回同样的结果。</p>
-</blockquote>
-<p>2.<strong>GET 请求的查询字符串（键值对）是随 URL 一起发送的。</strong>URL 和传输数据以 <code>?</code> 分割，参数之间以 <code>&amp;</code> 相连，如 <code>/test/demo_form.asp?name1=value1&amp;name2=value2</code> 。</p>
-<blockquote>
-<p>正因如此，处理敏感数据（如密码）时，不应使用 GET 方法。</p>
-</blockquote>
-<p>3.<strong>GET 方法传输数据的长度是有限制的。</strong></p>
-<blockquote>
-<p>虽然在 HTTP 规范中，GET 请求数据的长度和 URL 长度都是无限制的，但实际上，大多数浏览器会限制 URL 长度(如 IE 浏览器限制在2083 bit）。因此 GET 请求传输数据的长度会有所限制。</p>
-</blockquote>
-<p>4.<strong>GET 请求可以被浏览器缓存。</strong></p>
-<blockquote>
-<p>因此，通过 GET 方法返回的数据可能是浏览器缓存的数据。</p>
-</blockquote>
-<p>5.<strong>GET 请求保留在浏览器历史记录中且可被收藏为书签。</strong></p>
-<blockquote>
-<p>笔者认为这一点也是 <em>查询字符串会随 URL 一起发送</em> 的缘故。</p>
-</blockquote>
-<p>6.<strong>GET 方法传输的数据只能是 ASCII 码格式，否则需要 URL 编码才能进行传输。</strong></p>
-<blockquote>
-<p>这也是由于 URL 的编码格式采用的是 ASCII 码。</p>
-</blockquote>
-<h2 id="POST-方法"><a href="#POST-方法" class="headerlink" title="POST 方法"></a>POST 方法</h2><p>1.<strong>POST 方法主要用于向指定的资源提交数据。</strong>服务器端会获取这些数据并处理，然后进行回应。</p>
-<blockquote>
-<p>也就是说，POST 请求的操作是有损害(destructive)的，在发出请求的同时会有数据传送到服务器端，你（客户端）会对服务器端的资源进行更改。</p>
-</blockquote>
-<p>2.<strong>POST 请求的查询字符串（键值对）是在该请求的 HTTP 消息主体(request body)中发送的</strong>：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">POST /test/demo_form.asp HTTP/1.1</div><div class="line">Host: w3schools.com</div><div class="line">name1=value1&amp;name2=value2</div></pre></td></tr></table></figure>
-<blockquote>
-<p>正因如此，POST 请求相对 GET 请求在数据传输方面更加安全。（注意：此 <em>安全</em> 区别于上文提到的 GET 方法的安全性）</p>
-</blockquote>
-<p>3.<strong>POST 方法传输的数据长度没有限制。</strong></p>
-<blockquote>
-<p>在 HTTP 规范中，没有对 POST 请求传输的数据长度进行限制，而 POST 方法不依赖 URL ，所以没有限制。</p>
-</blockquote>
-<p>4.<strong>POST 请求不会被浏览器缓存。</strong></p>
-<blockquote>
-<p>如果你想，也可以通过手动设置的方法让浏览器进行缓存，不过通常不会这样做。</p>
-</blockquote>
-<p>5.<strong>POST 请求不会被保存在浏览器历史记录中，因此也无法被收藏为书签。</strong></p>
-<p>6.<strong>POST 方法传输的数据对格式没有要求，比如，它允许是二进制数据。</strong></p>
-<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>以上就是笔者对于 HTTP 协议中 GET 方法与 POST 方法二者区别的理解。若在以后学习过程中有新的发现或理解，笔者会及时进行更新。</p>
+<h2 id="浅复制"><a href="#浅复制" class="headerlink" title="浅复制"></a>浅复制</h2><p>浅复制只会将对象的各个属性进行依次复制，并不会进行递归复制，很容易实现：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//浅复制</span></div><div class="line"><span class="keyword">const</span> shallowCopy = <span class="function"><span class="params">source</span> =&gt;</span> &#123;</div><div class="line">    <span class="comment">//检验传入的参数</span></div><div class="line">    <span class="keyword">if</span> (!source || <span class="keyword">typeof</span> source !== <span class="string">'object'</span>) &#123;</div><div class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'Error arguments'</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">//判断参数是数组还是普通对象</span></div><div class="line">    <span class="keyword">let</span> newObj = source.constructor === <span class="built_in">Array</span> ? [] : &#123;&#125;;</div><div class="line"></div><div class="line">    <span class="built_in">Object</span>.keys(source).forEach(<span class="function"><span class="params">key</span> =&gt;</span> &#123;</div><div class="line">        newObj[key] = source[key];</div><div class="line">    &#125;);</div><div class="line"></div><div class="line">    <span class="keyword">return</span> newObj;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>对于数组，我们还可以通过 <code>Array.prototype.slice()</code> 和 <code>Array.prototype.concat()</code> 来进行浅复制。如下所示：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> arr1 = [<span class="string">'szm'</span>, &#123;<span class="attr">age</span>: <span class="number">24</span>&#125;];</div><div class="line"></div><div class="line"><span class="keyword">let</span> arr2 = arr1.slice(); </div><div class="line"><span class="keyword">let</span> arr3 = arr1.concat(); </div><div class="line"><span class="built_in">console</span>.log(arr2);</div><div class="line"><span class="built_in">console</span>.log(arr3);  <span class="comment">// ['szm', &#123;age: 24&#125;]</span></div></pre></td></tr></table></figure>
+<p>在 ES6 中，Object 类型引入了一个新的方法 <code>Object.assign()</code>，用于将所有可枚举属性的值从一个或多个源对象复制到目标对象，所以我们可以用它来进行对象的浅复制。如下所示：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> obj = &#123; </div><div class="line">    <span class="attr">name</span>: <span class="string">'szm'</span>,</div><div class="line">    <span class="attr">age</span>: <span class="number">24</span></div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">let</span> copy = <span class="built_in">Object</span>.assign(&#123;&#125;, obj);</div><div class="line"><span class="built_in">console</span>.log(copy);  <span class="comment">// &#123; name: 'szm', age: 24 &#125;</span></div></pre></td></tr></table></figure>
+<h2 id="深复制"><a href="#深复制" class="headerlink" title="深复制"></a>深复制</h2><p>不同于浅复制，深复制会将对象的属性递归复制，其实现如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//深复制</span></div><div class="line"><span class="keyword">const</span> deepCopy = <span class="function"><span class="params">source</span> =&gt;</span> &#123;</div><div class="line">    <span class="comment">//检验传入的参数</span></div><div class="line">    <span class="keyword">if</span> (!source || <span class="keyword">typeof</span> source !== <span class="string">'object'</span> ) &#123;</div><div class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'Error arguments'</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">//判断参数是数组还是普通对象</span></div><div class="line">    <span class="keyword">let</span> newObj = source.constructor === <span class="built_in">Array</span> ? [] : &#123;&#125;;</div><div class="line"></div><div class="line">    <span class="built_in">Object</span>.keys(source).forEach(<span class="function"><span class="params">key</span> =&gt;</span> &#123;</div><div class="line">        <span class="keyword">if</span> (source[key] &amp;&amp; <span class="keyword">typeof</span> source[key] === <span class="string">'object'</span>) &#123;</div><div class="line">            newObj[key] = source[key].constructor === <span class="built_in">Array</span> ? [] : &#123;&#125;;</div><div class="line">            newObj[key] = deepCopy(source[key]);</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            newObj[key] = source[key];</div><div class="line">        &#125;</div><div class="line">    &#125;);</div><div class="line"></div><div class="line">    <span class="keyword">return</span> newObj;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>除了递归，还有一种实现深复制的方式是利用 JSON 对象的 parse() 方法和 stringify() 方法，JOSN 对象中的 stringify 可以把一个 js 对象序列化为一个 JSON 字符串，parse 可以把 JSON 字符串反序列化为一个 js 对象，通过这两个方法，也可以实现对象的深复制。</p>
+<p>但是，由于 JSON 对象不支持 undefined 类型与函数，所以它们在序列化时会被有意忽略。如下所示：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 利用JSON序列化实现一个深复制</span></div><div class="line"><span class="keyword">const</span> deepCopy = <span class="function"><span class="params">source</span> =&gt;</span> <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(source));</div><div class="line"></div><div class="line"><span class="keyword">let</span> source = &#123;</div><div class="line">  <span class="attr">arr</span>: [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>],</div><div class="line">  <span class="attr">obj</span>: &#123;</div><div class="line">    <span class="attr">name</span>: <span class="string">'szm'</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">func</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">let</span> target = deepCopy(source);</div><div class="line"><span class="built_in">console</span>.log(target); <span class="comment">// &#123;arr: [1,2,3], obj: &#123;name: 'szm'&#125;&#125;</span></div></pre></td></tr></table></figure>
 
       
     </div>
@@ -462,11 +418,11 @@ HTTP 定义了几种客户端向服务器端发出请求的方法，如 GET、PO
       
         <div class="post-tags">
           
-            <a href="/tags/HTTP/" rel="tag">#HTTP</a>
+            <a href="/tags/JavaScript/" rel="tag">#JavaScript</a>
           
-            <a href="/tags/GET/" rel="tag">#GET</a>
+            <a href="/tags/深复制/" rel="tag">#深复制</a>
           
-            <a href="/tags/POST/" rel="tag">#POST</a>
+            <a href="/tags/浅复制/" rel="tag">#浅复制</a>
           
         </div>
       
@@ -475,17 +431,13 @@ HTTP 定义了几种客户端向服务器端发出请求的方法，如 GET、PO
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/10/02/how-to-set-up-blog/" rel="next" title="如何搭建个人博客（GitHub Pages + Hexo + 域名绑定）">
-                <i class="fa fa-chevron-left"></i> 如何搭建个人博客（GitHub Pages + Hexo + 域名绑定）
+              <a href="/2017/03/27/traverse-object-properties/" rel="next" title="JavaScript 遍历对象属性的方法">
+                <i class="fa fa-chevron-left"></i> JavaScript 遍历对象属性的方法
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/10/30/callback/" rel="prev" title="JavaScript中的回调函数">
-                JavaScript中的回调函数 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -534,8 +486,8 @@ HTTP 定义了几种客户端向服务器端发出请求的方法，如 GET、PO
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/10/19/get-vs-post/"
-           data-title="简单谈谈 GET 与 POST 的区别" data-url="http://songziming.com.cn/2016/10/19/get-vs-post/">
+      <div class="ds-thread" data-thread-key="2017/03/28/shallowCopy-and-deepCopy/"
+           data-title="JavaScript 中深复制与浅复制的实现" data-url="http://songziming.com.cn/2017/03/28/shallowCopy-and-deepCopy/">
       </div>
     
   </div>
@@ -671,7 +623,7 @@ HTTP 定义了几种客户端向服务器端发出请求的方法，如 GET、PO
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GET-方法"><span class="nav-number">2.</span> <span class="nav-text">GET 方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#POST-方法"><span class="nav-number">3.</span> <span class="nav-text">POST 方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结语"><span class="nav-number">4.</span> <span class="nav-text">结语</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#浅复制"><span class="nav-number">2.</span> <span class="nav-text">浅复制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#深复制"><span class="nav-number">3.</span> <span class="nav-text">深复制</span></a></li></ol></div>
             
           </div>
         </section>
