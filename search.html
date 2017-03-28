@@ -5,7 +5,7 @@
     
     <entry>
       <title><![CDATA[JavaScript 中深复制与浅复制的实现]]></title>
-      <url>http://songziming.com.cn/2017/03/28/shallowCopy-and-deepCopy/</url>
+      <url>http://songziming.com.cn/2017/03/29/shallowCopy-and-deepCopy/</url>
       <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在 JavaScript 中，对于 Object 与 Array 等引用类型值的复制出现了深复制与浅复制的概念。简单的说，浅复制只复制一层对象的属性，而深复制则递归复制了所有层级。下面介绍一下如何实现对象的深复制与浅复制。</p>
 <a id="more"></a>
 <h2 id="浅复制"><a href="#浅复制" class="headerlink" title="浅复制"></a>浅复制</h2><p>浅复制只会将对象的各个属性进行依次复制，并不会进行递归复制，很容易实现：</p>

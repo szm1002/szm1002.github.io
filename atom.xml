@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://songziming.com.cn/"/>
-  <updated>2017-03-28T15:58:41.786Z</updated>
+  <updated>2017-03-28T16:03:56.011Z</updated>
   <id>http://songziming.com.cn/</id>
   
   <author>
@@ -17,10 +17,10 @@
   
   <entry>
     <title>JavaScript 中深复制与浅复制的实现</title>
-    <link href="http://songziming.com.cn/2017/03/28/shallowCopy-and-deepCopy/"/>
-    <id>http://songziming.com.cn/2017/03/28/shallowCopy-and-deepCopy/</id>
-    <published>2017-03-28T15:47:50.000Z</published>
-    <updated>2017-03-28T15:58:41.786Z</updated>
+    <link href="http://songziming.com.cn/2017/03/29/shallowCopy-and-deepCopy/"/>
+    <id>http://songziming.com.cn/2017/03/29/shallowCopy-and-deepCopy/</id>
+    <published>2017-03-28T16:27:50.000Z</published>
+    <updated>2017-03-28T16:03:56.011Z</updated>
     
     <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在 JavaScript 中，对于 Object 与 Array 等引用类型值的复制出现了深复制与浅复制的概念。简单的说，浅复制只复制一层对象的属性，而深复制则递归复制了所有层级。下面介绍一下如何实现对象的深复制与浅复制。</p>
 <a id="more"></a>
