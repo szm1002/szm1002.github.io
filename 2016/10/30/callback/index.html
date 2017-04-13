@@ -86,22 +86,16 @@
 
 
 
-<meta name="description" content="什么是回调函数回调函数（Callback） 是一段可执行的代码段（通常包装成一个函数），它会作为一个参数传递给其他的代码（通常也是一个函数）。回调函数会等待父函数执行完毕后立即执行，而与此同时，其他函数的调用不会受到阻塞。
-
-A callback is a function that is passed as an argument to another function and is execu">
+<meta name="description" content="什么是回调函数回调函数（Callback） 是一段可执行的代码段（通常包装成一个函数），它会作为一个参数传递给其他的代码（通常也是一个函数）。回调函数会等待父函数执行完毕后立即执行，而与此同时，其他函数的调用不会受到阻塞。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript中的回调函数">
 <meta property="og:url" content="http://songziming.com.cn/2016/10/30/callback/index.html">
 <meta property="og:site_name" content="Mr.Song's BLOG">
-<meta property="og:description" content="什么是回调函数回调函数（Callback） 是一段可执行的代码段（通常包装成一个函数），它会作为一个参数传递给其他的代码（通常也是一个函数）。回调函数会等待父函数执行完毕后立即执行，而与此同时，其他函数的调用不会受到阻塞。
-
-A callback is a function that is passed as an argument to another function and is execu">
-<meta property="og:updated_time" content="2016-11-05T10:19:53.873Z">
+<meta property="og:description" content="什么是回调函数回调函数（Callback） 是一段可执行的代码段（通常包装成一个函数），它会作为一个参数传递给其他的代码（通常也是一个函数）。回调函数会等待父函数执行完毕后立即执行，而与此同时，其他函数的调用不会受到阻塞。">
+<meta property="og:updated_time" content="2017-04-13T04:52:43.463Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript中的回调函数">
-<meta name="twitter:description" content="什么是回调函数回调函数（Callback） 是一段可执行的代码段（通常包装成一个函数），它会作为一个参数传递给其他的代码（通常也是一个函数）。回调函数会等待父函数执行完毕后立即执行，而与此同时，其他函数的调用不会受到阻塞。
-
-A callback is a function that is passed as an argument to another function and is execu">
+<meta name="twitter:description" content="什么是回调函数回调函数（Callback） 是一段可执行的代码段（通常包装成一个函数），它会作为一个参数传递给其他的代码（通常也是一个函数）。回调函数会等待父函数执行完毕后立即执行，而与此同时，其他函数的调用不会受到阻塞。">
 
 
 
@@ -359,6 +353,7 @@ A callback is a function that is passed as an argument to another function and i
 
       
         <h2 id="什么是回调函数"><a href="#什么是回调函数" class="headerlink" title="什么是回调函数"></a>什么是回调函数</h2><p><a href="http://https://zh.wikipedia.org/wiki/%E5%9B%9E%E8%B0%83%E5%87%BD%E6%95%B0" target="_blank" rel="external">回调函数（Callback）</a> 是一段可执行的代码段（通常包装成一个函数），它会作为一个参数传递给其他的代码（通常也是一个函数）。回调函数会等待父函数执行完毕后立即执行，而与此同时，其他函数的调用不会受到阻塞。</p>
+<a id="more"></a>
 <blockquote>
 <p>A callback is a function that is passed as an argument to another function and is executed after its parent function has completed. Callbacks are special because they patiently wait to execute until their parent finishes. Meanwhile, the browser can be executing other functions or doing all sorts of other work.</p>
 <p>— <a href="http://learn.jquery.com/" target="_blank" rel="external">jQuery</a> 官网</p>
@@ -370,7 +365,6 @@ A callback is a function that is passed as an argument to another function and i
 </ol>
 <p>前者是轮询，后者就是回调。</p>
 <p>在这个回调机制里，你的电话号码就是回调函数，你把电话留给店员叫传递回调函数，东西到货叫做触发回调关联的事件，店员给你打电话就是调用回调函数。</p>
-<a id="more"></a>
 <h2 id="回调函数怎么用"><a href="#回调函数怎么用" class="headerlink" title="回调函数怎么用"></a>回调函数怎么用</h2><p>上面已经提到，JavaScript 中的回调函数一般都是作为参数传递给另外一个函数。下面分回调函数有没有参数两种情况分别说明如何传递它给父函数。</p>
 <h3 id="没有参数的回调函数"><a href="#没有参数的回调函数" class="headerlink" title="没有参数的回调函数"></a>没有参数的回调函数</h3><p>如果回调函数没有参数，那么你可以这么传递给父函数：</p>
 <pre><code>$.get( &quot;mypage.html&quot;, myCallBack );
@@ -568,7 +562,7 @@ A callback is a function that is passed as an argument to another function and i
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -577,7 +571,7 @@ A callback is a function that is passed as an argument to another function and i
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">30</span>
+                <span class="site-state-item-count">31</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

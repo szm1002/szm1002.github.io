@@ -4,6 +4,219 @@
 
     
   <url>
+    <loc>http://songziming.com.cn/2016/10/02/how-to-set-up-blog/</loc>
+    <lastmod>2017-04-13T04:53:15.049Z</lastmod>
+    <data>
+        <display>
+        <title>如何搭建个人博客（GitHub Pages + Hexo + 域名绑定）</title>
+        <pubTime>2016-10-02T06:21:27.000Z</pubTime>
+        
+        <tag>GitHub</tag>
+         
+        <tag>Hexo</tag>
+         
+        <tag>博客</tag>
+         
+         
+           
+             
+              <breadCrumb title="Other Notes" url="http://songziming.com.cn/categories/Other-Notes/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://songziming.com.cn/2016/10/30/callback/</loc>
+    <lastmod>2017-04-13T04:52:43.463Z</lastmod>
+    <data>
+        <display>
+        <title>JavaScript中的回调函数</title>
+        <pubTime>2016-10-30T14:48:39.000Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+        <tag>回调函数</tag>
+         
+        <tag>Callback</tag>
+         
+         
+           
+             
+              <breadCrumb title="JavaScript" url="http://songziming.com.cn/categories/JavaScript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://songziming.com.cn/2016/11/06/php-quote-md/</loc>
+    <lastmod>2017-04-13T04:52:12.637Z</lastmod>
+    <data>
+        <display>
+        <title>PHP 中单引号与双引号的区别</title>
+        <pubTime>2016-11-06T12:37:16.000Z</pubTime>
+        
+        <tag>PHP</tag>
+         
+         
+           
+             
+              <breadCrumb title="PHP" url="http://songziming.com.cn/categories/PHP/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://songziming.com.cn/2016/12/02/RegExp-in-JavaScript/</loc>
+    <lastmod>2017-04-13T04:51:45.474Z</lastmod>
+    <data>
+        <display>
+        <title>JavaScript 中的正则表达式</title>
+        <pubTime>2016-12-02T13:59:44.000Z</pubTime>
+        
+        <tag>正则表达式</tag>
+         
+        <tag>RegExp</tag>
+         
+        <tag>字符串</tag>
+         
+        <tag>模式匹配</tag>
+         
+         
+           
+             
+              <breadCrumb title="JavaScript" url="http://songziming.com.cn/categories/JavaScript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://songziming.com.cn/2016/12/16/CSS-box-model/</loc>
+    <lastmod>2017-04-13T04:51:16.538Z</lastmod>
+    <data>
+        <display>
+        <title>CSS 盒模型</title>
+        <pubTime>2016-12-16T10:31:53.000Z</pubTime>
+        
+        <tag>盒模型</tag>
+         
+        <tag>内容盒模型</tag>
+         
+        <tag>边框盒模型</tag>
+         
+        <tag>垂直外边距</tag>
+         
+         
+           
+             
+              <breadCrumb title="CSS" url="http://songziming.com.cn/categories/CSS/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://songziming.com.cn/2017/01/03/operator-precedence/</loc>
+    <lastmod>2017-04-13T04:48:56.841Z</lastmod>
+    <data>
+        <display>
+        <title>JavaScript 运算符优先级</title>
+        <pubTime>2017-01-03T14:03:27.000Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+        <tag>运算符</tag>
+         
+        <tag>优先级</tag>
+         
+         
+           
+             
+              <breadCrumb title="JavaScript" url="http://songziming.com.cn/categories/JavaScript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://songziming.com.cn/2017/01/18/css-cascade/</loc>
+    <lastmod>2017-04-13T04:48:27.502Z</lastmod>
+    <data>
+        <display>
+        <title>CSS 中的层叠与特殊性</title>
+        <pubTime>2017-01-18T02:58:16.000Z</pubTime>
+        
+        <tag>层叠</tag>
+         
+        <tag>特殊性</tag>
+         
+        <tag>继承</tag>
+         
+         
+           
+             
+              <breadCrumb title="CSS" url="http://songziming.com.cn/categories/CSS/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://songziming.com.cn/2017/02/28/http-status-code/</loc>
+    <lastmod>2017-04-13T04:47:56.150Z</lastmod>
+    <data>
+        <display>
+        <title>HTTP 状态码</title>
+        <pubTime>2017-02-28T04:29:06.000Z</pubTime>
+        
+        <tag>HTTP状态码</tag>
+         
+         
+           
+             
+              <breadCrumb title="HTTP" url="http://songziming.com.cn/categories/HTTP/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://songziming.com.cn/2017/04/13/sorting-algorithm-in-js/</loc>
+    <lastmod>2017-04-13T04:47:22.590Z</lastmod>
+    <data>
+        <display>
+        <title>常见排序算法的 JS 实现</title>
+        <pubTime>2017-04-13T04:33:52.000Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+        <tag>排序算法</tag>
+         
+         
+           
+             
+              <breadCrumb title="JavaScript" url="http://songziming.com.cn/categories/JavaScript/"/>
+          
+             
+              <breadCrumb title="算法" url="http://songziming.com.cn/categories/JavaScript/%E7%AE%97%E6%B3%95/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://songziming.com.cn/2017/03/29/shallowCopy-and-deepCopy/</loc>
     <lastmod>2017-03-28T16:11:59.826Z</lastmod>
     <data>
@@ -74,26 +287,6 @@
 
     
   <url>
-    <loc>http://songziming.com.cn/2016/11/06/php-quote-md/</loc>
-    <lastmod>2017-03-18T05:33:47.815Z</lastmod>
-    <data>
-        <display>
-        <title>PHP 中单引号与双引号的区别</title>
-        <pubTime>2016-11-06T12:37:16.000Z</pubTime>
-        
-        <tag>PHP</tag>
-         
-         
-           
-             
-              <breadCrumb title="PHP" url="http://songziming.com.cn/categories/PHP/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://songziming.com.cn/2017/03/13/javascript-this/</loc>
     <lastmod>2017-03-14T15:22:43.273Z</lastmod>
     <data>
@@ -109,26 +302,6 @@
            
              
               <breadCrumb title="JavaScript" url="http://songziming.com.cn/categories/JavaScript/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://songziming.com.cn/2017/02/28/http-status-code/</loc>
-    <lastmod>2017-03-13T14:06:10.972Z</lastmod>
-    <data>
-        <display>
-        <title>HTTP 状态码</title>
-        <pubTime>2017-02-28T04:29:06.000Z</pubTime>
-        
-        <tag>HTTP状态码</tag>
-         
-         
-           
-             
-              <breadCrumb title="HTTP" url="http://songziming.com.cn/categories/HTTP/"/>
           
         </display>
     </data>
@@ -176,145 +349,6 @@
 
     
   <url>
-    <loc>http://songziming.com.cn/2017/01/18/css-cascade/</loc>
-    <lastmod>2017-02-28T15:13:54.547Z</lastmod>
-    <data>
-        <display>
-        <title>CSS 中的层叠与特殊性</title>
-        <pubTime>2017-01-18T02:58:16.000Z</pubTime>
-        
-        <tag>层叠</tag>
-         
-        <tag>特殊性</tag>
-         
-        <tag>继承</tag>
-         
-         
-           
-             
-              <breadCrumb title="CSS" url="http://songziming.com.cn/categories/CSS/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://songziming.com.cn/2017/01/03/operator-precedence/</loc>
-    <lastmod>2017-01-03T14:53:32.712Z</lastmod>
-    <data>
-        <display>
-        <title>JavaScript 运算符优先级</title>
-        <pubTime>2017-01-03T14:03:27.000Z</pubTime>
-        
-        <tag>JavaScript</tag>
-         
-        <tag>运算符</tag>
-         
-        <tag>优先级</tag>
-         
-         
-           
-             
-              <breadCrumb title="JavaScript" url="http://songziming.com.cn/categories/JavaScript/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://songziming.com.cn/2016/12/16/CSS-box-model/</loc>
-    <lastmod>2016-12-16T10:57:28.544Z</lastmod>
-    <data>
-        <display>
-        <title>CSS 盒模型</title>
-        <pubTime>2016-12-16T10:31:53.000Z</pubTime>
-        
-        <tag>盒模型</tag>
-         
-        <tag>内容盒模型</tag>
-         
-        <tag>边框盒模型</tag>
-         
-        <tag>垂直外边距</tag>
-         
-         
-           
-             
-              <breadCrumb title="CSS" url="http://songziming.com.cn/categories/CSS/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://songziming.com.cn/2016/12/02/RegExp-in-JavaScript/</loc>
-    <lastmod>2016-12-02T14:53:29.690Z</lastmod>
-    <data>
-        <display>
-        <title>JavaScript 中的正则表达式</title>
-        <pubTime>2016-12-02T13:59:44.000Z</pubTime>
-        
-        <tag>正则表达式</tag>
-         
-        <tag>RegExp</tag>
-         
-        <tag>字符串</tag>
-         
-        <tag>模式匹配</tag>
-         
-         
-           
-             
-              <breadCrumb title="JavaScript" url="http://songziming.com.cn/categories/JavaScript/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://songziming.com.cn/2016/10/01/hello-world/</loc>
-    <lastmod>2016-11-05T13:46:54.787Z</lastmod>
-    <data>
-        <display>
-        <title>Hello World</title>
-        <pubTime>2016-10-01T02:59:17.933Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://songziming.com.cn/2016/10/30/callback/</loc>
-    <lastmod>2016-11-05T10:19:53.873Z</lastmod>
-    <data>
-        <display>
-        <title>JavaScript中的回调函数</title>
-        <pubTime>2016-10-30T14:48:39.000Z</pubTime>
-        
-        <tag>JavaScript</tag>
-         
-        <tag>回调函数</tag>
-         
-        <tag>Callback</tag>
-         
-         
-           
-             
-              <breadCrumb title="JavaScript" url="http://songziming.com.cn/categories/JavaScript/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://songziming.com.cn/2016/10/19/get-vs-post/</loc>
     <lastmod>2016-11-05T10:19:20.885Z</lastmod>
     <data>
@@ -332,30 +366,6 @@
            
              
               <breadCrumb title="JavaScript" url="http://songziming.com.cn/categories/JavaScript/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://songziming.com.cn/2016/10/02/how-to-set-up-blog/</loc>
-    <lastmod>2016-11-05T10:18:43.491Z</lastmod>
-    <data>
-        <display>
-        <title>如何搭建个人博客（GitHub Pages + Hexo + 域名绑定）</title>
-        <pubTime>2016-10-02T06:21:27.000Z</pubTime>
-        
-        <tag>GitHub</tag>
-         
-        <tag>Hexo</tag>
-         
-        <tag>博客</tag>
-         
-         
-           
-             
-              <breadCrumb title="Other Notes" url="http://songziming.com.cn/categories/Other-Notes/"/>
           
         </display>
     </data>
