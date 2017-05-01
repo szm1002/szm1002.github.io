@@ -383,9 +383,9 @@
 <h3 id="闭包中的-this"><a href="#闭包中的-this" class="headerlink" title="闭包中的 this"></a>闭包中的 this</h3><p>在闭包内层函数里的 this，由于闭包的函数没有直接调用对象，它会在非严格模式下指向全局对象 global/window，严格模式下为 undefined。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> num = <span class="number">1</span>;</div><div class="line"><span class="keyword">var</span> obj = &#123;</div><div class="line">    <span class="attr">num</span>: <span class="number">2</span>,</div><div class="line">    <span class="attr">getNum</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		<span class="keyword">return</span> (<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	    	<span class="keyword">return</span> <span class="keyword">this</span>.num;</div><div class="line">		&#125;)();</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(obj.getNum()); <span class="comment">// 1</span></div></pre></td></tr></table></figure>
 <h3 id="事件处理函数中的-this"><a href="#事件处理函数中的-this" class="headerlink" title="事件处理函数中的 this"></a>事件处理函数中的 this</h3><h4 id="内联事件处理函数中的-this"><a href="#内联事件处理函数中的-this" class="headerlink" title="内联事件处理函数中的 this"></a>内联事件处理函数中的 this</h4><p>当代码被内联处理函数调用时，它的 this 指向监听器所在的 DOM 元素。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;button onclick=<span class="string">"alert(this.tagName.toLowerCase());"</span>&gt;</div><div class="line">  Show <span class="keyword">this</span>;</div><div class="line">&lt;/button&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;button onclick=<span class="string">"alert(this.tagName.toLowerCase());"</span>&gt;</div><div class="line">  Show <span class="keyword">this</span>;</div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></div></pre></td></tr></table></figure>
 <p>上面的 alert 会显示 button。但注意只有外层代码中的 this 是这样设置的。看下面的例子：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;button onclick=<span class="string">"alert((function()&#123;return this&#125;)());"</span>&gt;</div><div class="line">  Show inner <span class="keyword">this</span>;</div><div class="line">&lt;/button&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;button onclick=<span class="string">"alert((function()&#123;return this&#125;)());"</span>&gt;</div><div class="line">  Show inner <span class="keyword">this</span>;</div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></div></pre></td></tr></table></figure>
 <p>在这种情况下，没有设置内部函数的 this，所以它指向 global/window 对象。</p>
 <h4 id="DOM-事件处理函数中的-this"><a href="#DOM-事件处理函数中的-this" class="headerlink" title="DOM 事件处理函数中的 this"></a>DOM 事件处理函数中的 this</h4><p>当一个函数被用作事件处理函数时，它的 this 指向触发该事件的元素。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 被调用时，将关联的元素变成蓝色</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">bluify</span>(<span class="params">e</span>)</span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span> === e.currentTarget); <span class="comment">// 总是 true</span></div><div class="line"></div><div class="line">  <span class="comment">// 当 currentTarget 和 target 是同一个对象是为 true</span></div><div class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span> === e.target);        </div><div class="line">  <span class="keyword">this</span>.style.backgroundColor = <span class="string">'#A5D9F3'</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 获取文档中的所有元素的列表</span></div><div class="line"><span class="keyword">var</span> elements = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'*'</span>);</div><div class="line"></div><div class="line"><span class="comment">// 将bluify作为元素的点击监听函数，当元素被点击时，就会变成蓝色</span></div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span> ; i&lt;elements.length ; i++)&#123;</div><div class="line">  elements[i].addEventListener(<span class="string">'click'</span>, bluify, <span class="literal">false</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
@@ -574,7 +574,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">16</span>
+              <span class="site-state-item-count">17</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -582,7 +582,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -591,7 +591,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">31</span>
+                <span class="site-state-item-count">34</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

@@ -4,6 +4,30 @@
 
     
   <url>
+    <loc>http://songziming.com.cn/2017/05/01/react-dev-env/</loc>
+    <lastmod>2017-05-01T11:25:00.008Z</lastmod>
+    <data>
+        <display>
+        <title>搭建 React + webpack + Babel 开发环境踩坑之旅</title>
+        <pubTime>2017-05-01T11:09:34.000Z</pubTime>
+        
+        <tag>React</tag>
+         
+        <tag>webpack</tag>
+         
+        <tag>Babel</tag>
+         
+         
+           
+             
+              <breadCrumb title="React" url="http://songziming.com.cn/categories/React/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://songziming.com.cn/2016/10/02/how-to-set-up-blog/</loc>
     <lastmod>2017-04-13T04:53:15.049Z</lastmod>
     <data>
