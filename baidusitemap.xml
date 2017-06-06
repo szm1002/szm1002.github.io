@@ -5,7 +5,7 @@
     
   <url>
     <loc>http://songziming.com.cn/2017/06/07/img-gap/</loc>
-    <lastmod>2017-06-06T16:31:55.985Z</lastmod>
+    <lastmod>2017-06-06T16:42:01.376Z</lastmod>
     <data>
         <display>
         <title>解决 img 标签间的空隙问题</title>
@@ -315,9 +315,9 @@
         <title>类数组对象转换为数组对象的几种方法</title>
         <pubTime>2017-03-18T05:04:23.000Z</pubTime>
         
-        <tag>JavaScript</tag>
-         
         <tag>ES6</tag>
+         
+        <tag>JavaScript</tag>
          
         <tag>数组</tag>
          
