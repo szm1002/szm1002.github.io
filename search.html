@@ -4,6 +4,24 @@
   
     
     <entry>
+      <title><![CDATA[JavaScript 中的隐式类型转换]]></title>
+      <url>http://songziming.com.cn/2017/07/09/implicit-type-conversion/</url>
+      <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>事情的起因是这样的，笔者在玩浏览器控制台的时候，偶然发现下面这段代码的运行结果很有意思：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> a = <span class="string">'0'</span>;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(a == <span class="literal">true</span>); <span class="comment">// false</span></div><div class="line"><span class="built_in">console</span>.log(a == <span class="literal">false</span>); <span class="comment">// true</span></div><div class="line"></div><div class="line"><span class="keyword">if</span> (a) &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'true'</span>);</div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'false'</span>);</div><div class="line">&#125;  <span class="comment">// 'true'</span></div></pre></td></tr></table></figure>
+<p>笔者一直以为 JavaScript 中所有的隐式类型转换规则都是一样的，所以特别纳闷，<code>a</code>在隐式类型转换后明明变成了 <code>false</code> ，但在 if 语句中为什么又变成了 <code>true</code> 呢？查阅红宝书之后笔者才发现，JavaScript 的隐式类型转换并没有那么简单。</p>
+<a id="more"></a>
+<h2 id="与-if-语句的隐式类型转换规则"><a href="#与-if-语句的隐式类型转换规则" class="headerlink" title="== 与 if 语句的隐式类型转换规则"></a><code>==</code> 与 if 语句的隐式类型转换规则</h2><p>当 <code>==</code> 两边操作数的数据类型不同时，它遵循的隐式类型转换规则是这样的：</p>
+<ul>
+<li>若有一个操作数是布尔值，则在比较前先将其转换为数值（false 转换为 0，true 转换为 1）；</li>
+<li>若有一个操作数为字符串，另一个操作数是数值，则在比较前先将字符串转换为数值。</li>
+</ul>
+<p>所以也就不难理解，当比较 <code>a == true</code> 时，<code>true</code> 先被转换为了数值 <code>1</code>，后又由于 <code>a</code> 是字符串，它被转换为了数值 <code>0</code>，于是 <code>a == true</code> 的比较结果便是 <code>false</code>。</p>
+<p>而 <code>if</code> 语句的转换规则，是调用 <code>Boolean()</code> 转换函数将 <code>if</code> 表达式的结果转换为一个布尔值。当 <code>Boolean()</code> 转换函数遇到字符串时，只有空字符串会被转换为 <code>false</code>，任何非空字符串都被转换为 <code>true</code>，于是变量 <code>a</code> 便被转换为了 <code>true</code>。</p>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>JavaScript 是一门弱类型的编程语言，它的隐式类型转换机制带来了很多便利性，同时也埋下了许多坑，开发者一不小心就会掉进深坑里。所以在使用它的隐式类型转换机制时，一定要明白它的转换原理，同时应尽量避免使用像 <code>==</code> 这样容易被带进坑里的类型转换特性。</p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[解决 img 标签间的空隙问题]]></title>
       <url>http://songziming.com.cn/2017/06/07/img-gap/</url>
       <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>笔者最近在开发过程中遇到一个有意思的问题。如果把一张图片，按照九宫格的方式分成9张小图，再用代码把它们拼接成一张大图的时候，水平方向和垂直方向都会出现空隙。下面来分析一下空隙产生的原因及其解决方法。</p>

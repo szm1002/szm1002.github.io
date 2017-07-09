@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://songziming.com.cn/"/>
-  <updated>2017-06-06T16:42:01.376Z</updated>
+  <updated>2017-07-09T08:06:33.024Z</updated>
   <id>http://songziming.com.cn/</id>
   
   <author>
@@ -14,6 +14,44 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JavaScript 中的隐式类型转换</title>
+    <link href="http://songziming.com.cn/2017/07/09/implicit-type-conversion/"/>
+    <id>http://songziming.com.cn/2017/07/09/implicit-type-conversion/</id>
+    <published>2017-07-09T07:54:31.000Z</published>
+    <updated>2017-07-09T08:06:33.024Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>事情的起因是这样的，笔者在玩浏览器控制台的时候，偶然发现下面这段代码的运行结果很有意思：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> a = <span class="string">'0'</span>;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(a == <span class="literal">true</span>); <span class="comment">// false</span></div><div class="line"><span class="built_in">console</span>.log(a == <span class="literal">false</span>); <span class="comment">// true</span></div><div class="line"></div><div class="line"><span class="keyword">if</span> (a) &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'true'</span>);</div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'false'</span>);</div><div class="line">&#125;  <span class="comment">// 'true'</span></div></pre></td></tr></table></figure>
+<p>笔者一直以为 JavaScript 中所有的隐式类型转换规则都是一样的，所以特别纳闷，<code>a</code>在隐式类型转换后明明变成了 <code>false</code> ，但在 if 语句中为什么又变成了 <code>true</code> 呢？查阅红宝书之后笔者才发现，JavaScript 的隐式类型转换并没有那么简单。</p>
+<a id="more"></a>
+<h2 id="与-if-语句的隐式类型转换规则"><a href="#与-if-语句的隐式类型转换规则" class="headerlink" title="== 与 if 语句的隐式类型转换规则"></a><code>==</code> 与 if 语句的隐式类型转换规则</h2><p>当 <code>==</code> 两边操作数的数据类型不同时，它遵循的隐式类型转换规则是这样的：</p>
+<ul>
+<li>若有一个操作数是布尔值，则在比较前先将其转换为数值（false 转换为 0，true 转换为 1）；</li>
+<li>若有一个操作数为字符串，另一个操作数是数值，则在比较前先将字符串转换为数值。</li>
+</ul>
+<p>所以也就不难理解，当比较 <code>a == true</code> 时，<code>true</code> 先被转换为了数值 <code>1</code>，后又由于 <code>a</code> 是字符串，它被转换为了数值 <code>0</code>，于是 <code>a == true</code> 的比较结果便是 <code>false</code>。</p>
+<p>而 <code>if</code> 语句的转换规则，是调用 <code>Boolean()</code> 转换函数将 <code>if</code> 表达式的结果转换为一个布尔值。当 <code>Boolean()</code> 转换函数遇到字符串时，只有空字符串会被转换为 <code>false</code>，任何非空字符串都被转换为 <code>true</code>，于是变量 <code>a</code> 便被转换为了 <code>true</code>。</p>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>JavaScript 是一门弱类型的编程语言，它的隐式类型转换机制带来了很多便利性，同时也埋下了许多坑，开发者一不小心就会掉进深坑里。所以在使用它的隐式类型转换机制时，一定要明白它的转换原理，同时应尽量避免使用像 <code>==</code> 这样容易被带进坑里的类型转换特性。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;事情的起因是这样的，笔者在玩浏览器控制台的时候，偶然发现下面这段代码的运行结果很有意思：&lt;/p&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;let&lt;/span&gt; a = &lt;span class=&quot;string&quot;&gt;&#39;0&#39;&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(a == &lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;); &lt;span class=&quot;comment&quot;&gt;// false&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(a == &lt;span class=&quot;literal&quot;&gt;false&lt;/span&gt;); &lt;span class=&quot;comment&quot;&gt;// true&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (a) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;string&quot;&gt;&#39;true&#39;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125; &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(&lt;span class=&quot;string&quot;&gt;&#39;false&#39;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;  &lt;span class=&quot;comment&quot;&gt;// &#39;true&#39;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;笔者一直以为 JavaScript 中所有的隐式类型转换规则都是一样的，所以特别纳闷，&lt;code&gt;a&lt;/code&gt;在隐式类型转换后明明变成了 &lt;code&gt;false&lt;/code&gt; ，但在 if 语句中为什么又变成了 &lt;code&gt;true&lt;/code&gt; 呢？查阅红宝书之后笔者才发现，JavaScript 的隐式类型转换并没有那么简单。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="http://songziming.com.cn/categories/JavaScript/"/>
+    
+    
+      <category term="JavaScript" scheme="http://songziming.com.cn/tags/JavaScript/"/>
+    
+      <category term="类型转换" scheme="http://songziming.com.cn/tags/%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/"/>
+    
+  </entry>
   
   <entry>
     <title>解决 img 标签间的空隙问题</title>

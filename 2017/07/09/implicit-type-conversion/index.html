@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="正则表达式,RegExp,字符串,模式匹配," />
+  <meta name="keywords" content="JavaScript,类型转换," />
 
 
 
@@ -86,22 +86,19 @@
 
 
 
-<meta name="description" content="前言正则表达式（Regular Expression） 是一个描述字符模式的对象，它被用来匹配字符串中的字符组合。 JavaScript 中的 String 类和 RegExp 类都定义了使用正则表达式的方法。">
+<meta name="description" content="前言事情的起因是这样的，笔者在玩浏览器控制台的时候，偶然发现下面这段代码的运行结果很有意思：
+12345678910let a = &apos;0&apos;;console.log(a == true); // falseconsole.log(a == false); // trueif (a) &amp;#123;    console.log(&apos;true&apos;);&amp;#125; else &amp;#123;    console">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript 中的正则表达式">
-<meta property="og:url" content="http://songziming.com.cn/2016/12/02/RegExp-in-JavaScript/index.html">
+<meta property="og:title" content="JavaScript 中的隐式类型转换">
+<meta property="og:url" content="http://songziming.com.cn/2017/07/09/implicit-type-conversion/index.html">
 <meta property="og:site_name" content="Mr.Song's BLOG">
-<meta property="og:description" content="前言正则表达式（Regular Expression） 是一个描述字符模式的对象，它被用来匹配字符串中的字符组合。 JavaScript 中的 String 类和 RegExp 类都定义了使用正则表达式的方法。">
-<meta property="og:image" content="http://songziming.com.cn/2016/12/02/RegExp-in-JavaScript/1.png">
-<meta property="og:image" content="http://songziming.com.cn/2016/12/02/RegExp-in-JavaScript/2.png">
-<meta property="og:image" content="http://songziming.com.cn/2016/12/02/RegExp-in-JavaScript/3.png">
-<meta property="og:image" content="http://songziming.com.cn/2016/12/02/RegExp-in-JavaScript/4.png">
-<meta property="og:image" content="http://songziming.com.cn/2016/12/02/RegExp-in-JavaScript/5.png">
-<meta property="og:updated_time" content="2017-04-13T04:51:45.474Z">
+<meta property="og:description" content="前言事情的起因是这样的，笔者在玩浏览器控制台的时候，偶然发现下面这段代码的运行结果很有意思：
+12345678910let a = &apos;0&apos;;console.log(a == true); // falseconsole.log(a == false); // trueif (a) &amp;#123;    console.log(&apos;true&apos;);&amp;#125; else &amp;#123;    console">
+<meta property="og:updated_time" content="2017-07-09T08:06:33.024Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaScript 中的正则表达式">
-<meta name="twitter:description" content="前言正则表达式（Regular Expression） 是一个描述字符模式的对象，它被用来匹配字符串中的字符组合。 JavaScript 中的 String 类和 RegExp 类都定义了使用正则表达式的方法。">
-<meta name="twitter:image" content="http://songziming.com.cn/2016/12/02/RegExp-in-JavaScript/1.png">
+<meta name="twitter:title" content="JavaScript 中的隐式类型转换">
+<meta name="twitter:description" content="前言事情的起因是这样的，笔者在玩浏览器控制台的时候，偶然发现下面这段代码的运行结果很有意思：
+12345678910let a = &apos;0&apos;;console.log(a == true); // falseconsole.log(a == false); // trueif (a) &amp;#123;    console.log(&apos;true&apos;);&amp;#125; else &amp;#123;    console">
 
 
 
@@ -122,9 +119,9 @@
 
 
 
-  <link rel="canonical" href="http://songziming.com.cn/2016/12/02/RegExp-in-JavaScript/"/>
+  <link rel="canonical" href="http://songziming.com.cn/2017/07/09/implicit-type-conversion/"/>
 
-  <title> JavaScript 中的正则表达式 | Mr.Song's BLOG </title>
+  <title> JavaScript 中的隐式类型转换 | Mr.Song's BLOG </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -287,7 +284,7 @@
             
             
               
-                JavaScript 中的正则表达式
+                JavaScript 中的隐式类型转换
               
             
           </h1>
@@ -299,8 +296,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-12-02T21:59:44+08:00" content="2016-12-02">
-              2016-12-02
+            <time itemprop="dateCreated" datetime="2017-07-09T15:54:31+08:00" content="2017-07-09">
+              2017-07-09
             </time>
           </span>
 
@@ -329,8 +326,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/12/02/RegExp-in-JavaScript/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/02/RegExp-in-JavaScript/" itemprop="commentsCount"></span>
+                <a href="/2017/07/09/implicit-type-conversion/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/07/09/implicit-type-conversion/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -358,109 +355,18 @@
       
 
       
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><a href="http://https://zh.wikipedia.org/wiki/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F" target="_blank" rel="external">正则表达式（Regular Expression）</a> 是一个描述字符模式的对象，它被用来匹配字符串中的字符组合。 JavaScript 中的 String 类和 RegExp 类都定义了使用正则表达式的方法。</p>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>事情的起因是这样的，笔者在玩浏览器控制台的时候，偶然发现下面这段代码的运行结果很有意思：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> a = <span class="string">'0'</span>;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(a == <span class="literal">true</span>); <span class="comment">// false</span></div><div class="line"><span class="built_in">console</span>.log(a == <span class="literal">false</span>); <span class="comment">// true</span></div><div class="line"></div><div class="line"><span class="keyword">if</span> (a) &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'true'</span>);</div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'false'</span>);</div><div class="line">&#125;  <span class="comment">// 'true'</span></div></pre></td></tr></table></figure>
+<p>笔者一直以为 JavaScript 中所有的隐式类型转换规则都是一样的，所以特别纳闷，<code>a</code>在隐式类型转换后明明变成了 <code>false</code> ，但在 if 语句中为什么又变成了 <code>true</code> 呢？查阅红宝书之后笔者才发现，JavaScript 的隐式类型转换并没有那么简单。</p>
 <a id="more"></a>
-<h2 id="正则表达式的定义"><a href="#正则表达式的定义" class="headerlink" title="正则表达式的定义"></a>正则表达式的定义</h2><p>JavaScript 中的正则表达式用 RegExp 对象表示，所以我们可以使用 RegExp() 构造函数来创建 RegExp 对象，不过在实际 使用中 RegExp 对象更多的是通过直接量语法来创建的。正则表达式直接量定义为包含在一对斜杠 <code>&quot;/&quot;</code> 之间的字符。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var expression1 = /pattern/flags;           //RegExp直接量</div><div class="line">var expression2 = new RegExp(&quot;pattern&quot;, &quot;flags&quot;);    //RegExp构造函数</div></pre></td></tr></table></figure>
-<blockquote>
-<p>flags 代表修饰符，本文稍后有详细介绍。</p>
-</blockquote>
-<h3 id="直接量字符"><a href="#直接量字符" class="headerlink" title="直接量字符"></a>直接量字符</h3><p>正则表达式中的所有字母和数字都是按照字面含义进行匹配的，但它也支持通过反斜线 <code>&quot;\&quot;</code> 转义的非字母的字符匹配，这些转义字符如下表所示：</p>
-<table>
-<thead>
-<tr>
-<th>字符</th>
-<th>匹配</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>字母和数字字符</td>
-<td>自身</td>
-</tr>
-<tr>
-<td>\o</td>
-<td>NUL字符（\u0000）</td>
-</tr>
-<tr>
-<td>\t</td>
-<td>制表符（\u0009）</td>
-</tr>
-<tr>
-<td>\n</td>
-<td>换行符（\u000A）</td>
-</tr>
-<tr>
-<td>\v</td>
-<td>垂直制表符（\u000B）</td>
-</tr>
-<tr>
-<td>\f</td>
-<td>换页符（\u000C）</td>
-</tr>
-<tr>
-<td>\r</td>
-<td>回车符（\u000D）</td>
-</tr>
-<tr>
-<td>\xnn</td>
-<td>由十六进制数 nn 指定的拉丁字符，例如 \x0A 等价于 \n</td>
-</tr>
-<tr>
-<td>\uxxxx</td>
-<td>由十六进制数 xxxx 指定的 Unicode 字符，例如 \u0009 等价于 \t</td>
-</tr>
-<tr>
-<td>\cX</td>
-<td>控制字符 ^X，例如 \cJ 等价于换行符 \n</td>
-</tr>
-</tbody>
-</table>
-<h3 id="字符类"><a href="#字符类" class="headerlink" title="字符类"></a>字符类</h3><p>将直接量字符单独放进方括号内就组成了字符类，一个字符类可以匹配它所包含的任意字符。例如，正则表达式 <code>/[abc]/</code> 就和字母 <code>&quot;a&quot;, &quot;b&quot;, &quot;c&quot;</code> 中的任意一个都匹配。正则表达式的字符类也支持转义字符定义的特殊字符，如下表所示：</p>
-<img src="/2016/12/02/RegExp-in-JavaScript/1.png" alt="字符类" title="字符类">
-<h3 id="重复"><a href="#重复" class="headerlink" title="重复"></a>重复</h3><p>正则表达式中还有一些重复字符语法，如下表所示：</p>
-<img src="/2016/12/02/RegExp-in-JavaScript/2.png" alt="重复" title="重复">
-<p>举一些栗子：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">/\d&#123;2,4&#125;/     //匹配2~4个数字</div><div class="line">/\w&#123;3&#125;\d?/    //精确匹配三个单词字符和一个可选的数字</div><div class="line">/\s+java\s+/  //匹配前后带有一个或多个空格的字符串&quot;java&quot;</div><div class="line">/[^(]*/       //匹配一个或多个非左括号的字符</div></pre></td></tr></table></figure>
-<h3 id="选择与分组"><a href="#选择与分组" class="headerlink" title="选择与分组"></a>选择与分组</h3><p>字符 <code>&quot;|&quot;</code> 用于分隔供选择的字符。例如， <code>/ab|cd|ef/</code> 可以匹配字符串 <code>&quot;ab&quot;, &quot;cd&quot;, &quot;ef&quot;</code> ； <code>/\d{3}|[a-z]{4}/</code> 匹配三位数字或四个小写字母。</p>
-<blockquote>
-<p>注意，选择项的尝试匹配次序是从左到右，直到发现匹配项。如果左边的选择项匹配，就忽略右边的匹配项，即使它产生更好的匹配。例如，当 <code>/a|ab/</code> 匹配字符串 <code>&quot;ab&quot;</code> 时，它只能匹配第一个字符。</p>
-</blockquote>
-<p>正则表达式的圆括号作用是把单独的项组合成子表达式，还可以在完整的模式中定义子模式。例如，<code>/java(script)?/</code> 可以匹配字符串 <code>&quot;java&quot;</code> ，其后可以有 <code>&quot;script&quot;</code> 也可以没有。</p>
-<h3 id="指定匹配位置"><a href="#指定匹配位置" class="headerlink" title="指定匹配位置"></a>指定匹配位置</h3><p>在正则表达式中，有一些锚字符，用来指定字符串中的特殊位置，如下表所示：</p>
-<img src="/2016/12/02/RegExp-in-JavaScript/3.png" alt="特殊位置" title="特殊位置">
-<h3 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h3><p>正则表达式还有3个修饰符，分别是 <code>&quot;i&quot;, &quot;g&quot;, &quot;m&quot;</code> 。它们放在字面量的 <code>&quot;/&quot;</code> 符号之外，是 RegExp() 构造函数的第二个参数。它们的含义如下表所示：</p>
-<img src="/2016/12/02/RegExp-in-JavaScript/4.png" alt="修饰符" title="修饰符">
-<h2 id="用于模式匹配的-String-方法"><a href="#用于模式匹配的-String-方法" class="headerlink" title="用于模式匹配的 String 方法"></a>用于模式匹配的 String 方法</h2><h3 id="search-方法"><a href="#search-方法" class="headerlink" title="search() 方法"></a>search() 方法</h3><p>search() 方法的参数是一个正则表达式，返回第一个与之匹配的子串的起始位置，若无匹配的子串，则返回 -1。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&quot;JavaScript&quot;.search(/script/i);          //将返回4</div></pre></td></tr></table></figure>
-<p>若 search() 方法的参数不是正则表达式，则首先会通过 RegExp() 构造函数将它转换为正则表达式。</p>
-<p>search() 方法不支持全局搜索，因为它会忽略正则表达式参数中的修饰符 <code>g</code> 。</p>
-<h3 id="replace-方法"><a href="#replace-方法" class="headerlink" title="replace() 方法"></a>replace() 方法</h3><p>replace() 方法用以执行检索与替换操作，它的第一个参数是正则表达式，第二个参数是要替换的字符串。它支持全局替换，不会忽略 <code>g</code> 修饰符。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">text.replace(/javascript/gi, &quot;JavaScript&quot;);      //将text中所有不区分大小写的javascript都替换为JavaScript</div></pre></td></tr></table></figure>
-<p>若 replace() 方法第一个参数是字符串而不是正则表达式，则它会直接搜索这个字符串，不会像 search() 方法那样通过 RegExp() 构造函数转换为正则表达式。</p>
-<h3 id="match-方法"><a href="#match-方法" class="headerlink" title="match() 方法"></a>match() 方法</h3><p>match() 方法是最常用的 String 正则表达式方法，它的参数是一个正则表达式（若不是正则表达式会通过 RegExp() 构造函数转换），返回的是一个由匹配结果组成的数组。</p>
-<p>若参数的正则表达式设置了 <code>g</code> 修饰符，则该方法返回的是一个包含所有匹配结果的数组。例如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&quot;1 plus 2 equals 3&quot;.match(/\d+/g);   //返回[&quot;1&quot;, &quot;2&quot;, &quot;3&quot;]</div></pre></td></tr></table></figure>
-<p>若参数的正则表达式没有设置 <code>g</code> 修饰符，它不会进行全局搜索，但也返回一个数组，数组第一个元素是匹配的字符串，余下的元素是正则表达式中用圆括号括起来的子表达式匹配的字符串。例如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">var url = /(\w+):\/\/([\w.]+)/;</div><div class="line">var text = &quot;Visit my blog at http://songziming.com.cn&quot;;</div><div class="line">var result = text.match(url);</div><div class="line">/*  [&quot;http://songziming.com.cn&quot;,</div><div class="line">     &quot;http&quot;,</div><div class="line">     &quot;songziming.com.cn&quot;,</div><div class="line">     &quot;~szm&quot;</div><div class="line">    ]</div><div class="line">*/</div></pre></td></tr></table></figure>
-<h3 id="split-方法"><a href="#split-方法" class="headerlink" title="split() 方法"></a>split() 方法</h3><p>split() 用来分隔字符串为数组，它的参数既能是一个字符串也能是一个正则表达式（字符串不会通过 RegExp() 构造函数转换为正则表达式）。例如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&quot;123,456,789&quot;.split(&quot;,&quot;);   //返回[&quot;123&quot;, &quot;456&quot;, &quot;789&quot;]</div><div class="line">&quot;1, 2, 3, 4&quot;.split(/\s*,\s*/);  //返回[&quot;1&quot;, &quot;2&quot;, &quot;3&quot;, &quot;4&quot;]</div></pre></td></tr></table></figure>
-<h2 id="RegExp-对象"><a href="#RegExp-对象" class="headerlink" title="RegExp 对象"></a>RegExp 对象</h2><p>文章开头讲到过，正则表达式还能通过 RegExp() 构造函数创建，它带有两个参数，第一个参数是正则表达式的主体部分，第二个参数可选，是修饰符。不过需要注意的是，在主体部分，不论是字符串直接量还是正则表达式，都需要使用 “\” 字符作为转义字符的前缀，因此当给 RegExp() 传入一个字符串表述的正则表达式时，必须将 “\” 替换为 “\“ 。例如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var zipcode = new RegExp(&quot;\\d&#123;5&#125;&quot;, &quot;g&quot;);   //全局匹配字符串中的5个数字</div></pre></td></tr></table></figure>
-<h3 id="RegExp-对象的属性"><a href="#RegExp-对象的属性" class="headerlink" title="RegExp 对象的属性"></a>RegExp 对象的属性</h3><p>每个 RegExp 对象都具有5个属性，如下图所示：</p>
-<img src="/2016/12/02/RegExp-in-JavaScript/5.png" alt="RegExp对象属性" title="RegExp对象属性">
-<p>其中，global, ignoreCase, multiline 都是只读的布尔值，source 是一个只读的字符串，lastIndex 是一个可读可写的整数。</p>
-<h3 id="RegExp-对象的方法"><a href="#RegExp-对象的方法" class="headerlink" title="RegExp 对象的方法"></a>RegExp 对象的方法</h3><h4 id="exec-方法"><a href="#exec-方法" class="headerlink" title="exec() 方法"></a>exec() 方法</h4><p>exec() 是 RegExp 对象最主要的模式匹配方法，它与 String 的 match() 方法非常相似。</p>
-<p>exec() 方法的参数是一个字符串，它执行对这个字符串的匹配搜索。如果没有找到任何匹配，就返回 null；如果找到了一个匹配，它将返回一个数组，就像 match() 方法为非全局检索返回的数组一样。数组第一个元素与正则表达式匹配的字符串，余下的元素是与圆括号内的子表达式匹配的子串。返回的数组还包括了 index 与 input 两个属性，index 属性包含了发生匹配的字符位置，input 属性引用的是正在检索的字符串。</p>
-<p>不管正则表达式是否具有g修饰符，exec() 方法都返回一样的数组。当同一个正则表达式第二次调用 exec() 方法时，将从 lastIndex 的位置开始检索。若 exec() 没有发现任何匹配结果，则将 lastIndex 重置为0。例如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var pattern = /Java/g;</div><div class="line">var text = &quot;JavaScript is more fun than Java!&quot;;</div><div class="line">var result;</div><div class="line">while((result = pattern.exec(text)) !== null) &#123;</div><div class="line">     alert(&quot;Matched &apos;&quot; + result[0] + &quot;&apos;&quot; +</div><div class="line">          &quot; at position &quot; + result.index +</div><div class="line">          &quot;; next search begins at &quot; + pattern.lastIndex);</div></pre></td></tr></table></figure>
-<h4 id="test-方法"><a href="#test-方法" class="headerlink" title="test() 方法"></a>test() 方法</h4><p>test() 方法的参数是一个字符串，返回一个指示是否匹配的布尔值。例如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var pattern = /java/i;</div><div class="line">pattern.test(&quot;JavaScript&quot;);    //返回true</div></pre></td></tr></table></figure>
-<p>调用 test() 与 exec() 等价。当一个全局正则表达式调用 test() 时，它会从 lastIndex 的位置开始检索，若找到了匹配结果，那么它就会设置 lastIndex 为当前匹配子串的结束位置。</p>
-<blockquote>
-<p>由于这个特性的存在，如果让一个带有 <code>g</code> 修饰符的正则表达式对多个字符串执行 exec() 或 test() 时，要么在每个字符串中找出所有的匹配以便将 lastIndex 自动重置为 0，要么需要手动重置 lastIndex 为 0。否则，下一次对新字符串进行检索时，起始位置可能就不是字符串的开始位置了。</p>
-<p>在 ECMAScript 5 中，正则表达式直接量每次计算都会创建一个新的 RegExp 对象，因此每次对新字符串检索时 lastIndex 都是0。</p>
-</blockquote>
+<h2 id="与-if-语句的隐式类型转换规则"><a href="#与-if-语句的隐式类型转换规则" class="headerlink" title="== 与 if 语句的隐式类型转换规则"></a><code>==</code> 与 if 语句的隐式类型转换规则</h2><p>当 <code>==</code> 两边操作数的数据类型不同时，它遵循的隐式类型转换规则是这样的：</p>
+<ul>
+<li>若有一个操作数是布尔值，则在比较前先将其转换为数值（false 转换为 0，true 转换为 1）；</li>
+<li>若有一个操作数为字符串，另一个操作数是数值，则在比较前先将字符串转换为数值。</li>
+</ul>
+<p>所以也就不难理解，当比较 <code>a == true</code> 时，<code>true</code> 先被转换为了数值 <code>1</code>，后又由于 <code>a</code> 是字符串，它被转换为了数值 <code>0</code>，于是 <code>a == true</code> 的比较结果便是 <code>false</code>。</p>
+<p>而 <code>if</code> 语句的转换规则，是调用 <code>Boolean()</code> 转换函数将 <code>if</code> 表达式的结果转换为一个布尔值。当 <code>Boolean()</code> 转换函数遇到字符串时，只有空字符串会被转换为 <code>false</code>，任何非空字符串都被转换为 <code>true</code>，于是变量 <code>a</code> 便被转换为了 <code>true</code>。</p>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>JavaScript 是一门弱类型的编程语言，它的隐式类型转换机制带来了很多便利性，同时也埋下了许多坑，开发者一不小心就会掉进深坑里。所以在使用它的隐式类型转换机制时，一定要明白它的转换原理，同时应尽量避免使用像 <code>==</code> 这样容易被带进坑里的类型转换特性。</p>
 
       
     </div>
@@ -514,13 +420,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/正则表达式/" rel="tag">#正则表达式</a>
+            <a href="/tags/JavaScript/" rel="tag">#JavaScript</a>
           
-            <a href="/tags/RegExp/" rel="tag">#RegExp</a>
-          
-            <a href="/tags/字符串/" rel="tag">#字符串</a>
-          
-            <a href="/tags/模式匹配/" rel="tag">#模式匹配</a>
+            <a href="/tags/类型转换/" rel="tag">#类型转换</a>
           
         </div>
       
@@ -529,17 +431,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/11/06/php-quote-md/" rel="next" title="PHP 中单引号与双引号的区别">
-                <i class="fa fa-chevron-left"></i> PHP 中单引号与双引号的区别
+              <a href="/2017/06/07/img-gap/" rel="next" title="解决 img 标签间的空隙问题">
+                <i class="fa fa-chevron-left"></i> 解决 img 标签间的空隙问题
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/12/16/CSS-box-model/" rel="prev" title="CSS 盒模型">
-                CSS 盒模型 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -588,8 +486,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/12/02/RegExp-in-JavaScript/"
-           data-title="JavaScript 中的正则表达式" data-url="http://songziming.com.cn/2016/12/02/RegExp-in-JavaScript/">
+      <div class="ds-thread" data-thread-key="2017/07/09/implicit-type-conversion/"
+           data-title="JavaScript 中的隐式类型转换" data-url="http://songziming.com.cn/2017/07/09/implicit-type-conversion/">
       </div>
     
   </div>
@@ -725,7 +623,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正则表达式的定义"><span class="nav-number">2.</span> <span class="nav-text">正则表达式的定义</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#直接量字符"><span class="nav-number">2.1.</span> <span class="nav-text">直接量字符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符类"><span class="nav-number">2.2.</span> <span class="nav-text">字符类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重复"><span class="nav-number">2.3.</span> <span class="nav-text">重复</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#选择与分组"><span class="nav-number">2.4.</span> <span class="nav-text">选择与分组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#指定匹配位置"><span class="nav-number">2.5.</span> <span class="nav-text">指定匹配位置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修饰符"><span class="nav-number">2.6.</span> <span class="nav-text">修饰符</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用于模式匹配的-String-方法"><span class="nav-number">3.</span> <span class="nav-text">用于模式匹配的 String 方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#search-方法"><span class="nav-number">3.1.</span> <span class="nav-text">search() 方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#replace-方法"><span class="nav-number">3.2.</span> <span class="nav-text">replace() 方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#match-方法"><span class="nav-number">3.3.</span> <span class="nav-text">match() 方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#split-方法"><span class="nav-number">3.4.</span> <span class="nav-text">split() 方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RegExp-对象"><span class="nav-number">4.</span> <span class="nav-text">RegExp 对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#RegExp-对象的属性"><span class="nav-number">4.1.</span> <span class="nav-text">RegExp 对象的属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RegExp-对象的方法"><span class="nav-number">4.2.</span> <span class="nav-text">RegExp 对象的方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#exec-方法"><span class="nav-number">4.2.1.</span> <span class="nav-text">exec() 方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#test-方法"><span class="nav-number">4.2.2.</span> <span class="nav-text">test() 方法</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#与-if-语句的隐式类型转换规则"><span class="nav-number">2.</span> <span class="nav-text">== 与 if 语句的隐式类型转换规则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结语"><span class="nav-number">3.</span> <span class="nav-text">结语</span></a></li></ol></div>
             
           </div>
         </section>
