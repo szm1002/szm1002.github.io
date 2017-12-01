@@ -4,6 +4,32 @@
 
     
   <url>
+    <loc>http://songziming.com.cn/2017/11/30/communication-between-components-vue/</loc>
+    <lastmod>2017-11-30T12:34:40.066Z</lastmod>
+    <data>
+        <display>
+        <title>Vue 组件间通信</title>
+        <pubTime>2017-11-30T12:20:21.000Z</pubTime>
+        
+        <tag>组件间通信</tag>
+         
+        <tag>props</tag>
+         
+        <tag>events</tag>
+         
+        <tag>EventBus</tag>
+         
+         
+           
+             
+              <breadCrumb title="Vue" url="http://songziming.com.cn/categories/Vue/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://songziming.com.cn/2017/07/09/implicit-type-conversion/</loc>
     <lastmod>2017-07-09T08:06:33.024Z</lastmod>
     <data>
