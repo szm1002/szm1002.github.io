@@ -7,6 +7,7 @@
 
 ### 2017
 
+- [11.30  Vue 组件间通信](http://songziming.com.cn/2017/11/30/communication-between-components-vue/)
 - [07.09  JavaScript 中的隐式类型转换](http://songziming.com.cn/2017/07/09/implicit-type-conversion/)
 - [06.07  解决 img 标签间的空隙问题](http://songziming.com.cn/2017/06/07/img-gap/)
 - [05.01  搭建 React + webpack + Babel 开发环境](http://songziming.com.cn/2017/05/01/react-dev-env/)
